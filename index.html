@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QTick - The Business OS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* Reduced amplitude for cleaner floating */
+        .animate-float {
+            animation: float 5s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        /* Modal Styles */
+        .modal {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .modal.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .modal:not(.hidden) {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        /* Mobile Card/Phone (Central focus) */
+        .mobile-card {
+            animation: none;
+            /* Remove original float-delayed animation for cleaner look */
+            transform: rotate(4deg);
+            transition: all 0.5s ease;
+        }
+
+        /* Added new specific rotation for clean slanting elements */
+        .slant-card-left {
+            transform: rotate(-8deg);
+            transition: all 0.5s ease;
+        }
+
+        .slant-card-right {
+            transform: rotate(8deg);
+            transition: all 0.5s ease;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden selection:bg-indigo-100 selection:text-indigo-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <img src="asset/QTick-Logo.png" alt="QTick Logo"
+                        class="w-10 h-10 rounded-xl shadow-lg shadow-indigo-500/20">
+                    <span class="text-xl font-bold tracking-tight text-slate-900">QTick</span>
+                </a>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-bold text-slate-600">
+                <a href="index.html" class="text-indigo-600 transition-colors">Home</a>
+                <a href="feature.html" class="hover:text-indigo-600 transition-colors">Features</a>
+                <a href="download.html" class="hover:text-indigo-600 transition-colors">Download</a>
+                <a href="contact.html" class="hover:text-indigo-600 transition-colors">Contact</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <!-- Removed Dark Mode Toggle -->
+                <a href="download.html"
+                    class="px-5 py-2.5 text-sm font-bold text-white bg-slate-900 rounded-lg hover:bg-indigo-600 transition-all">Get
+                    Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Fixed Positioning to stay right) -->
+    <header class="pt-32 pb-20 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content Area (Text and Buttons) -->
+                <div class="lg:py-16">
+                    <!-- Tagline -->
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-50 dark:bg-slate-800 border border-indigo-200 dark:border-slate-700 text-indigo-600 dark:text-indigo-400 text-xs font-bold uppercase tracking-wider mb-6">
+                        <span class="w-2 h-2 bg-indigo-500 rounded-full animate-pulse"></span>
+                        New: AI Voice Commands
+                    </div>
+                    <!-- H1 Content -->
+                    <h1
+                        class="text-5xl md:text-7xl font-extrabold text-slate-900 dark:text-white mb-8 tracking-tight leading-tight">
+                        Run your business on<br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">AI
+                            Autopilot.</span>
+                    </h1>
+                    <!-- P Content -->
+                    <p class="text-xl text-slate-600 dark:text-slate-400 mb-10 leading-relaxed max-w-lg">
+                        Stop juggling five different apps. Manage smart queues, generated websites, marketing, and
+                        analytics from one elegant dashboard.
+                    </p>
+                    <!-- Button Layout -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button id="startFreeBtn"
+                            class="px-8 py-4 bg-indigo-600 text-white rounded-xl font-bold text-lg hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-500/30 flex items-center justify-center gap-2">
+                            Get Started Free <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </button>
+                        <button id="watchDemoBtn"
+                            class="px-8 py-4 bg-white dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-300 dark:border-slate-700 rounded-xl font-bold text-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-all flex items-center justify-center gap-2">
+                            <i data-lucide="play-circle" class="w-5 h-5"></i> Watch Demo
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Visual Area (Clean and Structured - All elements constrained to this column) -->
+                <div class="hero-visual hidden lg:block h-[550px] relative">
+
+                    <!-- 7. NEW: Small Dashboard Card (Highest Layer - Z-90) -->
+                    <div class="absolute bg-white p-4 rounded-xl shadow-2xl border border-indigo-200 z-90 animate-float"
+                        style="top: 120px; right: -15%; transform: rotate(-1deg); animation-delay: 0.5s; width: 220px;">
+                        <div class="flex items-center gap-2 mb-2">
+                            <div class="w-5 h-5 rounded-full bg-indigo-500 flex items-center justify-center text-white shadow-md">
+                                <i data-lucide="layout-dashboard" class="w-3 h-3"></i>
+                            </div>
+                            <span class="text-sm font-bold text-slate-700">Daily Snapshot</span>
+                        </div>
+                        <div class="text-2xl font-extrabold text-slate-900 mb-2">$5,120</div>
+                        <div class="text-xs text-green-500 font-bold flex items-center gap-1">
+                            <i data-lucide="arrow-up-right" class="w-3 h-3"></i> 12% vs yesterday
+                        </div>
+                    </div>
+
+                    <!-- 4. Lead-Gen Notification (New Enquiry - Stacking: z-55 - ADJUSTED DOWN) -->
+                    <div
+                        class="absolute bg-white px-4 py-2 rounded-xl shadow-2xl border border-orange-200 z-55 flex items-center gap-3 animate-float"
+                        style="top: 250px; right: -10%; transform: rotate(-5deg); animation-delay: 1s;">
+                        <div class="w-6 h-6 rounded-full bg-orange-100 flex items-center justify-center text-orange-600">
+                            <i data-lucide="magnet" class="w-4 h-4"></i>
+                        </div>
+                        <span class="text-sm font-bold text-slate-700">New Enquiry!</span>
+                    </div>
+
+                    <!-- 5. New Review Notification (Highest Layer - Z-90 - ADJUSTED DOWN) -->
+                    <div
+                        class="absolute bg-white px-4 py-2 rounded-full shadow-2xl border border-yellow-200 z-90 flex items-center gap-2 animate-float"
+                        style="top: 320px; right: -25%; transform: rotate(5deg); animation-delay: 2s;">
+                        <div class="flex text-yellow-400">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                        </div>
+                        <span class="text-xs font-bold text-slate-700">5-Star Review!</span>
+                        <div class="text-green-500 text-[10px] font-bold">Live</div>
+                    </div>
+                    
+                    <!-- 6. Campaign Sent Notification (WhatsApp Sale - Stacking: z-50) -->
+                    <div
+                        class="absolute bg-white px-4 py-2 rounded-xl shadow-2xl border border-green-200 z-50 flex items-center gap-3 animate-float"
+                        style="bottom: 150px; right: 0%; transform: rotate(-2deg); animation-delay: 4s;">
+                        <div class="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-white shadow-md">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                        </div>
+                        <span class="text-sm font-bold text-slate-700">Sale Campaign Sent</span>
+                    </div>
+
+                    <!-- 3. The Main Mobile Phone Card (Central Focus - z-40) -->
+                    <div class="absolute top-1/2 right-1/4 -translate-y-1/2 w-72 bg-white rounded-3xl shadow-2xl z-40 mobile-card border-2 border-indigo-200"
+                        style="box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);">
+                        <!-- Phone Header (Blue) -->
+                        <div class="bg-indigo-600 p-4 rounded-t-[20px] flex justify-center items-center h-20 relative">
+                            <span class="text-white text-3xl font-extrabold">A-14</span>
+                            <div class="absolute top-2 right-2 w-1.5 h-1.5 bg-white rounded-full opacity-50"></div>
+                            <div class="absolute top-2 left-1/2 -translate-x-1/2 w-10 h-1 bg-black/20 rounded-full">
+                            </div>
+                        </div>
+
+                        <!-- Phone Body (White) -->
+                        <div class="p-4 space-y-4">
+                            <div class="text-xs font-bold text-slate-400 uppercase">Next Serving</div>
+                            <!-- Current Customer (Appointment image mimic) -->
+                            <div class="flex items-center gap-3 p-3 bg-indigo-50 rounded-xl border border-indigo-200">
+                                <!-- Appointment Image placeholder: A simple circle with initials -->
+                                <div
+                                    class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-indigo-600 font-bold text-xs shadow-inner border border-indigo-100">
+                                    <i data-lucide="calendar-check" class="w-6 h-6"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-sm font-bold text-slate-900">Sarah's Haircut</div>
+                                    <div class="text-xs text-indigo-600 font-semibold">Today, 4:00 PM</div>
+                                </div>
+                            </div>
+
+                            <div class="text-xs font-bold text-slate-400 uppercase pt-2">Waiting Queue</div>
+                            <!-- Waiting Customer -->
+                            <div class="flex items-center gap-3 p-3 bg-white rounded-xl border border-slate-100">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center text-slate-600 font-bold text-xs">
+                                    MK</div>
+                                <div class="flex-1">
+                                    <div class="text-sm font-bold text-slate-900">Mike K.</div>
+                                    <div class="text-xs text-slate-500">Queue Time: 5 mins</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Footer AI Bubble -->
+                        <div
+                            class="m-4 mt-8 p-3 bg-slate-100 rounded-xl rounded-bl-none shadow-inner border border-slate-200">
+                            <div class="flex items-center gap-2 mb-1">
+                                <div
+                                    class="w-4 h-4 bg-gradient-to-r from-indigo-500 to-violet-500 rounded-full flex items-center justify-center text-[8px] text-white font-bold">
+                                    AI</div><span class="text-[10px] font-bold text-slate-400">ASSISTANT</span>
+                            </div>
+                            <p class="text-xs font-semibold text-slate-700 leading-snug">"I've added a new
+                                appointment for Sarah at 4 PM."</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 2. Right Slant Card (Invoice/Billing - Stacking: z-45) -->
+                    <div
+                        class="absolute bottom-[30px] right-[-20%] w-56 bg-white/70 backdrop-blur-sm rounded-2xl shadow-xl p-4 z-45 slant-card-right border border-slate-200">
+                        <div class="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase mb-2">
+                            <i data-lucide="receipt" class="w-4 h-4 text-blue-500"></i>
+                            Billing & Payments
+                        </div>
+                        <div class="flex justify-between items-center mb-1">
+                            <div class="text-xl font-bold text-slate-900">$120.00 Paid</div>
+                            <span class="text-[10px] text-green-600 font-bold bg-green-100 px-2 py-0.5 rounded-full">Completed</span>
+                        </div>
+                        <div class="text-[10px] font-bold text-slate-400">Invoice #001 Sent</div>
+                    </div>
+
+                    <!-- 1. Left Slant Card (Analytics - Back Layer) -->
+                    <div
+                        class="absolute top-10 right-[55%] w-64 bg-white/70 backdrop-blur-sm rounded-2xl shadow-xl p-4 z-10 slant-card-left border border-slate-200">
+                        <div class="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase mb-2">
+                            <i data-lucide="bar-chart-2" class="w-4 h-4 text-indigo-500"></i>
+                            Live Analytics
+                        </div>
+                        <div class="h-16 bg-indigo-100 rounded-lg relative overflow-hidden">
+                            <!-- Mock chart bars -->
+                            <div class="absolute bottom-0 w-full flex justify-around items-end h-full p-1">
+                                <div class="w-1/12 h-1/4 bg-indigo-400 rounded-t"></div>
+                                <div class="w-1/12 h-2/4 bg-indigo-400 rounded-t"></div>
+                                <div class="w-1/12 h-3/4 bg-indigo-600 rounded-t"></div>
+                                <div class="w-1/12 h-1/2 bg-indigo-400 rounded-t"></div>
+                                <div class="w-1/12 h-full bg-indigo-600 rounded-t"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header> <!--Features Ecosystem-->
+    <section id="platform" class="py-24 bg-white dark:bg-slate-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">The
+                    Complete Business Ecosystem</h2>
+                <p class="text-slate-500 dark:text-slate-400 text-lg max-w-2xl mx-auto">Powerful
+                    standalone modules. Unbeatable when used together.</p>
+            </div>
+            <!-- Bento Grid Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[minmax(200px,auto)]">
+                <!-- 1. Smart Queue (Standard) -->
+                <div
+                    class="lg:col-span-2 row-span-2 bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 p-8 flex flex-col relative overflow-hidden group hover:shadow-xl transition-all duration-300">
+                    <div class="z-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div
+                                class="p-2 bg-indigo-50 dark:bg-indigo-900/30 rounded-lg text-indigo-600 dark:text-indigo-400">
+                                <i data-lucide="users" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Smart
+                                Queuing</h3>
+                        </div>
+                        <p class="text-slate-500 dark:text-slate-400 leading-relaxed max-w-md mb-6">
+                            Eliminate crowded waiting rooms. Customers join remotely via app or
+                            QR code and get real-time updates.</p>
+                        <div class="flex gap-2"><span
+                                class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs font-bold rounded-full">Real-time</span><span
+                                class="px-3 py-1 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-xs font-bold rounded-full">Mobile
+                                App</span></div>
+                    </div>
+                    <!-- Live Queue Visual -->
+                    <div
+                        class="mt-8 bg-slate-50 dark:bg-slate-700 border border-slate-100 dark:border-slate-600 rounded-t-xl flex-1 p-4 shadow-inner relative">
+                        <div
+                            class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-white/50 dark:to-slate-800/50 z-10">
+                        </div>
+                        <div class="space-y-3">
+                            <div
+                                class="flex items-center justify-between bg-white dark:bg-slate-800 p-3 rounded-lg shadow-sm border-l-4 border-green-500 transform transition hover:scale-[1.02]">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-600 flex items-center justify-center text-xs font-bold text-slate-500 dark:text-slate-300">
+                                        SJ</div>
+                                    <div>
+                                        <div class="text-sm font-bold dark:text-white">Sarah
+                                            J.</div>
+                                        <div class="text-xs text-slate-400">Ticket #102
+                                        </div>
+                                    </div>
+                                </div><span
+                                    class="text-xs font-bold text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/20 px-2 py-1 rounded">Serving</span>
+                            </div>
+                            <div
+                                class="flex items-center justify-between bg-white dark:bg-slate-800 p-3 rounded-lg shadow-sm border-l-4 border-yellow-400">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-600 flex items-center justify-center text-xs font-bold text-slate-500 dark:text-slate-300">
+                                        MT</div>
+                                    <div>
+                                        <div class="text-sm font-bold dark:text-white">Mike
+                                            T.</div>
+                                        <div class="text-xs text-slate-400">Ticket #103
+                                        </div>
+                                    </div>
+                                </div><span
+                                    class="text-xs font-bold text-yellow-600 dark:text-yellow-400 bg-yellow-50 dark:bg-yellow-900/20 px-2 py-1 rounded">Waiting</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 2. Business Profile (Updated visual) -->
+                <div class="lg:col-span-2 bg-slate-900 text-white rounded-3xl p-8 relative overflow-hidden group">
+                    <div
+                        class="absolute top-0 right-0 w-64 h-64 bg-indigo-600 rounded-full blur-[80px] opacity-20 -mr-10 -mt-10">
+                    </div>
+                    <div class="relative z-10 flex flex-col h-full justify-between">
+                        <div>
+                            <div class="flex items-center gap-2 mb-4">
+                                <div class="p-2 bg-white/10 rounded-lg"><i data-lucide="globe"
+                                        class="w-5 h-5 text-indigo-400"></i></div>
+                                <h3 class="text-xl font-bold">Instant SEO Profile</h3>
+                            </div>
+                            <p class="text-slate-300 text-sm mb-6">No website? QTick
+                                generates a stunning public profile for you automatically.
+                            </p>
+                        </div>
+                        <!-- Action Link --><a href="#"
+                            class="bg-white/10 hover:bg-white/20 border border-white/10 p-3 rounded-xl transition-all group-hover:translate-x-1 flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-slate-200 flex-shrink-0 overflow-hidden">
+                                <img src="https://ui-avatars.com/api/?name=Shai+Beauty&background=random" alt="Logo">
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="text-[10px] text-slate-400 uppercase font-bold">
+                                    View Sample</div>
+                                <div class="text-sm font-bold text-white truncate">
+                                    qtick.biz/shaibeautyparlour</div>
+                            </div><i data-lucide="external-link" class="w-4 h-4 text-indigo-400"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- 3. AI Voice Command (Gradient Card) -->
+                <div
+                    class="lg:col-span-2 bg-gradient-to-br from-indigo-600 to-violet-600 text-white rounded-3xl p-8 relative overflow-hidden">
+                    <div class="relative z-10 flex md:items-center gap-6 flex-col md:flex-row">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-3">
+                                <div class="px-2 py-1 bg-white/20 rounded text-[10px] font-bold uppercase">
+                                    New Feature </div>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">"Talk to your Business"
+                            </h3>
+                            <p class="text-indigo-100 text-sm">Don't click menus. Just
+                                tell QTick to block a slot or
+                                check revenue.</p>
+                        </div>
+                        <!-- Voice Visual -->
+                        <div class="bg-black/20 p-4 rounded-2xl backdrop-blur-sm w-full md:w-64 border border-white/10">
+                            <div class="flex justify-end mb-2"><span
+                                    class="bg-white/20 text-[10px] px-2 py-1 rounded-lg">Block
+                                    2pm slot</span></div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-6 h-6 rounded-full bg-indigo-400 flex items-center justify-center">
+                                    <i data-lucide="mic" class="w-3 h-3"></i>
+                                </div>
+                                <span class="bg-indigo-500 text-[10px] px-2 py-1 rounded-lg">Done.
+                                    Calendar updated.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 4. Intelligence Suite -->
+                <div
+                    class="md:col-span-2 lg:col-span-2 bg-slate-800 text-white rounded-3xl p-8 border border-slate-700 relative overflow-hidden">
+                    <div class="grid md:grid-cols-2 gap-8 relative z-10">
+                        <div>
+                            <div class="flex items-center gap-2 mb-2"><i data-lucide="bar-chart-2"
+                                    class="w-5 h-5 text-indigo-400"></i>
+                                <h3 class="text-2xl font-bold text-indigo-400">
+                                    Intelligence Suite</h3>
+                            </div>
+                            <p class="text-slate-400 text-sm mb-6">Deep insights
+                                into revenue,
+                                staff efficiency,
+                                and footfall trends.</p>
+                            <div class="flex gap-2">
+                                <div class="text-xs bg-slate-700 px-2 py-1 rounded text-slate-300">
+                                    Peak Hours</div>
+                                <div class="text-xs bg-slate-700 px-2 py-1 rounded text-slate-300">
+                                    Staff ROI</div>
+                            </div>
+                        </div>
+                        <!-- CSS Charts -->
+                        <div
+                            class="flex items-end justify-between gap-2 h-32 bg-slate-900/50 p-4 rounded-xl border border-slate-600">
+                            <div class="w-full bg-slate-700 rounded-t h-[40%]">
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-t h-[60%]">
+                            </div>
+                            <div class="w-full bg-indigo-500 rounded-t h-[80%] shadow-[0_0_15px_rgba(99,102,241,0.5)]">
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-t h-[50%]">
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-t h-[70%]">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 5. Billing & Inventory -->
+                <div
+                    class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-200 dark:border-slate-700 hover:border-indigo-300 dark:hover:border-indigo-700 transition-colors hover:shadow-lg flex flex-col justify-center">
+                    <div
+                        class="w-12 h-12 bg-indigo-50 dark:bg-indigo-900/30 rounded-xl flex items-center justify-center text-indigo-600 dark:text-indigo-400 mb-4">
+                        <i data-lucide="receipt" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">
+                        Billing & Stock</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">
+                        Auto-generate invoices and deduct inventory instantly.
+                    </p>
+                </div>
+                <!-- 6. Review System -->
+                <div
+                    class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-200 dark:border-slate-700 hover:border-indigo-300 dark:hover:border-indigo-700 transition-colors hover:shadow-lg flex flex-col justify-center">
+                    <div
+                        class-="w-12 h-12 bg-yellow-50 dark:bg-yellow-900/30 rounded-xl flex items-center justify-center text-yellow-600 dark:text-yellow-400 mb-4">
+                        <i data-lucide="star" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">
+                        Review System</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">
+                        Collect 5-star ratings automatically via WhatsApp.
+                    </p>
+                </div>
+                <!-- 7. WhatsApp Digital Campaign (REVERTED TO GREEN) -->
+                <div
+                    class="md:col-span-2 bg-green-50 dark:bg-green-900/20 border border-green-100 dark:border-green-900/30 rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden group hover:shadow-md transition-all">
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div
+                                class="p-2 bg-white dark:bg-slate-800 rounded-lg text-green-600 dark:text-green-400 shadow-sm">
+                                <i data-lucide="message-circle" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-green-900 dark:text-green-300">
+                                WhatsApp Campaigns</h3>
+                        </div>
+                        <p class="text-green-800/80 dark:text-green-300/80 text-sm leading-relaxed mb-6">
+                            Turn your database into cash. Blast
+                            personalized offers and birthday wishes
+                            directly to phones with 98% open rates.</p>
+                    </div>
+                    <!-- Visual -->
+                    <div
+                        class="bg-white/60 dark:bg-slate-800/60 p-3 rounded-xl border border-green-200/50 dark:border-green-700/50 flex items-center gap-3 backdrop-blur-sm">
+                        <div
+                            class="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/50 flex items-center justify-center text-green-600 dark:text-green-400">
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                        </div>
+                        <div class="text-xs font-bold text-green-800 dark:text-green-200">
+                            Campaign Sent: "Weekend Sale"
+                        </div>
+                    </div>
+                </div>
+                <!-- 8. Lead Generation (REVERTED TO ORANGE) -->
+                <div
+                    class="md:col-span-2 bg-orange-50 dark:bg-orange-900/20 border border-orange-100 dark:border-orange-900/30 rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden group hover:shadow-md transition-all">
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div
+                                class="p-2 bg-white dark:bg-slate-800 rounded-lg text-orange-600 dark:text-orange-400 shadow-sm">
+                                <i data-lucide="magnet" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-orange-900 dark:text-orange-300">
+                                Lead Generation</h3>
+                        </div>
+                        <p class="text-orange-800/80 dark:text-orange-300/80 text-sm leading-relaxed mb-6">
+                            Capture enquiries 24/7 from your profile
+                            and QR codes. Automatically organize
+                            leads into a smart CRM pipeline.</p>
+                    </div>
+                    <!-- Visual -->
+                    <div class="flex gap-2">
+                        <div
+                            class="px-3 py-2 bg-white dark:bg-slate-800 rounded-lg text-xs font-bold text-orange-600 dark:text-orange-400 shadow-sm flex items-center gap-2">
+                            <span class="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></span>New
+                            Enquiry
+                        </div>
+                        <div
+                            class="px-3 py-2 bg-white/40 dark:bg-slate-700/40 rounded-lg text-xs font-bold text-orange-700/50 dark:text-orange-300/50 flex items-center gap-1">
+                            Qualified </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--NEW SECTION: Industries-->
+    <section id="industries"
+        class="py-24 bg-slate-50 dark:bg-slate-900 relative overflow-hidden border-y border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <div
+                    class="inline-block px-3 py-1 bg-indigo-50 dark:bg-indigo-900/30 rounded-full text-indigo-600 dark:text-indigo-400 text-xs font-bold uppercase mb-3">
+                    Versatile Platform</div>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+                    Tailored for your Business</h2>
+                <p class="text-slate-500 dark:text-slate-400 text-lg max-w-2xl mx-auto">Whether you
+                    run a spa or a sports arena,
+                    QTick adapts to your specific needs.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1: Salon (UPDATED GRADIENT: PINK/ROSE) --><a href="https://qtick-salon.vercel.app/" target="_blank"
+                    class="group relative bg-gradient-to-br from-rose-50 to-pink-100 dark:from-slate-800 dark:to-pink-900/30 rounded-3xl p-8 border border-pink-200 dark:border-pink-800 hover:border-pink-300 dark:hover:border-pink-700 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div
+                        class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-pink-600 shadow-sm mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="scissors" class="w-6 h-6"></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-pink-700 dark:group-hover:text-pink-400 transition-colors">
+                        Salons & Barbers</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">Manage stylists,
+                        chairs,
+                        and appointments with ease. Reduce no-shows.</p>
+                    <div
+                        class="flex items-center text-xs font-bold text-pink-600 dark:text-pink-400 group-hover:text-pink-700 dark:group-hover:text-pink-300">
+                        View Details <i data-lucide="arrow-up-right" class="w-4 h-4 ml-1"></i>
+                    </div>
+                </a>
+                <!-- Card 2: Spa (Existing Violet Gradient) --><a href="https://qtick.biz/spa" target="_blank"
+                    class="group relative bg-gradient-to-br from-violet-50 to-violet-100 dark:from-slate-800 dark:to-violet-900/30 rounded-3xl p-8 border border-violet-200 dark:border-violet-800 hover:border-violet-300 dark:hover:border-violet-700 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div
+                        class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-violet-600 shadow-sm mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="flower" class="w-6 h-6"></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-violet-700 dark:group-hover:text-violet-400 transition-colors">
+                        Spas & Wellness</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">Serene
+                        booking experiences. Room management and therapist allocation.</p>
+                    <div
+                        class="flex items-center text-xs font-bold text-violet-600 dark:text-violet-400 group-hover:text-violet-700 dark:group-hover:text-violet-300">
+                        View Details <i data-lucide="arrow-up-right" class="w-4 h-4 ml-1"></i></div>
+                </a>
+                <!-- Card 3: Food Truck (DISABLED & TAPED - ORANGE/RED Gradient) -->
+                <div
+                    class="group relative bg-gradient-to-br from-orange-50 to-red-100 dark:from-slate-800 dark:to-red-900/30 rounded-3xl p-8 border border-red-200 dark:border-red-800 opacity-70 cursor-not-allowed overflow-hidden">
+                    <!-- Coming Soon Tape -->
+                    <div
+                        class="absolute top-6 -right-12 w-40 bg-yellow-400 text-yellow-900 text-[10px] font-bold py-1 text-center transform rotate-45 shadow-sm z-10">
+                        COMING SOON</div>
+                    <div
+                        class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-red-600 shadow-sm mb-6">
+                        <i data-lucide="truck" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-600 dark:text-slate-500 mb-2">
+                        Food Trucks & Cafes</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-600 mb-6">QR
+                        ordering and kitchen display system (KDS) for fast-paced
+                        service.</p>
+                    <div class="flex items-center text-xs font-bold text-slate-400 dark:text-slate-600">
+                        Launch Pending <i data-lucide="lock" class="w-3 h-3 ml-1"></i></div>
+                </div>
+                <!-- Card 4: Laundry (Existing Blue Gradient) -->
+                <div
+                    class="group relative bg-gradient-to-br from-blue-50 to-blue-100 dark:from-slate-800 dark:to-blue-900/30 rounded-3xl p-8 border border-blue-200 dark:border-blue-800 opacity-70 cursor-not-allowed overflow-hidden">
+                    <!-- Coming Soon Tape -->
+                    <div
+                        class="absolute top-6 -right-12 w-40 bg-yellow-400 text-yellow-900 text-[10px] font-bold py-1 text-center transform rotate-45 shadow-sm z-10">
+                        COMING SOON</div>
+                    <div
+                        class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-blue-600 shadow-sm mb-6">
+                        <i data-lucide="shirt" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-600 dark:text-slate-500 mb-2">
+                        Laundry & Dry Clean</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-600 mb-6">
+                        Track garments,
+                        auto-notify customers for pickup,
+                        and manage delivery.</p>
+                    <div class="flex items-center text-xs font-bold text-slate-400 dark:text-slate-600">
+                        Launch Pending <i data-lucide="lock" class="w-3 h-3 ml-1"></i>
+                    </div>
+                </div>
+                <!-- Card 5: Gaming Zone (UPDATED GRADIENT: CYAN/TEAL) --><a href="https://qtick.biz/gaming" target="_blank"
+                    class="group relative bg-gradient-to-br from-cyan-50 to-teal-100 dark:from-slate-800 dark:to-teal-900/30 rounded-3xl p-8 border border-cyan-200 dark:border-cyan-800 hover:border-cyan-300 dark:hover:border-cyan-700 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div
+                        class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-cyan-600 shadow-sm mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="gamepad-2" class="w-6 h-6"></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-cyan-700 dark:group-hover:text-cyan-400 transition-colors">
+                        Gaming Zones</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">
+                        Time-based slot booking for consoles,
+                        VR stations,
+                        and bowling alleys.</p>
+                    <div
+                        class="flex items-center text-xs font-bold text-cyan-600 dark:text-cyan-400 group-hover:text-cyan-700 dark:group-hover:text-cyan-300">
+                        View Details <i data-lucide="arrow-up-right" class="w-4 h-4 ml-1"></i></div>
+                </a>
+                <!-- Card 6: Turf (Existing Green Gradient) --><a href="https://qtick.biz/turf" target="_blank"
+                    class="group relative bg-gradient-to-br from-green-50 to-green-100 dark:from-slate-800 dark:to-green-900/30 rounded-3xl p-8 border border-green-200 dark:border-green-800 hover:border-green-300 dark:hover:border-green-700 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div
+                        class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-green-600 shadow-sm mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="activity" class="w-6 h-6"></i>
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-green-700 dark:group-hover:text-green-400 transition-colors">
+                        Sports Turf & Arenas</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">
+                        hourly booking management,
+                        league organization,
+                        and membership tracking.</p>
+                    <div
+                        class="flex items-center text-xs font-bold text-green-600 dark:text-green-400 group-hover:text-green-700 dark:group-hover:text-green-300">
+                        View Details <i data-lucide="arrow-up-right" class="w-4 h-4 ml-1"></i></div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!--SECTION 1: Client Stories(Videos)-->
+    <section id="stories" class="py-24 bg-slate-900 text-white border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Real Stories,
+                        Real Growth</h2>
+                    <p class="text-slate-400">See how businesses are scaling with QTick.</p>
+                </div><button
+                    class="text-sm font-bold text-indigo-400 flex items-center gap-2 hover:text-white transition-colors">View
+                    All Stories <i data-lucide="arrow-right" class="w-4 h-4"></i></button>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Video 1 -->
+                <div
+                    class="group relative aspect-video bg-slate-800 rounded-2xl overflow-hidden cursor-pointer border border-slate-700 hover:border-indigo-500 transition-all">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-80">
+                    </div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div
+                            class="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <i data-lucide="play" class="w-6 h-6 text-white fill-current ml-1"></i>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-4 left-4">
+                        <h4 class="font-bold text-white">The Urban Spa</h4>
+                        <p class="text-xs text-slate-300">Increased bookings by 40%</p>
+                    </div>
+                </div>
+                <!-- Video 2 -->
+                <div
+                    class="group relative aspect-video bg-slate-800 rounded-2xl overflow-hidden cursor-pointer border border-slate-700 hover:border-indigo-500 transition-all">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-80">
+                    </div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div
+                            class="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <i data-lucide="play" class="w-6 h-6 text-white fill-current ml-1"></i>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-4 left-4">
+                        <h4 class="font-bold text-white">Dr. Smith's Clinic</h4>
+                        <p class="text-xs text-slate-300">Zero waiting room chaos</p>
+                    </div>
+                </div>
+                <!-- Video 3 -->
+                <div
+                    class="group relative aspect-video bg-slate-800 rounded-2xl overflow-hidden cursor-pointer border border-slate-700 hover:border-indigo-500 transition-all">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-80">
+                    </div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div
+                            class="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <i data-lucide="play" class="w-6 h-6 text-white fill-current ml-1"></i>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-4 left-4">
+                        <h4 class="font-bold text-white">GovHub Service Center</h4>
+                        <p class="text-xs text-slate-300">1,
+                            000+Daily Visitors</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--SECTION 2: Client Feedback(Text Reviews)-->
+    <section id="reviews" class="py-24 bg-white dark:bg-slate-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Loved by
+                    Businesses</h2>
+                <p class="text-slate-500 dark:text-slate-400">We let the results speak for
+                    themselves.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl hover:shadow-lg transition-all">
+                    <div class="flex text-yellow-400 mb-4 gap-1"><i data-lucide="star"
+                            class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i
+                            data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star"
+                            class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-slate-700 dark:text-slate-300 italic mb-6 text-sm leading-relaxed">
+                        "The website
+                        profile alone is worth it. I didn't have to pay a developer or
+                        learn coding. It just works."</p>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 bg-indigo-100 dark:bg-indigo-900/30 rounded-full flex items-center justify-center text-xs font-bold text-indigo-600 dark:text-indigo-400">
+                            SJ</div>
+                        <div>
+                            <div class="font-bold text-slate-900 dark:text-white text-sm">
+                                Sarah Jenkins</div>
+                            <div class="text-xs text-slate-500 dark:text-slate-400">
+                                Salon Owner</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 2 -->
+                <div class="bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl hover:shadow-lg transition-all">
+                    <div class="flex text-yellow-400 mb-4 gap-1"><i data-lucide="star"
+                            class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i
+                            data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star"
+                            class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-slate-700 dark:text-slate-300 italic mb-6 text-sm leading-relaxed">
+                        "The AI voice
+                        command is a game changer. My staff can block slots without
+                        even touching the screen."</p>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 bg-indigo-100 dark:bg-indigo-900/30 rounded-full flex items-center justify-center text-xs font-bold text-indigo-600 dark:text-indigo-400">
+                            MR</div>
+                        <div>
+                            <div class="font-bold text-slate-900 dark:text-white text-sm">
+                                Mark Roberts</div>
+                            <div class="text-xs text-slate-500 dark:text-slate-400">
+                                The Cut Barbershop</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 3 -->
+                <div class="bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl hover:shadow-lg transition-all">
+                    <div class="flex text-yellow-400 mb-4 gap-1"><i data-lucide="star"
+                            class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i
+                            data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star"
+                            class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-slate-700 dark:text-slate-300 italic mb-6 text-sm leading-relaxed">
+                        "My reception is
+                        finally quiet. The app tells patients exactly when to
+                        come in. Zero chaos."</p>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 bg-indigo-100 dark:bg-indigo-900/30 rounded-full flex items-center justify-center text-xs font-bold text-indigo-600 dark:text-indigo-400">
+                            DT</div>
+                        <div>
+                            <div class="font-bold text-slate-900 dark:text-white text-sm">
+                                Dr. Mark T.</div>
+                            <div class="text-xs text-slate-500 dark:text-slate-400">
+                                City Dental</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--CTA -->
+    <section class="py-20 bg-slate-900 dark:bg-black text-white relative overflow-hidden border-t border-slate-800">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
+            <div class="w-96 h-96 bg-indigo-600 rounded-full blur-[100px] opacity-20 absolute -top-20 -left-20">
+            </div>
+            <div class="w-96 h-96 bg-violet-600 rounded-full blur-[100px] opacity-20 absolute -bottom-20 -right-20">
+            </div>
+        </div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to upgrade your
+                business?</h2>
+            <p class="text-slate-400 text-lg mb-10 max-w-2xl mx-auto">Join the platform
+                that handles queues,
+                payments,
+                AI marketing,
+                and more.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4"><button
+                    class="px-8 py-4 bg-indigo-600 hover:bg-indigo-500 rounded-xl font-bold transition-all shadow-lg shadow-indigo-500/30">Get
+                    Started Free </button><button
+                    class="px-8 py-4 bg-transparent border border-slate-600 hover:bg-slate-800 rounded-xl font-bold transition-all">View
+                    Pricing </button></div>
+        </div>
+    </section>
+    <!--Footer -->
+    <footer class="bg-white pt-16 pb-8 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4"><img src="asset/QTick-Logo.png" alt="QTick Logo"
+                            class="w-8 h-8 rounded-lg shadow-lg shadow-indigo-500/20"><span
+                            class="text-xl font-bold text-slate-900">QTick</span>
+                    </div>
+                    <p class="text-slate-500 mb-6 max-w-sm text-sm leading-relaxed">
+                        The all-in-one operating system for modern businesses.
+                        Manage queues,
+                        marketing,
+                        and growth from a single dashboard. </p>
+                    <div class="flex gap-4"><a href="#"
+                            class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-indigo-600 hover:text-white transition-all"><i
+                                data-lucide="twitter" class="w-4 h-4"></i></a><a href="#"
+                            class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-indigo-600 hover:text-white transition-all"><i
+                                data-lucide="linkedin" class="w-4 h-4"></i></a><a href="#"
+                            class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-indigo-600 hover:text-white transition-all"><i
+                                data-lucide="instagram" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-4">Product</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="feature.html" class="hover:text-indigo-600">Queue
+                                System</a></li>
+                        <li><a href="feature.html" class="hover:text-indigo-600">Website
+                                Builder</a>
+                        </li>
+                        <li><a href="feature.html" class="hover:text-indigo-600">WhatsApp
+                                Marketing</a>
+                        </li>
+                        <li><a href="download.html" class="hover:text-indigo-600">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-4">Support</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="#" class="hover:text-indigo-600">Help
+                                Center</a></li>
+                        <li><a href="#" class="hover:text-indigo-600">API
+                                Documentation</a></li>
+                        <li><a href="contact.html" class="hover:text-indigo-600">Contact
+                                Us</a></li>
+                        <li><a href="#" class="hover:text-indigo-600">Privacy
+                                Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
+                <div>© 2025 QTick Inc. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+    <!-- #5 Floating Bottom Bar(Visible on ALL screens)-->
+    <div
+        class="fixed bottom-0 w-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 p-4 z-40 flex justify-between items-center transition-colors duration-300">
+        <div class="text-sm font-bold text-slate-900 dark:text-white">Ready to
+            grow?</div><a href="download.html"
+            class="px-5 py-2.5 bg-indigo-600 text-white rounded-lg font-bold text-sm shadow-lg shadow-indigo-500/20 hover:bg-indigo-700 transition-colors">Get
+            Started Free</a>
+    </div>
+    <!--Chat Widget Script-->
+    <script src="js/chat-widget.js"></script>
+    <script> // Initialize Icons
+        lucide.createIcons();
+
+        // Removed Dark Mode Logic
+
+    </script>
+
+    <!-- YouTube Video Modal -->
+    <div id="videoModal"
+        class="modal hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+        <div class="relative w-full max-w-4xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl">
+            <button id="closeVideoBtn"
+                class="absolute top-4 right-4 z-10 p-2 bg-black/50 hover:bg-black/70 text-white rounded-full transition-colors">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <iframe id="youtubeFrame" class="w-full h-full" src="" title="QTick Demo" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- Registration Modal -->
+    <div id="registerModal"
+        class="modal hidden fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+        <div
+            class="bg-white dark:bg-slate-800 w-full max-w-md rounded-2xl shadow-2xl overflow-hidden transform transition-all scale-100">
+            <div class="p-6 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center">
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Start for Free</h3>
+                <button id="closeRegisterBtn"
+                    class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <div class="p-6">
+                <form id="registerForm" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-1">Business
+                            Name</label>
+                        <input type="text" id="businessName" required
+                            class="w-full px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-indigo-500 outline-none transition-all"
+                            placeholder="e.g. Urban Salon">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-1">Phone
+                            Number</label>
+                        <input type="tel" id="phoneNumber" required
+                            class="w-full px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-indigo-500 outline-none transition-all"
+                            placeholder="+1 (555) 000-0000">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-1">Business
+                            Type</label>
+                        <div class="relative">
+                            <select id="businessType" required
+                                class="w-full px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-indigo-500 outline-none transition-all appearance-none">
+                                <option value="" disabled selected>Select your business type</option>
+                                <option value="Salon">Salon</option>
+                                <option value="Spa">Spa</option>
+                                <option value="Barber Shop">Barber Shop</option>
+                                <option value="Gaming Zone">Gaming Zone</option>
+                                <option value="Turf">Turf / Sports Arena</option>
+                            </select>
+                            <i data-lucide="chevron-down"
+                                class="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none"></i>
+                        </div>
+                    </div>
+                    <button type="submit"
+                        class="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl shadow-lg shadow-indigo-500/30 transition-all mt-2">
+                        Register Now
+                    </button>
+                </form>
+
+                <!-- Success Message -->
+                <div id="successMessage" class="hidden text-center py-8">
+                    <div
+                        class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="check" class="w-8 h-8"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Registration Successful!</h4>
+                    <p class="text-slate-500 dark:text-slate-400">Our sales team will contact you within 6 hours.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // YouTube Modal Logic
+        const videoModal = document.getElementById('videoModal');
+        const watchDemoBtn = document.getElementById('watchDemoBtn');
+        const closeVideoBtn = document.getElementById('closeVideoBtn');
+        const youtubeFrame = document.getElementById('youtubeFrame');
+        const videoUrl = "https://www.youtube.com/embed/9FdnJ0d6G4k?autoplay=1";
+
+        watchDemoBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            videoModal.classList.remove('hidden');
+            youtubeFrame.src = videoUrl;
+        });
+
+        const closeVideo = () => {
+            videoModal.classList.add('hidden');
+            youtubeFrame.src = ""; // Stop video
+        };
+
+        closeVideoBtn.addEventListener('click', closeVideo);
+        videoModal.addEventListener('click', (e) => {
+            if (e.target === videoModal) closeVideo();
+        });
+
+        // Registration Modal Logic
+        const registerModal = document.getElementById('registerModal');
+        const startFreeBtn = document.getElementById('startFreeBtn');
+        const closeRegisterBtn = document.getElementById('closeRegisterBtn');
+        const registerForm = document.getElementById('registerForm');
+        const successMessage = document.getElementById('successMessage');
+
+        // Also attach to the nav button
+        const navGetStartedBtn = document.querySelector('nav a[href="download.html"]');
+        if (navGetStartedBtn) {
+            navGetStartedBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                registerModal.classList.remove('hidden');
+            });
+        }
+
+        startFreeBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            registerModal.classList.remove('hidden');
+        });
+
+        const closeRegister = () => {
+            registerModal.classList.add('hidden');
+            // Reset form after delay
+            setTimeout(() => {
+                registerForm.reset();
+                registerForm.classList.remove('hidden');
+                successMessage.classList.add('hidden');
+            }, 300);
+        };
+
+        closeRegisterBtn.addEventListener('click', closeRegister);
+        registerModal.addEventListener('click', (e) => {
+            if (e.target === registerModal) closeRegister();
+        });
+
+        // Form Submission
+        registerForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const businessName = document.getElementById('businessName').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const businessType = document.getElementById('businessType').value;
+
+            // Simulate Email Sending
+            console.log("--- New Registration ---\r\nTo: qtick.app@gmail.com\r\nSubject: New Lead: " + businessName + "\r\nBody: Business: " + businessName + ", Phone: " + phoneNumber + ", Type: " + businessType);
+
+            // Show Success
+            registerForm.classList.add('hidden');
+            successMessage.classList.remove('hidden');
+
+            // Simulate "mailto" for demonstration (optional, often blocked or annoying, so logging is safer for this demo)
+            // window.location.href = `mailto:qtick.app@gmail.com?subject=New Registration&body=Business: ${businessName}, Phone: ${phoneNumber}`;
+        });
+
+        // Re-initialize icons for new content
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

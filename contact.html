@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact QTick - Global Offices</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* Glass Effect for Form */
+        .glass-panel {
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Smooth Input Focus Transition */
+        input,
+        textarea {
+            transition: all 0.2s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden relative selection:bg-indigo-100 selection:text-indigo-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <img src="asset/QTick-Logo.png" alt="QTick Logo"
+                        class="w-10 h-10 rounded-xl shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform">
+                    <span class="text-xl font-bold tracking-tight text-slate-900">QTick</span>
+                </a>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-bold text-slate-600">
+                <a href="index.html" class="hover:text-indigo-600 transition-colors">Home</a>
+                <a href="feature.html" class="hover:text-indigo-600 transition-colors">Features</a>
+                <a href="download.html" class="hover:text-indigo-600 transition-colors">Download</a>
+                <a href="contact.html" class="text-indigo-600 transition-colors">Contact</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="download.html"
+                    class="px-5 py-2.5 text-sm font-bold text-white bg-slate-900 rounded-lg hover:bg-indigo-600 transition-all">Get
+                    Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden">
+
+        <!-- Background Blobs (Matches Home Page) -->
+        <div
+            class="absolute top-0 right-0 w-[900px] h-[900px] bg-indigo-100/50 rounded-full blur-3xl opacity-60 z-0 translate-x-1/3 -translate-y-1/4">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-50 rounded-full blur-3xl opacity-60 z-0 -translate-x-1/3 translate-y-1/4">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 w-full relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+
+                <!-- Left Column: Contact Info -->
+                <div class="pt-4">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-indigo-100 shadow-sm text-indigo-600 text-xs font-bold uppercase tracking-wider mb-6">
+                        <span class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
+                        We are Online
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">Let's scale your
+                        business.</h1>
+                    <p class="text-lg text-slate-500 mb-10 leading-relaxed">
+                        Ready to deploy QTick? Have questions about enterprise features? Our global team is ready to
+                        help.
+                    </p>
+
+                    <!-- Locations Grid -->
+                    <div class="grid md:grid-cols-2 gap-5 mb-8">
+                        <!-- Singapore (Head Office) -->
+                        <div
+                            class="bg-white/80 backdrop-blur-sm border border-slate-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all hover:border-indigo-200 group">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div
+                                    class="w-8 h-8 bg-indigo-50 text-indigo-600 rounded-lg flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                                    <i data-lucide="building-2" class="w-4 h-4"></i>
+                                </div>
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Head
+                                    Office</span>
+                            </div>
+                            <h3 class="font-bold text-slate-900 mb-1">Singapore</h3>
+                            <p class="text-sm text-slate-500 leading-relaxed">
+                                09-35, Serangoon Av 4<br>
+                                Singapore 550229
+                            </p>
+                        </div>
+
+                        <!-- India Office -->
+                        <div
+                            class="bg-white/80 backdrop-blur-sm border border-slate-200 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all hover:border-orange-200 group">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div
+                                    class="w-8 h-8 bg-orange-50 text-orange-600 rounded-lg flex items-center justify-center group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                                    <i data-lucide="map-pin" class="w-4 h-4"></i>
+                                </div>
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">India
+                                    Office</span>
+                            </div>
+                            <h3 class="font-bold text-slate-900 mb-1">Thoothukudi</h3>
+                            <p class="text-sm text-slate-500 leading-relaxed">
+                                Pearl City<br>
+                                Tamil Nadu, India
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- General Contact Info -->
+                    <div class="space-y-6 mb-10 border-t border-slate-200 pt-8">
+                        <!-- Email -->
+                        <div class="flex items-start gap-4 group">
+                            <div
+                                class="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-sm border border-slate-200 text-slate-400 group-hover:text-indigo-600 group-hover:border-indigo-200 transition-colors">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-0.5">Email
+                                    Support</h3>
+                                <a href="mailto:contactus@qtick.com"
+                                    class="text-slate-900 hover:text-indigo-600 transition-colors text-lg font-bold">contactus@qtick.com</a>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="flex items-start gap-4 group">
+                            <div
+                                class="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-sm border border-slate-200 text-slate-400 group-hover:text-indigo-600 group-hover:border-indigo-200 transition-colors">
+                                <i data-lucide="phone" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-0.5">Direct Line
+                                </h3>
+                                <a href="tel:+6583324428"
+                                    class="text-slate-900 hover:text-indigo-600 transition-colors text-lg font-bold">+65
+                                    8332 4428</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- WhatsApp Button -->
+                    <div
+                        class="p-6 rounded-2xl bg-white border border-green-100 flex items-center justify-between hover:shadow-lg transition-shadow relative overflow-hidden group">
+                        <div
+                            class="absolute inset-0 bg-green-50/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                                <span class="text-xs font-bold text-green-600 uppercase">Quick Response</span>
+                            </div>
+                            <div class="font-bold text-slate-900">Prefer WhatsApp?</div>
+                        </div>
+                        <a href="https://wa.me/6583324428" target="_blank"
+                            class="relative z-10 flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-xl font-bold transition-all shadow-lg shadow-green-500/20 transform group-hover:translate-x-[-5px]">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i> Chat Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Form -->
+                <div class="glass-panel rounded-3xl p-8 md:p-10 relative top-4">
+                    <h2 class="text-2xl font-bold text-slate-900 mb-6">Send us a message</h2>
+
+                    <form action="#" method="POST" class="space-y-5">
+                        <div class="grid md:grid-cols-2 gap-5">
+                            <!-- Name -->
+                            <div class="space-y-1.5">
+                                <label class="text-xs font-bold text-slate-500 uppercase ml-1">Full Name</label>
+                                <input type="text" placeholder="John Doe"
+                                    class="w-full px-4 py-3.5 rounded-xl bg-white/50 border border-slate-200 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 outline-none placeholder-slate-400 font-medium text-slate-900">
+                            </div>
+                            <!-- Email -->
+                            <div class="space-y-1.5">
+                                <label class="text-xs font-bold text-slate-500 uppercase ml-1">Email Address</label>
+                                <input type="email" placeholder="john@company.com"
+                                    class="w-full px-4 py-3.5 rounded-xl bg-white/50 border border-slate-200 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 outline-none placeholder-slate-400 font-medium text-slate-900">
+                            </div>
+                        </div>
+
+                        <!-- Contact Number -->
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-slate-500 uppercase ml-1">Contact Number</label>
+                            <input type="tel" placeholder="+65 1234 5678"
+                                class="w-full px-4 py-3.5 rounded-xl bg-white/50 border border-slate-200 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 outline-none placeholder-slate-400 font-medium text-slate-900">
+                        </div>
+
+                        <!-- Question -->
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-slate-500 uppercase ml-1">How can we help?</label>
+                            <textarea rows="4" placeholder="Tell us about your business needs..."
+                                class="w-full px-4 py-3.5 rounded-xl bg-white/50 border border-slate-200 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 outline-none placeholder-slate-400 font-medium text-slate-900 resize-none"></textarea>
+                        </div>
+
+                        <!-- Submit -->
+                        <button type="submit"
+                            class="w-full py-4 bg-slate-900 hover:bg-indigo-600 text-white rounded-xl font-bold text-lg transition-all shadow-xl shadow-slate-900/10 flex items-center justify-center gap-2 group mt-2">
+                            Send Message
+                            <i data-lucide="send" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+
+                        <p class="text-center text-xs text-slate-400 mt-4">
+                            By contacting us, you agree to our <a href="#"
+                                class="underline hover:text-indigo-600">Privacy Policy</a>.
+                        </p>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white pt-16 pb-8 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <img src="asset/QTick-Logo.png" alt="QTick Logo"
+                            class="w-8 h-8 rounded-lg shadow-lg shadow-indigo-500/20">
+                        <span class="text-xl font-bold text-slate-900">QTick</span>
+                    </div>
+                    <p class="text-slate-500 mb-6 max-w-sm text-sm leading-relaxed">
+                        The all-in-one operating system for modern businesses. Manage queues, marketing, and growth from
+                        a single dashboard.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-indigo-600 hover:text-white transition-all">
+                            <i data-lucide="twitter" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#"
+                            class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-indigo-600 hover:text-white transition-all">
+                            <i data-lucide="linkedin" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#"
+                            class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-indigo-600 hover:text-white transition-all">
+                            <i data-lucide="instagram" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-4">Product</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="feature.html" class="hover:text-indigo-600">Queue System</a></li>
+                        <li><a href="feature.html" class="hover:text-indigo-600">Website Builder</a></li>
+                        <li><a href="feature.html" class="hover:text-indigo-600">WhatsApp Marketing</a></li>
+                        <li><a href="download.html" class="hover:text-indigo-600">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-4">Support</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="#" class="hover:text-indigo-600">Help Center</a></li>
+                        <li><a href="#" class="hover:text-indigo-600">API Documentation</a></li>
+                        <li><a href="contact.html" class="hover:text-indigo-600">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-indigo-600">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
+                <div>© 2025 QTick Inc. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Widget Script -->
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
