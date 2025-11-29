@@ -4,28 +4,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to Get 5-Star Reviews on Autopilot - QTick Blog</title>
+    <!-- SEO Meta Tags -->
+    <title>How to Get 5-Star Reviews on Autopilot | QTick Blog</title>
     <meta name="description"
-        content="Reviews are the lifeblood of local businesses. Learn how to automate review collection and boost your Google ranking.">
+        content="Reviews are the lifeblood of local businesses. Learn how to automate review collection, boost your Google ranking, and handle negative feedback privately.">
+    <meta name="keywords"
+        content="get google reviews, automate reviews, reputation management, salon marketing, customer feedback, QTick">
+    <meta name="author" content="Alex Johnson">
+    <link rel="canonical" href="https://qtick.vercel.app/blog-article-review-system.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://qtick.vercel.app/blog-article-review-system.html">
+    <meta property="og:title" content="How to Get 5-Star Reviews on Autopilot | QTick Blog">
+    <meta property="og:description"
+        content="Reviews are the lifeblood of local businesses. Learn how to automate review collection, boost your Google ranking, and handle negative feedback privately.">
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://qtick.vercel.app/blog-article-review-system.html">
+    <meta property="twitter:title" content="How to Get 5-Star Reviews on Autopilot | QTick Blog">
+    <meta property="twitter:description"
+        content="Reviews are the lifeblood of local businesses. Learn how to automate review collection, boost your Google ranking, and handle negative feedback privately.">
+    <meta property="twitter:image"
+        content="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .prose h2 {
+            color: #1e293b;
+            font-weight: 700;
+            margin-top: 2.5em;
+            margin-bottom: 1em;
+        }
+
+        .prose p {
+            color: #475569;
+            line-height: 1.8;
+            margin-bottom: 1.5em;
+        }
+
+        .prose strong {
+            color: #0f172a;
+            font-weight: 600;
+        }
     </style>
+
     <!-- Schema Markup -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://qtick.vercel.app/blog-article-review-system.html"
+      },
       "headline": "How to Get 5-Star Reviews on Autopilot",
+      "description": "Reviews are the lifeblood of local businesses. Learn how to automate review collection, boost your Google ranking, and handle negative feedback privately.",
       "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
       "author": {
         "@type": "Person",
-        "name": "Alex Johnson"
+        "name": "Alex Johnson",
+        "url": "https://qtick.vercel.app/blog.html"
       },
       "publisher": {
         "@type": "Organization",
@@ -36,20 +102,20 @@
         }
       },
       "datePublished": "2025-11-29",
-      "description": "Reviews are the lifeblood of local businesses. Learn how to automate review collection."
+      "dateModified": "2025-11-29"
     }
     </script>
 </head>
 
-<body class="bg-slate-50 text-slate-900">
+<body class="bg-white text-slate-900 antialiased selection:bg-yellow-100 selection:text-yellow-900">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200">
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center gap-2">
                 <a href="index.html" class="flex items-center gap-2 group">
                     <img src="asset/QTick-Logo.png" alt="QTick Logo"
-                        class="w-10 h-10 rounded-xl shadow-lg shadow-indigo-500/20">
+                        class="w-10 h-10 rounded-xl shadow-lg shadow-indigo-500/20 transition-transform group-hover:scale-105">
                     <span class="text-xl font-bold tracking-tight text-slate-900">QTick</span>
                 </a>
             </div>
@@ -64,93 +130,212 @@
             </div>
             <div class="flex items-center gap-4">
                 <a href="contact.html"
-                    class="px-5 py-2.5 text-sm font-bold text-white bg-slate-900 rounded-lg hover:bg-indigo-600 transition-all">Get
+                    class="px-5 py-2.5 text-sm font-bold text-white bg-slate-900 rounded-lg hover:bg-indigo-600 transition-all shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/40">Get
                     Started Free</a>
             </div>
         </div>
     </nav>
 
-    <!-- Article Header -->
-    <header class="pt-32 pb-12 px-6 bg-white border-b border-slate-100">
-        <div class="max-w-3xl mx-auto text-center">
+    <!-- Article Hero -->
+    <header class="pt-32 pb-16 px-6 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-4xl mx-auto text-center">
             <div
-                class="inline-block px-3 py-1 bg-yellow-50 rounded-full text-yellow-600 text-xs font-bold uppercase mb-6">
-                Reputation</div>
-            <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight">How to Get 5-Star Reviews
-                on Autopilot</h1>
-            <div class="flex items-center justify-center gap-4 text-slate-500 text-sm">
-                <div class="flex items-center gap-2">
-                    <div class="w-8 h-8 bg-slate-200 rounded-full"></div>
-                    <span class="font-bold text-slate-900">Alex Johnson</span>
+                class="inline-flex items-center gap-2 px-3 py-1 bg-yellow-100 rounded-full text-yellow-700 text-xs font-bold uppercase tracking-wider mb-8">
+                <span class="w-2 h-2 rounded-full bg-yellow-600"></span>
+                Reputation
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-8 leading-tight tracking-tight">
+                How to Get 5-Star Reviews on Autopilot
+            </h1>
+            <p class="text-xl text-slate-500 max-w-2xl mx-auto mb-8 leading-relaxed">
+                Reviews are the lifeblood of local businesses. Learn how to automate review collection and boost your
+                Google ranking without the awkward ask.
+            </p>
+
+            <!-- Author & Meta -->
+            <div class="flex flex-wrap items-center justify-center gap-6 text-slate-500 text-sm font-medium">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="w-10 h-10 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-full flex items-center justify-center text-white font-bold text-xs">
+                        AJ</div>
+                    <div class="text-left">
+                        <div class="text-slate-900 font-bold">Alex Johnson</div>
+                        <div class="text-xs">Reputation Manager</div>
+                    </div>
                 </div>
-                <span>•</span>
-                <span>Nov 29, 2025</span>
-                <span>•</span>
-                <span>3 min read</span>
+                <div class="hidden md:block w-px h-8 bg-slate-300"></div>
+                <div class="flex items-center gap-2">
+                    <i data-lucide="calendar" class="w-4 h-4"></i>
+                    <span>Nov 29, 2025</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i data-lucide="clock" class="w-4 h-4"></i>
+                    <span>3 min read</span>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Featured Image -->
-    <div class="max-w-5xl mx-auto px-6 -mt-8 mb-16">
-        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"
-            alt="Online Reviews" class="w-full rounded-3xl shadow-2xl">
+    <!-- Main Content Wrapper -->
+    <div class="max-w-7xl mx-auto px-6 py-12 grid lg:grid-cols-12 gap-12">
+
+        <!-- Sidebar (Share & TOC) -->
+        <aside class="hidden lg:block lg:col-span-3">
+            <div class="sticky top-32 space-y-8">
+                <div>
+                    <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Share this article</h4>
+                    <div class="flex gap-2">
+                        <button
+                            class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-[#1DA1F2] hover:text-white transition-all">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </button>
+                        <button
+                            class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-[#0A66C2] hover:text-white transition-all">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </button>
+                        <button
+                            class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-[#4267B2] hover:text-white transition-all">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </button>
+                        <button
+                            class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-slate-800 hover:text-white transition-all">
+                            <i data-lucide="link" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="border-t border-slate-100 pt-8">
+                    <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Table of Contents</h4>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li><a href="#timing" class="hover:text-yellow-600 transition-colors">1. Timing is
+                                Everything</a></li>
+                        <li><a href="#frictionless" class="hover:text-yellow-600 transition-colors">2. Make it
+                                Frictionless</a></li>
+                        <li><a href="#negatives" class="hover:text-yellow-600 transition-colors">3. Handle Negatives
+                                Privately</a></li>
+                        <li><a href="#respond" class="hover:text-yellow-600 transition-colors">4. Respond to Every
+                                Review</a></li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Article Content -->
+        <main class="lg:col-span-7">
+            <!-- Featured Image -->
+            <div class="mb-12 rounded-3xl overflow-hidden shadow-2xl shadow-yellow-900/10">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"
+                    alt="Online Reviews"
+                    class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700">
+            </div>
+
+            <article class="prose prose-lg prose-indigo max-w-none">
+                <p class="lead text-xl text-slate-600 mb-8 font-medium">
+                    93% of customers read online reviews before buying. If you don't have recent, positive reviews, you
+                    essentially don't exist in the modern marketplace. But asking for them face-to-face is awkward.
+                    Here's how to automate it.
+                </p>
+
+                <h2 id="timing" class="scroll-mt-32">1. Timing is Everything</h2>
+                <p>
+                    The best time to ask for a review is immediately after a positive experience. Not 3 days later. Not
+                    next week. Right now.
+                </p>
+                <p>
+                    <strong>QTick</strong> sends an automated WhatsApp message 30 minutes after the appointment ends:
+                    <em>"Hi Sarah, thanks for visiting! How was your experience today?"</em> This captures the customer
+                    while the positive feeling is still fresh.
+                </p>
+
+                <h2 id="frictionless" class="scroll-mt-32">2. Make it Frictionless</h2>
+                <p>
+                    Don't make them search for you on Google. Send them a direct link. <em>"Click here to give us 5
+                        stars."</em>
+                </p>
+                <p>
+                    The fewer clicks, the higher the conversion. If they have to open a browser, type your name, find
+                    your profile, and click "write review," you've already lost them.
+                </p>
+
+                <h2 id="negatives" class="scroll-mt-32">3. Handle Negatives Privately</h2>
+                <p>
+                    Smart review systems filter feedback. If a customer rates you 1-3 stars, the system asks for
+                    internal feedback (<em>"What went wrong? How can we improve?"</em>).
+                </p>
+                <p>
+                    If they rate 4-5 stars, it redirects them to Google Maps. This protects your public reputation while
+                    giving you valuable insights to fix operational issues privately.
+                </p>
+
+                <h2 id="respond" class="scroll-mt-32">4. Respond to Every Review</h2>
+                <p>
+                    Google's algorithm loves engagement. Replying to reviews shows you care and boosts your SEO ranking.
+                </p>
+                <p>
+                    A simple <em>"Thanks for visiting, Sarah! Can't wait to see you again."</em> goes a long way. It
+                    shows potential customers that there are real humans behind the business.
+                </p>
+
+                <hr class="my-12 border-slate-200">
+
+                <!-- CTA Box -->
+                <div
+                    class="bg-gradient-to-br from-yellow-500 to-orange-600 rounded-3xl p-8 md:p-12 text-center text-white shadow-xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4 font-display">Boost your Google Ranking</h3>
+                        <p class="text-yellow-100 mb-8 text-lg max-w-xl mx-auto">
+                            QTick's automated review engine helps businesses get 3x more reviews in the first month.
+                        </p>
+                        <a href="contact.html"
+                            class="inline-flex items-center justify-center px-8 py-4 bg-white text-yellow-600 font-bold rounded-xl hover:bg-yellow-50 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            Start Collecting Reviews
+                            <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+                        </a>
+                        <p class="mt-4 text-xs text-yellow-100 opacity-80">Automated • Smart Filtering</p>
+                    </div>
+                </div>
+            </article>
+        </main>
+
+        <!-- Sidebar Right (Related) -->
+        <aside class="hidden lg:block lg:col-span-2">
+            <div class="sticky top-32">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-6">Related Articles</h4>
+                <div class="space-y-6">
+                    <!-- Related 1 -->
+                    <a href="blog-article-whatsapp-marketing.html" class="block group">
+                        <div class="aspect-video bg-slate-100 rounded-lg overflow-hidden mb-3">
+                            <img src="https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&w=400&q=80"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                        </div>
+                        <h5
+                            class="font-bold text-slate-900 text-sm leading-snug group-hover:text-indigo-600 transition-colors">
+                            Why WhatsApp Marketing Beats Email</h5>
+                    </a>
+                    <!-- Related 2 -->
+                    <a href="blog-article-loyalty-program.html" class="block group">
+                        <div class="aspect-video bg-slate-100 rounded-lg overflow-hidden mb-3">
+                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&w=400&q=80"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                        </div>
+                        <h5
+                            class="font-bold text-slate-900 text-sm leading-snug group-hover:text-indigo-600 transition-colors">
+                            Boost Retention with Loyalty Programs</h5>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
     </div>
-
-    <!-- Content -->
-    <article class="max-w-3xl mx-auto px-6 pb-24 prose prose-lg prose-indigo prose-slate">
-        <p class="lead text-xl text-slate-600 mb-8">93% of customers read online reviews before buying. If you don't
-            have recent, positive reviews, you don't exist. But asking for them is awkward. Here's how to automate it.
-        </p>
-
-        <h2>Timing is Everything</h2>
-        <p>The best time to ask for a review is immediately after a positive experience. Not 3 days later. Not next
-            week. Right now. QTick sends an automated WhatsApp message 30 minutes after the appointment ends: "Hi Sarah,
-            how was your visit? Rate us!"</p>
-
-        <h2>Make it Frictionless</h2>
-        <p>Don't make them search for you on Google. Send them a direct link. "Click here to give us 5 stars." The fewer
-            clicks, the higher the conversion.</p>
-
-        <h2>Handle Negatives Privately</h2>
-        <p>Smart review systems filter feedback. If a customer rates you 1-3 stars, the system asks for internal
-            feedback ("What went wrong?"). If they rate 4-5 stars, it redirects them to Google Maps. This protects your
-            public reputation while giving you valuable insights.</p>
-
-        <h2>Respond to Every Review</h2>
-        <p>Google's algorithm loves engagement. Replying to reviews shows you care and boosts your SEO ranking. A simple
-            "Thanks for visiting!" goes a long way.</p>
-
-        <div class="bg-yellow-50 p-8 rounded-2xl mt-12 not-prose border border-yellow-100">
-            <h3 class="text-xl font-bold text-yellow-900 mb-2">Boost your Google Ranking</h3>
-            <p class="text-yellow-800 mb-6">QTick's automated review engine helps businesses get 3x more reviews in the
-                first month.</p>
-            <a href="contact.html"
-                class="inline-flex items-center justify-center px-6 py-3 bg-yellow-600 text-white font-bold rounded-xl hover:bg-yellow-700 transition-all">Start
-                Collecting Reviews</a>
-        </div>
-    </article>
 
     <!-- Footer -->
     <footer class="bg-white pt-16 pb-8 border-t border-slate-200">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-12 mb-12">
                 <div class="col-span-1 md:col-span-2">
-                    <div class="flex items-center gap-2 mb-4">
-                        <img src="asset/QTick-Logo.png" alt="QTick Logo"
-                            class="w-8 h-8 rounded-lg shadow-lg shadow-indigo-500/20">
-                        <span class="text-xl font-bold text-slate-900">QTick</span>
-                    </div>
-                    <p class="text-slate-500 mb-6 max-w-sm text-sm leading-relaxed">The all-in-one operating system for
-                        modern businesses.</p>
-                </div>
-                <div>
-                    <h4 class="font-bold text-slate-900 mb-4">Product</h4>
-                    <ul class="space-y-2 text-sm text-slate-500">
-                        <li><a href="features.html" class="hover:text-indigo-600">Features</a></li>
-                        <li><a href="industries.html" class="hover:text-indigo-600">Industries</a></li>
-                        <li><a href="pricing.html" class="hover:text-indigo-600">Pricing</a></li>
-                        <li><a href="download.html" class="hover:text-indigo-600">Download</a></li>
+                    <li><a href="pricing.html" class="hover:text-indigo-600">Pricing</a></li>
+                    <li><a href="download.html" class="hover:text-indigo-600">Download</a></li>
                     </ul>
                 </div>
                 <div>

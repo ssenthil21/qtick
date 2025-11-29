@@ -64,46 +64,49 @@
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="contact.html"
-                        class="px-8 py-4 bg-pink-600 text-white rounded-xl font-bold hover:bg-pink-700 transition-all shadow-lg shadow-pink-500/30 text-center">
+                        class="px-8 py-4 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-500/30 text-center">
                         Start Free Trial
+                    </a>
+                    <a href="pricing.html"
+                        class="px-8 py-4 bg-white text-slate-700 font-bold rounded-xl border border-slate-200 hover:bg-slate-50 transition-all text-center">
+                        View Pricing
                     </a>
                 </div>
             </div>
             <div class="relative">
-                <!-- Visual Placeholder -->
-                <div
-                    class="aspect-video bg-slate-900 rounded-3xl border border-slate-800 shadow-2xl flex items-center justify-center relative overflow-hidden">
-                    <div class="text-center text-white">
-                        <i data-lucide="gift" class="w-16 h-16 mx-auto mb-4 opacity-50"></i>
-                        <div class="font-bold text-xl">Loyalty Dashboard</div>
-                    </div>
+                <div class="absolute inset-0 bg-gradient-to-tr from-pink-500/20 to-purple-500/20 rounded-3xl blur-3xl">
                 </div>
+                <img src="asset/loyalty-card.png" alt="Loyalty Program Dashboard"
+                    class="relative rounded-3xl shadow-2xl border border-slate-200/50 w-full transform hover:scale-[1.02] transition-transform duration-500">
             </div>
         </div>
     </header>
 
-    <!-- Features -->
-    <section class="py-24 bg-slate-50 border-y border-slate-200">
+    <!-- Features Grid -->
+    <section class="py-24 bg-slate-50">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
-                    <div class="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center text-pink-600 mb-6"><i
-                            data-lucide="award" class="w-6 h-6"></i></div>
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                    <div class="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center text-pink-600 mb-6">
+                        <i data-lucide="award" class="w-6 h-6"></i>
+                    </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-3">Points System</h3>
                     <p class="text-slate-500 text-sm leading-relaxed">Assign points for every dollar spent. Let
                         customers redeem points for discounts or free services.</p>
                 </div>
-                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-all">
                     <div
                         class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 mb-6">
-                        <i data-lucide="users" class="w-6 h-6"></i></div>
+                        <i data-lucide="users" class="w-6 h-6"></i>
+                    </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-3">Tiered Membership</h3>
                     <p class="text-slate-500 text-sm leading-relaxed">Create VIP tiers (Silver, Gold, Platinum) to
                         gamify the experience and encourage higher spending.</p>
                 </div>
-                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
-                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-6"><i
-                            data-lucide="gift" class="w-6 h-6"></i></div>
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-6">
+                        <i data-lucide="gift" class="w-6 h-6"></i>
+                    </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-3">Birthday Rewards</h3>
                     <p class="text-slate-500 text-sm leading-relaxed">Automatically send special offers or free gifts to
                         customers on their birthdays.</p>
@@ -124,6 +127,24 @@
                     </div>
                     <p class="text-slate-500 mb-6 max-w-sm text-sm leading-relaxed">The all-in-one operating system for
                         modern businesses.</p>
+                    <div class="flex gap-4 mb-6">
+                        <a href="https://www.instagram.com/qtickbiz/" target="_blank" rel="noopener noreferrer"
+                            class="text-slate-400 hover:text-pink-600 transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@qtickbiz" target="_blank" rel="noopener noreferrer"
+                            class="text-slate-400 hover:text-red-600 transition-colors">
+                            <i data-lucide="youtube" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://www.facebook.com/qtickbiz" target="_blank" rel="noopener noreferrer"
+                            class="text-slate-400 hover:text-blue-600 transition-colors">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://in.linkedin.com/company/qtickbiz" target="_blank" rel="noopener noreferrer"
+                            class="text-slate-400 hover:text-blue-700 transition-colors">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                    </div>
                 </div>
                 <div>
                     <h4 class="font-bold text-slate-900 mb-4">Product</h4>
@@ -131,6 +152,7 @@
                         <li><a href="features.html" class="hover:text-indigo-600">Features</a></li>
                         <li><a href="industries.html" class="hover:text-indigo-600">Industries</a></li>
                         <li><a href="pricing.html" class="hover:text-indigo-600">Pricing</a></li>
+                        <li><a href="download.html" class="hover:text-indigo-600">Download</a></li>
                         <li><a href="contact.html" class="hover:text-indigo-600">Book Demo</a></li>
                     </ul>
                 </div>
