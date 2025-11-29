@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym & Fitness Management Software - QTick</title>
+    <meta name="description"
+        content="Manage memberships, classes, and trainers with QTick. The all-in-one software for gyms and fitness studios.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <img src="asset/QTick-Logo.png" alt="QTick Logo"
+                        class="w-10 h-10 rounded-xl shadow-lg shadow-indigo-500/20">
+                    <span class="text-xl font-bold tracking-tight text-slate-900">QTick</span>
+                </a>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-bold text-slate-600">
+                <a href="index.html" class="hover:text-indigo-600 transition-colors">Home</a>
+                <a href="features.html" class="hover:text-indigo-600 transition-colors">Features</a>
+                <a href="industries.html" class="text-indigo-600 transition-colors">Industries</a>
+                <a href="pricing.html" class="hover:text-indigo-600 transition-colors">Pricing</a>
+                <a href="blog.html" class="hover:text-indigo-600 transition-colors">Blog</a>
+                <a href="contact.html" class="hover:text-indigo-600 transition-colors">Contact</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="contact.html"
+                    class="px-5 py-2.5 text-sm font-bold text-white bg-slate-900 rounded-lg hover:bg-indigo-600 transition-all">Get
+                    Started Free</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="pt-32 pb-20 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+            <div>
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-50 text-amber-600 text-xs font-bold uppercase tracking-wider mb-6">
+                    <i data-lucide="dumbbell" class="w-4 h-4"></i> For Gyms & Fitness
+                </div>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight">
+                    Power up your <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600">fitness
+                        business.</span>
+                </h1>
+                <p class="text-xl text-slate-500 mb-8 leading-relaxed">
+                    Manage memberships, schedule classes, and book personal training sessions. Keep your members engaged
+                    and your business growing.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="contact.html"
+                        class="px-8 py-4 bg-amber-600 text-white rounded-xl font-bold hover:bg-amber-700 transition-all shadow-lg shadow-amber-500/30 text-center">
+                        Start Free Trial
+                    </a>
+                </div>
+            </div>
+            <div class="relative">
+                <!-- Gym Dashboard Card -->
+                <div class="relative bg-slate-900 rounded-3xl shadow-2xl border border-slate-800 overflow-hidden">
+                    <!-- Top Bar -->
+                    <div class="bg-slate-800/50 border-b border-slate-700 p-4 flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                        </div>
+                        <div class="text-xs font-bold text-slate-500">QTick Gym OS</div>
+                    </div>
+                    <!-- Dashboard Content -->
+                    <div class="p-6">
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="bg-slate-800 p-4 rounded-2xl border border-slate-700">
+                                <div class="text-xs text-slate-400 font-bold uppercase mb-1">Active Members</div>
+                                <div class="text-2xl font-extrabold text-white">1,248</div>
+                                <div class="text-xs text-green-400 mt-1">↑ 24 this week</div>
+                            </div>
+                            <div class="bg-slate-800 p-4 rounded-2xl border border-slate-700">
+                                <div class="text-xs text-slate-400 font-bold uppercase mb-1">Live Check-ins</div>
+                                <div class="text-2xl font-extrabold text-amber-500">42</div>
+                                <div class="text-xs text-slate-500 mt-1">Currently in gym</div>
+                            </div>
+                        </div>
+                        <!-- Class Status -->
+                        <div class="space-y-3">
+                            <div class="text-xs font-bold text-slate-500 uppercase">Upcoming Classes</div>
+                            <div class="flex items-center gap-3 p-3 bg-slate-800 rounded-xl border border-slate-700">
+                                <div
+                                    class="w-10 h-10 bg-amber-500/20 rounded-lg flex items-center justify-center text-amber-500">
+                                    <i data-lucide="flame" class="w-5 h-5"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-sm font-bold text-white">HIIT Blast</div>
+                                    <div class="text-xs text-slate-400">Studio A • 5:30 PM</div>
+                                </div>
+                                <div class="px-2 py-1 bg-slate-700 rounded text-xs text-white font-bold">
+                                    18/20
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 bg-slate-800 rounded-xl border border-slate-700">
+                                <div
+                                    class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-500">
+                                    <i data-lucide="activity" class="w-5 h-5"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-sm font-bold text-white">Yoga Flow</div>
+                                    <div class="text-xs text-slate-400">Studio B • 6:00 PM</div>
+                                </div>
+                                <div class="px-2 py-1 bg-slate-700 rounded text-xs text-white font-bold">
+                                    12/15
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Industry Specific Features -->
+    <section class="py-24 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Built for fitness</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto">Everything you need to run a successful gym
+                    or studio.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
+                    <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600 mb-6">
+                        <i data-lucide="credit-card" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Membership Management</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Handle recurring payments,
+                        expirations, and
+                        renewals automatically. Track member attendance.</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
+                    <div
+                        class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 mb-6">
+                        <i data-lucide="calendar" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Class Scheduling</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Let members book spots in yoga,
+                        spin, or HIIT
+                        classes online. Manage waitlists automatically.</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
+                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-6">
+                        <i data-lucide="user-check" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Trainer Booking</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Allow clients to book personal
+                        training sessions
+                        directly with their preferred trainer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white pt-16 pb-8 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <img src="asset/QTick-Logo.png" alt="QTick Logo"
+                            class="w-8 h-8 rounded-lg shadow-lg shadow-indigo-500/20">
+                        <span class="text-xl font-bold text-slate-900">QTick</span>
+                    </div>
+                    <p class="text-slate-500 mb-6 max-w-sm text-sm leading-relaxed">The all-in-one
+                        operating system for
+                        modern businesses.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-4">Product</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="features.html" class="hover:text-indigo-600">Features</a></li>
+                        <li><a href="industries.html" class="hover:text-indigo-600">Industries</a>
+                        </li>
+                        <li><a href="pricing.html" class="hover:text-indigo-600">Pricing</a></li>
+                        <li><a href="contact.html" class="hover:text-indigo-600">Book Demo</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-4">Support</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="faq.html" class="hover:text-indigo-600">FAQ</a></li>
+                        <li><a href="contact.html" class="hover:text-indigo-600">Contact Us</a></li>
+                        <li><a href="blog.html" class="hover:text-indigo-600">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
+                <div>© 2025 QTick Inc. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>

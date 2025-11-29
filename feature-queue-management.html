@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Queue Management System - QTick</title>
+    <meta name="description"
+        content="Eliminate waiting lines with QTick's smart queuing system. Allow customers to join remotely and track their status in real-time.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <img src="asset/QTick-Logo.png" alt="QTick Logo"
+                        class="w-10 h-10 rounded-xl shadow-lg shadow-indigo-500/20">
+                    <span class="text-xl font-bold tracking-tight text-slate-900">QTick</span>
+                </a>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-bold text-slate-600">
+                <a href="index.html" class="hover:text-indigo-600 transition-colors">Home</a>
+                <a href="features.html" class="text-indigo-600 transition-colors">Features</a>
+                <a href="industries.html" class="hover:text-indigo-600 transition-colors">Industries</a>
+                <a href="pricing.html" class="hover:text-indigo-600 transition-colors">Pricing</a>
+                <a href="blog.html" class="hover:text-indigo-600 transition-colors">Blog</a>
+                <a href="contact.html" class="hover:text-indigo-600 transition-colors">Contact</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="contact.html"
+                    class="px-5 py-2.5 text-sm font-bold text-white bg-slate-900 rounded-lg hover:bg-indigo-600 transition-all">Get
+                    Started Free</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="pt-32 pb-20 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+            <div>
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-50 text-indigo-600 text-xs font-bold uppercase tracking-wider mb-6">
+                    <i data-lucide="users" class="w-4 h-4"></i> Smart Queuing
+                </div>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight">
+                    Stop making your customers <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">wait in
+                        line.</span>
+                </h1>
+                <p class="text-xl text-slate-500 mb-8 leading-relaxed">
+                    Allow customers to join the queue remotely via app or QR code. They can track their status in
+                    real-time and arrive just when it's their turn.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="contact.html"
+                        class="px-8 py-4 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-500/30 text-center">
+                        Get Started Free
+                    </a>
+                    <a href="contact.html"
+                        class="px-8 py-4 bg-white text-slate-900 border border-slate-300 rounded-xl font-bold hover:bg-slate-50 transition-all text-center">
+                        Book a Demo
+                    </a>
+                </div>
+            </div>
+            <div class="relative">
+                <!-- Visual Placeholder -->
+                <div
+                    class="aspect-square bg-slate-100 rounded-3xl border border-slate-200 shadow-2xl flex items-center justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 to-white"></div>
+                    <!-- Mock UI -->
+                    <div class="relative z-10 w-64 bg-white rounded-2xl shadow-xl border border-slate-100 p-4">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="font-bold text-slate-900">Your Turn</div>
+                            <div class="text-xs font-bold text-green-500 bg-green-50 px-2 py-1 rounded">Live</div>
+                        </div>
+                        <div class="text-4xl font-extrabold text-indigo-600 mb-2 text-center">A-14</div>
+                        <div class="text-xs text-center text-slate-400 mb-4">Estimated wait: 0 mins</div>
+                        <div class="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+                            <div class="w-full h-full bg-green-500"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Benefits -->
+    <section class="py-24 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Why businesses love Smart Queuing</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto">It's not just about convenience. It's about efficiency and
+                    revenue.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
+                    <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-green-600 mb-6">
+                        <i data-lucide="clock" class="w-6 h-6"></i></div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Reduce Perceived Wait Time</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Customers can wait from anywhere—coffee shop, car,
+                        or home. They don't feel "stuck" in your lobby.</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
+                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-6"><i
+                            data-lucide="users" class="w-6 h-6"></i></div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Retain Walk-ins</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Don't turn people away because of a crowded lobby.
+                        Add them to the digital queue and text them when you're ready.</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
+                    <div
+                        class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 mb-6">
+                        <i data-lucide="bar-chart" class="w-6 h-6"></i></div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Staff Efficiency</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Staff know exactly who is next and what service
+                        they need. No more shouting names or confusion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900 mb-8">How it works</h2>
+                    <div class="space-y-8">
+                        <div class="flex gap-4">
+                            <div
+                                class="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold flex-shrink-0">
+                                1</div>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 mb-2">Customer joins the queue</h3>
+                                <p class="text-slate-500 text-sm">They scan a QR code at your door or use the QTick app
+                                    to join remotely.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div
+                                class="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold flex-shrink-0">
+                                2</div>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 mb-2">They get real-time updates</h3>
+                                <p class="text-slate-500 text-sm">They can see their position in line and estimated wait
+                                    time on their phone.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div
+                                class="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold flex-shrink-0">
+                                3</div>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 mb-2">They arrive just in time</h3>
+                                <p class="text-slate-500 text-sm">We notify them when it's their turn, so they walk in
+                                    ready to be served.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200">
+                    <!-- Placeholder for step visual -->
+                    <div
+                        class="aspect-square bg-white rounded-2xl shadow-sm flex items-center justify-center text-slate-300">
+                        <i data-lucide="smartphone" class="w-16 h-16"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-slate-900 text-white relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">Ready to clear the crowd?</h2>
+            <p class="text-slate-400 text-lg mb-10 max-w-2xl mx-auto">Join thousands of businesses using QTick to manage
+                their queues.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="contact.html"
+                    class="px-8 py-4 bg-indigo-600 hover:bg-indigo-500 rounded-xl font-bold transition-all shadow-lg shadow-indigo-500/30">Get
+                    Started Free</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white pt-16 pb-8 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <img src="asset/QTick-Logo.png" alt="QTick Logo"
+                            class="w-8 h-8 rounded-lg shadow-lg shadow-indigo-500/20">
+                        <span class="text-xl font-bold text-slate-900">QTick</span>
+                    </div>
+                    <p class="text-slate-500 mb-6 max-w-sm text-sm leading-relaxed">The all-in-one operating system for
+                        modern businesses.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-4">Product</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="features.html" class="hover:text-indigo-600">Features</a></li>
+                        <li><a href="industries.html" class="hover:text-indigo-600">Industries</a></li>
+                        <li><a href="pricing.html" class="hover:text-indigo-600">Pricing</a></li>
+                        <li><a href="contact.html" class="hover:text-indigo-600">Book Demo</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-4">Support</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="faq.html" class="hover:text-indigo-600">FAQ</a></li>
+                        <li><a href="contact.html" class="hover:text-indigo-600">Contact Us</a></li>
+                        <li><a href="blog.html" class="hover:text-indigo-600">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
+                <div>© 2025 QTick Inc. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>
