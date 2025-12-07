@@ -2,13 +2,6 @@
 <html lang="en">
 
 <head>
-    <script type="module">import { injectIntoGlobalHook } from "/@react-refresh";
-        injectIntoGlobalHook(window);
-        window.$RefreshReg$ = () => { };
-        window.$RefreshSig$ = () => (type) => type;</script>
-
-    <script type="module" src="/@vite/client"></script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QTick Salon Management Software | Booking, Queue &amp; Billing | Grow Your Beauty Business</title>
@@ -19,12 +12,13 @@
     <meta property="og:title" content="QTick Salon Management Software | Booking, Queue &amp; Billing">
     <meta property="og:description"
         content="All-in-one salon, software for Indian businesses. Smart bookings, billing, WhatsApp automation, and analytics.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png">
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@Lovable">
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png">
+    <!-- Tailwind CSS (RESTORED) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <style type="text/css">
         :where(html[dir="ltr"]),
         :where([data-sonner-toaster][dir="ltr"]) {
@@ -866,6 +860,7 @@
 
         html,
         :host {
+            scroll-behavior: smooth;
             line-height: 1.5;
             /* 1 */
             -webkit-text-size-adjust: 100%;
@@ -5304,11 +5299,9 @@ All colors MUST be HSL.
         <section aria-label="Notifications alt+T" tabindex="-1" aria-live="polite" aria-relevant="additions text"
             aria-atomic="false"></section>
         <div class="min-h-screen">
-            <header class="bg-white border-b border-slate-200">
-                <!-- Top Nav -->
-                <div id="global-header"></div>
-                <script src="header.js"></script>
-            </header>
+            <!-- Navigation -->
+            <div id="global-header"></div>
+            <script src="header.js"></script>
 
 
             <section class="relative pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-soft overflow-hidden">
@@ -5339,11 +5332,12 @@ All colors MUST be HSL.
                                 clinic software for bookings, billing, and WhatsApp automation. Built for Indian
                                 businesses that want to
                                 grow.</p>
-                            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"><button
-                                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-hero text-white shadow-glow hover:shadow-lg hover:scale-105 transition-all duration-300 h-11 rounded-md px-8 text-base">Start
-                                    14-Day Free Trial</button><button
-                                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 rounded-md px-8 text-base">Book
-                                    a Free Demo Call</button></div>
+                            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"><a
+                                    href="#cta"
+                                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-hero text-white shadow-glow hover:shadow-lg hover:scale-105 transition-all duration-300 h-11 rounded-md px-8 text-base">Start
+                                    14-Day Free Trial</a><a href="#cta"
+                                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 rounded-md px-8 text-base">Book
+                                    a Free Demo Call</a></div>
                             <div
                                 class="flex flex-wrap gap-6 justify-center lg:justify-start text-sm text-muted-foreground">
                                 <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24"
@@ -6795,7 +6789,7 @@ All colors MUST be HSL.
                     </div>
                 </div>
             </section>
-            <section class="py-24 bg-gradient-soft relative overflow-hidden">
+            <section id="cta" class="py-24 bg-gradient-soft relative overflow-hidden scroll-mt-32">
                 <div class="absolute top-10 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
                 <div class="absolute bottom-10 left-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -6806,11 +6800,11 @@ All colors MUST be HSL.
                         <p class="text-lg text-muted-foreground mb-10">Join 200+ salon owners who've transformed their
                             business with
                             QTick. Start your free trial today – no credit card required.</p>
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center"><button
-                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-hero text-white shadow-glow hover:shadow-lg hover:scale-105 transition-all duration-300 h-11 rounded-md px-8 text-base">Start
-                                14-Day Free Trial</button><button
-                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 rounded-md px-8 text-base">Book
-                                a Free Demo</button></div>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center"><a href="#cta"
+                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-hero text-white shadow-glow hover:shadow-lg hover:scale-105 transition-all duration-300 h-11 rounded-md px-8 text-base">Start
+                                14-Day Free Trial</a><a href="#cta"
+                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 rounded-md px-8 text-base">Book
+                                a Free Demo</a></div>
                         <p class="text-sm text-muted-foreground mt-6">No tech skills needed · We'll help you set it up ·
                             Cancel
                             anytime</p>
@@ -6818,10 +6812,9 @@ All colors MUST be HSL.
                 </div>
             </section>
             <div id='global-footer'></div>
-<script src='footer.js'></script>
+            <script src='footer.js'></script>
         </div>
     </div>
-    <script type="module" src="/src/main.tsx"></script>
 
 
     <span id="PING_CONTENT_AUTOPLAY_DETECTION" style="display: none;"></span>

@@ -1,8 +1,8 @@
 const footerContent = `
 <footer class="bg-white pt-16 pb-8 border-t border-slate-200">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="grid md:grid-cols-5 gap-12 mb-12">
-            <div class="col-span-1 md:col-span-2">
+        <div class="grid md:grid-cols-4 gap-12 mb-12">
+            <div class="col-span-1">
                 <div class="flex items-center gap-2 mb-4">
                     <img src="asset/QTick-Logo.png" alt="QTick Logo"
                         class="w-8 h-8 rounded-lg shadow-lg shadow-indigo-500/20">
