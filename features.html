@@ -209,6 +209,19 @@
         .feature-icon {
             box-shadow: 0 10px 30px -10px rgba(79, 70, 229, 0.3);
         }
+
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
     </style>
 </head>
 
@@ -223,8 +236,224 @@
                 <span class="text-xl font-bold text-slate-900">QTick</span>
             </a>
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-                <a href="features.html" class="hover:text-indigo-600">Platform</a>
-                <a href="industries.html" class="hover:text-indigo-600">Industries</a>
+                <div class="relative group h-full flex items-center">
+                    <a href="features.html" class="flex items-center gap-1 hover:text-indigo-600 py-4 cursor-pointer">
+                        Platform
+                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+                    </a>
+
+                    <div
+                        class="absolute top-full -left-10 w-[900px] bg-white rounded-2xl shadow-xl border border-slate-100 p-6 invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 z-50">
+                        <div class="grid grid-cols-3 gap-4">
+                            <!-- Queue Management -->
+                            <a href="feature-queue-management.html"
+                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item">
+                                <div
+                                    class="p-3 bg-indigo-50 text-indigo-600 rounded-lg group-hover/item:scale-110 transition-transform">
+                                    <i data-lucide="users" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-1">Queue Management</h4>
+                                    <p class="text-xs text-slate-500 leading-snug">Smart token system & tracking</p>
+                                </div>
+                            </a>
+
+                            <!-- Appointment Booking -->
+                            <a href="feature-appointment-booking.html"
+                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item">
+                                <div
+                                    class="p-3 bg-indigo-50 text-indigo-600 rounded-lg group-hover/item:scale-110 transition-transform">
+                                    <i data-lucide="calendar-check" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-1">Appointments</h4>
+                                    <p class="text-xs text-slate-500 leading-snug">Online booking & scheduling</p>
+                                </div>
+                            </a>
+
+                            <!-- Billing -->
+                            <a href="feature-billing-inventory.html"
+                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item">
+                                <div
+                                    class="p-3 bg-blue-50 text-blue-600 rounded-lg group-hover/item:scale-110 transition-transform">
+                                    <i data-lucide="receipt" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-1">Billing & Inventory</h4>
+                                    <p class="text-xs text-slate-500 leading-snug">Invoices, payments & stock</p>
+                                </div>
+                            </a>
+
+                            <!-- WhatsApp Marketing -->
+                            <a href="feature-whatsapp-marketing.html"
+                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item">
+                                <div
+                                    class="p-3 bg-green-50 text-green-600 rounded-lg group-hover/item:scale-110 transition-transform">
+                                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-1">WhatsApp Marketing</h4>
+                                    <p class="text-xs text-slate-500 leading-snug">Campaigns & automation</p>
+                                </div>
+                            </a>
+
+                            <!-- Website Builder -->
+                            <a href="feature-website-builder.html"
+                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item">
+                                <div
+                                    class="p-3 bg-sky-50 text-sky-600 rounded-lg group-hover/item:scale-110 transition-transform">
+                                    <i data-lucide="globe" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-1">Website Builder</h4>
+                                    <p class="text-xs text-slate-500 leading-snug">SEO-ready business profile</p>
+                                </div>
+                            </a>
+
+                            <!-- Reviews -->
+                            <a href="feature-review-system.html"
+                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item">
+                                <div
+                                    class="p-3 bg-yellow-50 text-yellow-600 rounded-lg group-hover/item:scale-110 transition-transform">
+                                    <i data-lucide="star" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-1">Review System</h4>
+                                    <p class="text-xs text-slate-500 leading-snug">Automated feedback collection</p>
+                                </div>
+                            </a>
+
+                            <!-- Loyalty -->
+                            <a href="feature-loyalty-program.html"
+                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item">
+                                <div
+                                    class="p-3 bg-pink-50 text-pink-600 rounded-lg group-hover/item:scale-110 transition-transform">
+                                    <i data-lucide="heart" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-1">Loyalty Program</h4>
+                                    <p class="text-xs text-slate-500 leading-snug">Rewards & retention</p>
+                                </div>
+                            </a>
+
+                            <!-- Analytics -->
+                            <a href="feature-analytics.html"
+                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item">
+                                <div
+                                    class="p-3 bg-purple-50 text-purple-600 rounded-lg group-hover/item:scale-110 transition-transform">
+                                    <i data-lucide="bar-chart-2" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-1">Analytics</h4>
+                                    <p class="text-xs text-slate-500 leading-snug">Business insights & data</p>
+                                </div>
+                            </a>
+
+                            <!-- Leads -->
+                            <a href="feature-lead-management.html"
+                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item">
+                                <div
+                                    class="p-3 bg-orange-50 text-orange-600 rounded-lg group-hover/item:scale-110 transition-transform">
+                                    <i data-lucide="zap" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-1">Lead Management</h4>
+                                    <p class="text-xs text-slate-500 leading-snug">Capture & convert leads</p>
+                                </div>
+                            </a>
+
+                            <!-- View All Link -->
+                            <a href="features.html"
+                                class="col-span-3 mt-2 pt-4 border-t border-slate-100 flex items-center justify-center text-sm font-bold text-indigo-600 hover:text-indigo-700">
+                                View All Features <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative group h-full flex items-center">
+                    <a href="industries.html" class="flex items-center gap-1 hover:text-indigo-600 py-4 cursor-pointer">
+                        Industries
+                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+                    </a>
+
+                    <!-- Mega Menu Dropdown -->
+                    <div
+                        class="absolute top-full left-0 md:-left-20 w-[600px] bg-white rounded-2xl shadow-xl border border-slate-100 p-6 invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 z-50">
+                        <div class="grid grid-cols-2 gap-4">
+                            <!-- Salon Item -->
+                            <a href="industry-salon.html"
+                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item">
+                                <div
+                                    class="p-3 bg-pink-50 text-pink-600 rounded-lg group-hover/item:scale-110 transition-transform">
+                                    <i data-lucide="scissors" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-1 text-sm">Salons & Barbers</h4>
+                                    <p class="text-xs text-slate-500 leading-snug">Stylist scheduling & appointments</p>
+                                </div>
+                            </a>
+
+                            <!-- Spa Item -->
+                            <a href="industry-spa-software.html"
+                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item">
+                                <div
+                                    class="p-3 bg-violet-50 text-violet-600 rounded-lg group-hover/item:scale-110 transition-transform">
+                                    <i data-lucide="flower" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-1 text-sm">Spas & Wellness</h4>
+                                    <p class="text-xs text-slate-500 leading-snug">Room allocation & therapy management
+                                    </p>
+                                </div>
+                            </a>
+
+                            <!-- Clinic Item -->
+                            <a href="industry-clinic-management.html"
+                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item">
+                                <div
+                                    class="p-3 bg-cyan-50 text-cyan-600 rounded-lg group-hover/item:scale-110 transition-transform">
+                                    <i data-lucide="stethoscope" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-1 text-sm">Clinics & Doctors</h4>
+                                    <p class="text-xs text-slate-500 leading-snug">Patient queue & prescriptions</p>
+                                </div>
+                            </a>
+
+                            <!-- Gym Item -->
+                            <a href="industry-fitness-gym-software.html"
+                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item">
+                                <div
+                                    class="p-3 bg-amber-50 text-amber-600 rounded-lg group-hover/item:scale-110 transition-transform">
+                                    <i data-lucide="dumbbell" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-1 text-sm">Gyms & Fitness</h4>
+                                    <p class="text-xs text-slate-500 leading-snug">Class booking & memberships</p>
+                                </div>
+                            </a>
+
+                            <!-- Gaming Item -->
+                            <a href="industry-gaming.html"
+                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item">
+                                <div
+                                    class="p-3 bg-violet-50 text-violet-600 rounded-lg group-hover/item:scale-110 transition-transform">
+                                    <i data-lucide="gamepad-2" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-1 text-sm">Gaming Zones</h4>
+                                    <p class="text-xs text-slate-500 leading-snug">Console time-tracking & billing</p>
+                                </div>
+                            </a>
+
+                            <!-- View All Link -->
+                            <a href="industries.html"
+                                class="col-span-2 mt-2 pt-4 border-t border-slate-100 flex items-center justify-center text-sm font-bold text-indigo-600 hover:text-indigo-700">
+                                View All Industries <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 <a href="blog.html" class="hover:text-indigo-600">Blog</a>
                 <a href="about.html" class="hover:text-indigo-600">About Us</a>
                 <a href="pricing.html" class="hover:text-indigo-600">Pricing</a>
@@ -260,13 +489,91 @@
             <p class="text-lg text-slate-500 max-w-2xl mx-auto">
                 Explore the 10 powerful modules that make QTick the ultimate growth engine for service businesses.
             </p>
+
+
         </div>
     </header>
+
+    <!-- Feature Navigation (Sticky) -->
+    <nav
+        class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-slate-200 py-4 overflow-x-auto no-scrollbar">
+        <div class="max-w-7xl mx-auto px-6 flex gap-4 min-w-max">
+            <!-- Home -->
+            <a href="index.html"
+                class="flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-200 bg-white hover:border-indigo-500 hover:shadow-md transition-all duration-300 group">
+                <i data-lucide="home" class="w-4 h-4 text-slate-400 group-hover:text-indigo-600 transition-colors"></i>
+                <span class="text-sm font-bold text-slate-600 group-hover:text-slate-900">Home</span>
+            </a>
+            <!-- Queue -->
+            <a href="#queue"
+                class="flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-200 bg-white hover:border-indigo-500 hover:shadow-md transition-all duration-300 group">
+                <i data-lucide="users" class="w-4 h-4 text-slate-400 group-hover:text-indigo-600 transition-colors"></i>
+                <span class="text-sm font-bold text-slate-600 group-hover:text-slate-900">Queuing</span>
+            </a>
+            <!-- Billing -->
+            <a href="#billing"
+                class="flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-200 bg-white hover:border-blue-500 hover:shadow-md transition-all duration-300 group">
+                <i data-lucide="receipt" class="w-4 h-4 text-slate-400 group-hover:text-blue-600 transition-colors"></i>
+                <span class="text-sm font-bold text-slate-600 group-hover:text-slate-900">Billing</span>
+            </a>
+            <!-- Reviews -->
+            <a href="#reviews"
+                class="flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-200 bg-white hover:border-yellow-500 hover:shadow-md transition-all duration-300 group">
+                <i data-lucide="star" class="w-4 h-4 text-slate-400 group-hover:text-yellow-600 transition-colors"></i>
+                <span class="text-sm font-bold text-slate-600 group-hover:text-slate-900">Reviews</span>
+            </a>
+            <!-- Loyalty -->
+            <a href="#loyalty"
+                class="flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-200 bg-white hover:border-pink-500 hover:shadow-md transition-all duration-300 group">
+                <i data-lucide="heart" class="w-4 h-4 text-slate-400 group-hover:text-pink-600 transition-colors"></i>
+                <span class="text-sm font-bold text-slate-600 group-hover:text-slate-900">Loyalty</span>
+            </a>
+            <!-- Website -->
+            <a href="#website"
+                class="flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-200 bg-white hover:border-sky-500 hover:shadow-md transition-all duration-300 group">
+                <i data-lucide="globe" class="w-4 h-4 text-slate-400 group-hover:text-sky-600 transition-colors"></i>
+                <span class="text-sm font-bold text-slate-600 group-hover:text-slate-900">Website</span>
+            </a>
+            <!-- WhatsApp -->
+            <a href="#whatsapp"
+                class="flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-200 bg-white hover:border-green-500 hover:shadow-md transition-all duration-300 group">
+                <i data-lucide="message-circle"
+                    class="w-4 h-4 text-slate-400 group-hover:text-green-600 transition-colors"></i>
+                <span class="text-sm font-bold text-slate-600 group-hover:text-slate-900">Campaigns</span>
+            </a>
+            <!-- Analytics -->
+            <a href="#analytics"
+                class="flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-200 bg-white hover:border-purple-500 hover:shadow-md transition-all duration-300 group">
+                <i data-lucide="bar-chart-2"
+                    class="w-4 h-4 text-slate-400 group-hover:text-purple-600 transition-colors"></i>
+                <span class="text-sm font-bold text-slate-600 group-hover:text-slate-900">Analytics</span>
+            </a>
+            <!-- Leads -->
+            <a href="#leads"
+                class="flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-200 bg-white hover:border-orange-500 hover:shadow-md transition-all duration-300 group">
+                <i data-lucide="zap" class="w-4 h-4 text-slate-400 group-hover:text-orange-600 transition-colors"></i>
+                <span class="text-sm font-bold text-slate-600 group-hover:text-slate-900">Leads</span>
+            </a>
+            <!-- Reports -->
+            <a href="#reports"
+                class="flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-200 bg-white hover:border-gray-500 hover:shadow-md transition-all duration-300 group">
+                <i data-lucide="file-text"
+                    class="w-4 h-4 text-slate-400 group-hover:text-gray-600 transition-colors"></i>
+                <span class="text-sm font-bold text-slate-600 group-hover:text-slate-900">Reports</span>
+            </a>
+            <!-- Enquiry -->
+            <a href="#enquiry"
+                class="flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-200 bg-white hover:border-teal-500 hover:shadow-md transition-all duration-300 group">
+                <i data-lucide="inbox" class="w-4 h-4 text-slate-400 group-hover:text-teal-600 transition-colors"></i>
+                <span class="text-sm font-bold text-slate-600 group-hover:text-slate-900">Enquiry Hub</span>
+            </a>
+        </div>
+    </nav>
 
     <!--=================FEATURES LIST=================-->
 
     <!-- 1. Queuing & Appointments -->
-    <section id="appointments" class="py-24 bg-white border-b border-slate-100 feature-group">
+    <section id="queue" class="py-24 bg-white border-b border-slate-100 feature-group">
         <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
             <div class="order-1 lg:order-1">
                 <div
@@ -275,7 +582,8 @@
                 </div>
                 <h2 class="text-3xl font-bold text-slate-900 mb-4">Smart Queuing & Appointments</h2>
                 <p class="text-lg text-slate-500 mb-6 leading-relaxed">
-                    The core of QTick. Customers join remotely and track their status via the app, eliminating physical
+                    The core of QTick. Customers join remotely and track their status via the app, eliminating
+                    physical
                     lines and minimizing uncertainty.
                 </p>
                 <ul class="space-y-3 mb-8">
@@ -286,7 +594,8 @@
                             class="w-5 h-5 text-green-500 mt-1"></i><span class="text-slate-700 font-medium">Provide
                             real-time status updates to phones.</span></li>
                     <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
-                            class="w-5 h-5 text-green-500 mt-1"></i><span class="text-slate-700 font-medium">Build trust
+                            class="w-5 h-5 text-green-500 mt-1"></i><span class="text-slate-700 font-medium">Build
+                            trust
                             by respecting customer time.</span></li>
                 </ul>
                 <a href="feature-queue-management.html"
@@ -303,7 +612,8 @@
                     </div>
                     <div class="relative z-10">
                         <div class="flex justify-between items-center mb-6">
-                            <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Live Status</span>
+                            <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Live
+                                Status</span>
                             <span class="flex h-2 w-2 relative">
                                 <span
                                     class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
@@ -325,7 +635,7 @@
     </section>
 
     <!-- 2. Billing & Inventory -->
-    <section class="py-24 bg-slate-50 border-b border-slate-200 feature-group">
+    <section id="billing" class="py-24 bg-slate-50 border-b border-slate-200 feature-group">
         <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
             <!-- Interactive Visual -->
             <div class="order-2 lg:order-1 flex justify-center">
@@ -340,9 +650,11 @@
                         <div class="font-bold text-lg">Invoice #2025</div>
                     </div>
                     <div class="space-y-3 mb-6">
-                        <div class="flex justify-between text-sm text-slate-600"><span>Haircut</span><span>$25.00</span>
+                        <div class="flex justify-between text-sm text-slate-600">
+                            <span>Haircut</span><span>$25.00</span>
                         </div>
-                        <div class="flex justify-between text-sm text-slate-600"><span>Shampoo</span><span>$15.00</span>
+                        <div class="flex justify-between text-sm text-slate-600">
+                            <span>Shampoo</span><span>$15.00</span>
                         </div>
                         <div class="flex justify-between font-bold text-slate-900 pt-2 border-t border-slate-100">
                             <span>Total</span><span>$40.00</span>
@@ -359,8 +671,10 @@
                 </div>
                 <h2 class="text-3xl font-bold text-slate-900 mb-4">Billing & Inventory</h2>
                 <p class="text-lg text-slate-500 mb-6 leading-relaxed">
-                    Simplify financial transactions. Generate professional digital invoices instantly and track stock
-                    levels automatically to manage costs effectively.
+                    Simplify financial transactions. Generate professional digital invoices instantly and track
+                    stock
+                    levels
+                    automatically to manage costs effectively.
                 </p>
                 <ul class="space-y-3 mb-8">
                     <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
@@ -371,7 +685,8 @@
                             products from inventory upon sale.</span></li>
                     <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
                             class="w-5 h-5 text-blue-500 mt-1"></i><span class="text-slate-700 font-medium">Keep
-                            supplies well-stocked with tracking.</span></li>
+                            supplies
+                            well-stocked with tracking.</span></li>
                 </ul>
                 <a href="feature-billing-inventory.html"
                     class="inline-flex items-center gap-2 text-blue-600 font-bold hover:text-blue-700 transition-colors">
@@ -382,7 +697,7 @@
     </section>
 
     <!-- 3. Review System -->
-    <section class="py-24 bg-white border-b border-slate-100 feature-group">
+    <section id="reviews" class="py-24 bg-white border-b border-slate-100 feature-group">
         <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
             <div class="order-1 lg:order-1">
                 <div
@@ -400,7 +715,8 @@
                             positive reviews on your public profile.</span></li>
                     <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
                             class="w-5 h-5 text-yellow-500 mt-1"></i><span class="text-slate-700 font-medium">Build
-                            trust and credibility for new research.</span></li>
+                            trust
+                            and credibility for new research.</span></li>
                     <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
                             class="w-5 h-5 text-yellow-500 mt-1"></i><span class="text-slate-700 font-medium">Automate
                             the entire feedback loop.</span></li>
@@ -461,16 +777,20 @@
                 </div>
                 <h2 class="text-3xl font-bold text-slate-900 mb-4">Loyalty Program</h2>
                 <p class="text-lg text-slate-500 mb-6 leading-relaxed">
-                    Foster customer retention, which is more cost-effective than acquisition. Identify repeat customers
-                    and create targeted reward programs.
+                    Foster customer retention, which is more cost-effective than acquisition. Identify repeat
+                    customers
+                    and
+                    create targeted reward programs.
                 </p>
                 <ul class="space-y-3 mb-8">
                     <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
                             class="w-5 h-5 text-pink-500 mt-1"></i><span class="text-slate-700 font-medium">Reward
-                            loyal customers automatically.</span></li>
+                            loyal
+                            customers automatically.</span></li>
                     <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
                             class="w-5 h-5 text-pink-500 mt-1"></i><span class="text-slate-700 font-medium">Create
-                            tiered membership levels.</span></li>
+                            tiered
+                            membership levels.</span></li>
                     <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
                             class="w-5 h-5 text-pink-500 mt-1"></i><span class="text-slate-700 font-medium">Increase
                             customer lifetime value.</span></li>
@@ -484,7 +804,7 @@
     </section>
 
     <!-- 5. Website Profile -->
-    <section class="py-24 bg-white border-b border-slate-100 feature-group">
+    <section id="website" class="py-24 bg-white border-b border-slate-100 feature-group">
         <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
             <div class="order-1 lg:order-1">
                 <div
@@ -502,10 +822,12 @@
                             services, pricing, and operating hours.</span></li>
                     <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
                             class="w-5 h-5 text-sky-500 mt-1"></i><span class="text-slate-700 font-medium">Get
-                            discovered by new customers on Google.</span></li>
+                            discovered
+                            by new customers on Google.</span></li>
                     <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
                             class="w-5 h-5 text-sky-500 mt-1"></i><span class="text-slate-700 font-medium">Display
-                            glowing customer reviews in one place.</span></li>
+                            glowing
+                            customer reviews in one place.</span></li>
                 </ul>
                 <a href="feature-website-builder.html"
                     class="inline-flex items-center gap-2 text-sky-600 font-bold hover:text-sky-700 transition-colors">
@@ -542,7 +864,8 @@
                                     <span>⭐ 4.9 (120 Reviews)</span>
                                 </div>
                                 <p class="text-xs text-slate-400 line-clamp-2">Premium hair and spa services in the
-                                    heart of the city.</p>
+                                    heart of
+                                    the city.</p>
                             </div>
                             <div class="px-4 space-y-3 pb-6">
                                 <div class="text-xs font-bold text-slate-900 uppercase tracking-wide">Services</div>
@@ -555,25 +878,16 @@
                                     <button
                                         class="px-3 py-1 bg-indigo-600 text-white text-xs font-bold rounded hover:bg-indigo-700">Book</button>
                                 </div>
-                                <div
-                                    class="flex justify-between items-center p-3 border border-slate-100 rounded-lg hover:border-indigo-200 transition-colors bg-slate-50/50">
-                                    <div>
-                                        <div class="font-bold text-sm">Full Spa</div>
-                                        <div class="text-xs text-slate-500">$80.00</div>
-                                    </div>
-                                    <button
-                                        class="px-3 py-1 bg-indigo-600 text-white text-xs font-bold rounded hover:bg-indigo-700">Book</button>
+                                <div </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
     </section>
 
     <!-- 6. Digital Campaign -->
-    <section class="py-24 bg-slate-50 border-b border-slate-200 feature-group">
+    <section id="whatsapp" class="py-24 bg-slate-50 border-b border-slate-200 feature-group">
         <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
             <!-- Interactive Visual -->
             <div class="order-2 lg:order-1 flex justify-center">
@@ -581,7 +895,8 @@
                     <div
                         class="chat-bubble bg-white p-4 rounded-2xl rounded-bl-none shadow-md border border-slate-100 mr-12">
                         <div class="text-xs text-slate-400 mb-1">Your Business</div>
-                        <div class="text-sm font-medium text-slate-700">🎉 Hey! We miss you. Come in this week for 20%
+                        <div class="text-sm font-medium text-slate-700">🎉 Hey! We miss you. Come in this week for
+                            20%
                             off!</div>
                     </div>
                     <div
@@ -599,7 +914,8 @@
                 <h2 class="text-3xl font-bold text-slate-900 mb-4">WhatsApp Digital Campaigns</h2>
                 <p class="text-lg text-slate-500 mb-6 leading-relaxed">
                     Turn your database into a marketing asset. Run targeted campaigns via WhatsApp to re-engage past
-                    clients and attract new ones.
+                    clients
+                    and attract new ones.
                 </p>
                 <ul class="space-y-3 mb-8">
                     <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
@@ -607,7 +923,8 @@
                             specific segments with special offers.</span></li>
                     <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
                             class="w-5 h-5 text-green-500 mt-1"></i><span class="text-slate-700 font-medium">Boost
-                            sales during slower periods instantly.</span></li>
+                            sales
+                            during slower periods instantly.</span></li>
                     <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
                             class="w-5 h-5 text-green-500 mt-1"></i><span class="text-slate-700 font-medium">Drive
                             immediate bookings with high open rates.</span></li>
@@ -621,7 +938,7 @@
     </section>
 
     <!-- 7. Data Analytics -->
-    <section class="py-24 bg-white border-b border-slate-100 feature-group">
+    <section id="analytics" class="py-24 bg-white border-b border-slate-100 feature-group">
         <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
             <div class="order-1 lg:order-1">
                 <div
@@ -630,8 +947,10 @@
                 </div>
                 <h2 class="text-3xl font-bold text-slate-900 mb-4">Advanced Data Analytics</h2>
                 <p class="text-lg text-slate-500 mb-6 leading-relaxed">
-                    Put data at the forefront of your strategy. Gather insights on footfall, service times, and revenue
-                    to make informed decisions.
+                    Put data at the forefront of your strategy. Gather insights on footfall, service times, and
+                    revenue
+                    to
+                    make informed decisions.
                 </p>
                 <ul class="space-y-3 mb-8">
                     <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
@@ -642,7 +961,8 @@
                             areas for improvement.</span></li>
                     <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
                             class="w-5 h-5 text-purple-500 mt-1"></i><span class="text-slate-700 font-medium">Shape
-                            your business for future growth.</span></li>
+                            your
+                            business for future growth.</span></li>
                 </ul>
                 <a href="feature-analytics.html"
                     class="inline-flex items-center gap-2 text-purple-600 font-bold hover:text-purple-700 transition-colors">
@@ -675,7 +995,7 @@
     </section>
 
     <!-- 8. Lead Generation -->
-    <section class="py-24 bg-slate-50 border-b border-slate-200 feature-group">
+    <section id="leads" class="py-24 bg-slate-50 border-b border-slate-200 feature-group">
         <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
             <div class="order-2 lg:order-1 flex justify-center">
                 <div
@@ -696,15 +1016,17 @@
                 </div>
                 <h2 class="text-3xl font-bold text-slate-900 mb-4">Customer Lead Generation</h2>
                 <p class="text-lg text-slate-500 mb-6 leading-relaxed">
-                    Provide an exceptional experience to turn customers into brand ambassadors who generate referrals.
+                    Provide an exceptional experience to turn customers into brand ambassadors who generate
+                    referrals.
                 </p>
                 <ul class="space-y-3 mb-8">
                     <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
                             class="w-5 h-5 text-orange-500 mt-1"></i><span class="text-slate-700 font-medium">Make
-                            your business highly visible online.</span></li>
+                            your
+                            business highly visible online.</span></li>
                     <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
-                            class="w-5 h-5 text-orange-500 mt-1"></i><span class="text-slate-700 font-medium">Attract
-                            a steady stream of new customers.</span></li>
+                            class="w-5 h-5 text-orange-500 mt-1"></i><span class="text-slate-700 font-medium">Attract a
+                            steady stream of new customers.</span></li>
                     <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
                             class="w-5 h-5 text-orange-500 mt-1"></i><span class="text-slate-700 font-medium">Drive
                             organic growth via your profile.</span></li>
@@ -718,7 +1040,7 @@
     </section>
 
     <!-- 9. QTick Reports -->
-    <section class="py-24 bg-white border-b border-slate-100 feature-group">
+    <section id="reports" class="py-24 bg-white border-b border-slate-100 feature-group">
         <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
             <div class="order-1 lg:order-1">
                 <div
@@ -727,19 +1049,23 @@
                 </div>
                 <h2 class="text-3xl font-bold text-slate-900 mb-4">Comprehensive Reports</h2>
                 <p class="text-lg text-slate-500 mb-6 leading-relaxed">
-                    Generate detailed weekly, monthly, and yearly reports on key metrics like revenue, acquisition, and
+                    Generate detailed weekly, monthly, and yearly reports on key metrics like revenue, acquisition,
+                    and
                     staff performance.
                 </p>
                 <ul class="space-y-3 mb-8">
                     <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
                             class="w-5 h-5 text-gray-500 mt-1"></i><span class="text-slate-700 font-medium">Invaluable
-                            for financial planning.</span></li>
+                            for
+                            financial planning.</span></li>
                     <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
                             class="w-5 h-5 text-gray-500 mt-1"></i><span class="text-slate-700 font-medium">Review
-                            staff performance effectively.</span></li>
+                            staff
+                            performance effectively.</span></li>
                     <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
                             class="w-5 h-5 text-gray-500 mt-1"></i><span class="text-slate-700 font-medium">Make
-                            long-term strategic decisions.</span></li>
+                            long-term
+                            strategic decisions.</span></li>
                 </ul>
                 <a href="feature-analytics.html"
                     class="inline-flex items-center gap-2 text-gray-600 font-bold hover:text-gray-700 transition-colors">
@@ -760,7 +1086,8 @@
                             </div>
                         </div>
                         <div>
-                            <div class="flex justify-between text-xs font-bold mb-1"><span>Spa</span><span>45%</span>
+                            <div class="flex justify-between text-xs font-bold mb-1">
+                                <span>Spa</span><span>45%</span>
                             </div>
                             <div class="w-full bg-slate-100 rounded-full h-2">
                                 <div class="bg-purple-500 h-2 rounded-full h-bar bar-2"></div>
@@ -781,7 +1108,7 @@
     </section>
 
     <!-- 10. Enquiry Hub -->
-    <section id="frontdesk" class="py-24 bg-slate-50 feature-group">
+    <section id="enquiry" class="py-24 bg-slate-50 feature-group">
         <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
             <div class="order-2 lg:order-1 flex justify-center">
                 <div class="ui-card w-full max-w-sm p-0 overflow-hidden shadow-xl bg-white rounded-xl">
@@ -807,12 +1134,14 @@
                 <h2 class="text-3xl font-bold text-slate-900 mb-4">Central Enquiry Hub</h2>
                 <p class="text-lg text-slate-500 mb-6 leading-relaxed">
                     A single place to capture and track new enquiries. Easily review incoming leads to increase your
-                    client base.
+                    client
+                    base.
                 </p>
                 <ul class="space-y-3 mb-8">
                     <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
-                            class="w-5 h-5 text-teal-500 mt-1"></i><span class="text-slate-700 font-medium">Never miss
-                            a business opportunity.</span></li>
+                            class="w-5 h-5 text-teal-500 mt-1"></i><span class="text-slate-700 font-medium">Never
+                            miss a
+                            business opportunity.</span></li>
                     <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
                             class="w-5 h-5 text-teal-500 mt-1"></i><span class="text-slate-700 font-medium">Centralized
                             dashboard for all leads.</span></li>
@@ -827,7 +1156,6 @@
             </div>
         </div>
     </section>
-    </footer>
 
     <footer class="bg-white pt-16 pb-8 border-t border-slate-200">
         <div class="max-w-7xl mx-auto px-6">
@@ -838,7 +1166,8 @@
                             class="w-8 h-8 rounded-lg shadow-lg shadow-indigo-500/20">
                         <span class="text-xl font-bold text-slate-900">QTick</span>
                     </div>
-                    <p class="text-slate-500 mb-6 max-w-sm text-sm leading-relaxed">The all-in-one operating system for
+                    <p class="text-slate-500 mb-6 max-w-sm text-sm leading-relaxed">The all-in-one operating system
+                        for
                         modern businesses.</p>
                     <div class="flex gap-4 mb-6">
                         <a href="https://www.instagram.com/qtickbiz/" target="_blank" rel="noopener noreferrer"
@@ -884,8 +1213,8 @@
             </div>
         </div>
     </footer>
-
-    <script>lucide.createIcons();</script>
+    <script>lucide.createIcons();
+    </script>
 </body>
 
 </html>
