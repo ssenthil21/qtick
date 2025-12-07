@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue Efficiency Calculator - QTick Free Tools</title>
+    <meta name="description"
+        content="Estimate the hidden cost of waiting lines in your business. Free Queue Management efficiency calculator for clinics and gaming zones.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7L33WE0WWW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-7L33WE0WWW');
+    </script>
+</head>
+
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <img src="asset/QTick-Logo.png" alt="QTick Logo"
+                        class="w-10 h-10 rounded-xl shadow-lg shadow-indigo-500/20">
+                    <span class="text-xl font-bold tracking-tight text-slate-900">QTick</span>
+                </a>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-bold text-slate-600">
+                <a href="index.html" class="hover:text-indigo-600 transition-colors">Home</a>
+                <a href="features.html" class="hover:text-indigo-600 transition-colors">Features</a>
+                <a href="industries.html" class="hover:text-indigo-600 transition-colors">Industries</a>
+                <a href="pricing.html" class="hover:text-indigo-600 transition-colors">Pricing</a>
+                <a href="blog.html" class="hover:text-indigo-600 transition-colors">Blog</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="contact.html"
+                    class="px-5 py-2.5 text-sm font-bold text-white bg-slate-900 rounded-lg hover:bg-indigo-600 transition-all">
+                    Get Started Free
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="pt-32 pb-20 text-center px-6 bg-white border-b border-slate-100">
+        <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold mb-6">
+            <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+            Efficiency Tool
+        </div>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">Queue Cost Calculator</h1>
+        <p class="text-xl text-slate-500 max-w-2xl mx-auto">
+            Waiting isn't just annoying—it's expensive. Calculate the hidden cost of queues in your business.
+        </p>
+    </header>
+
+    <!-- Calculator Section -->
+    <section class="py-16 px-6">
+        <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
+
+            <!-- Inputs -->
+            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
+                <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <i data-lucide="clock" class="w-5 h-5 text-indigo-600"></i>
+                    Traffic Data
+                </h3>
+
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Daily Visitors (Walk-ins)</label>
+                        <input type="number" id="dailyVisitors" value="100"
+                            class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 outline-none text-lg font-mono text-slate-900">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Average Wait Time (Minutes)</label>
+                        <input type="range" id="waitTime" min="0" max="60" value="20" class="w-full accent-indigo-600">
+                        <div class="flex justify-between text-xs text-slate-500 mt-1">
+                            <span>0m</span>
+                            <span id="waitDisplay" class="font-bold text-indigo-600 text-sm">20m</span>
+                            <span>60m</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Staff Hourly Cost ($)</label>
+                        <input type="number" id="staffCost" value="15"
+                            class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 outline-none text-lg font-mono text-slate-900">
+                        <p class="text-xs text-slate-400 mt-1">Cost of staff managing the queue/front desk.</p>
+                    </div>
+
+                    <div class="p-4 bg-indigo-50 rounded-xl border border-indigo-100">
+                        <div class="text-xs font-bold text-indigo-900 uppercase mb-2">Did You Know?</div>
+                        <p class="text-sm text-indigo-800">
+                            Research shows that after 15 minutes of waiting, customer satisfaction drops by
+                            <strong>40%</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="bg-slate-900 text-white p-8 rounded-3xl shadow-2xl relative overflow-hidden">
+                <div
+                    class="absolute bottom-0 left-0 w-64 h-64 bg-cyan-600 rounded-full blur-[100px] opacity-20 -ml-20 -mb-20">
+                </div>
+
+                <h3 class="text-xl font-bold mb-8 relative z-10">Monthly Impact</h3>
+
+                <div class="space-y-8 relative z-10">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 rounded-2xl bg-slate-800/50 border border-slate-700">
+                            <div class="text-slate-400 text-xs uppercase font-bold mb-1">Customer Time Wasted</div>
+                            <div id="wastedHours" class="text-3xl font-bold text-orange-400">1,000h</div>
+                            <div class="text-xs text-slate-500 mt-1">Hours spent standing in line</div>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-slate-800/50 border border-slate-700">
+                            <div class="text-slate-400 text-xs uppercase font-bold mb-1">Queue Cost</div>
+                            <div id="queueCost" class="text-3xl font-bold text-red-400">$2,500</div>
+                            <div class="text-xs text-slate-500 mt-1">Staff time lost to chaos</div>
+                        </div>
+                    </div>
+
+                    <div class="py-6 border-t border-slate-700">
+                        <div class="text-slate-300 font-bold mb-4">With QTick Smart Queue:</div>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-green-400"></i>
+                                Wait times reduced by ~85%
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-green-400"></i>
+                                Staff freed up for service
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-green-400"></i>
+                                Happy customers = Return visits
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="contact.html"
+                        class="block w-full py-4 bg-white text-indigo-900 rounded-xl font-bold text-center hover:bg-slate-100 transition-colors">
+                        Eliminate Queues Today
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white pt-16 pb-8 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 text-center text-slate-400 text-sm">
+            &copy; 2025 QTick Inc. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        const ids = ['dailyVisitors', 'waitTime', 'staffCost'];
+        ids.forEach(id => document.getElementById(id).addEventListener('input', calculateQueue));
+
+        function calculateQueue() {
+            const visitors = parseFloat(document.getElementById('dailyVisitors').value) || 0;
+            const waitMins = parseFloat(document.getElementById('waitTime').value) || 0;
+            const staffRate = parseFloat(document.getElementById('staffCost').value) || 0;
+
+            document.getElementById('waitDisplay').textContent = waitMins + 'm';
+
+            // Calculations
+            // Total hours customers spend waiting per month (30 days)
+            const dailyWaitHours = (visitors * waitMins) / 60;
+            const monthlyWaitHours = dailyWaitHours * 30;
+
+            // Cost: Staff time spent managing/dealing with lines.
+            // Assumption: Managing a queue takes ~10% of staff attention per waiting customer OR 
+            // simpler: Staff time is wasted if lines are long. 
+            // Let's model "Opportunity Cost" = Wait Hours * Staff Rate * 0.5 (Half efficiency loss)
+            // Or roughly: 1 staff member is dedicated to front desk management per 100 visitors?
+            // Let's keep it simple: "Staff Time Cost" = (Wait Hours / 5) * Rate. 
+            // (Assuming 1 minute of staff work for every 5 minutes of customer wait - checking in, calming down, directing).
+            const staffHoursLost = monthlyWaitHours * 0.2; // 20% friction
+            const cost = staffHoursLost * staffRate;
+
+            document.getElementById('wastedHours').textContent = Math.round(monthlyWaitHours).toLocaleString() + 'h';
+            document.getElementById('queueCost').textContent = '$' + Math.round(cost).toLocaleString();
+        }
+
+        calculateQueue();
+    </script>
+</body>
+
+</html>

@@ -42,6 +42,15 @@
       "areaServed": "Global"
     }
     </script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7L33WE0WWW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-7L33WE0WWW');
+    </script>
 </head>
 
 <body class="bg-slate-50 text-slate-900">
@@ -107,24 +116,9 @@
                     </a>
                 </div>
             </div>
-            <div class="relative">
-                <!-- Visual Placeholder -->
-                <div
-                    class="aspect-square bg-slate-100 rounded-3xl border border-slate-200 shadow-2xl flex items-center justify-center relative overflow-hidden">
-                    <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 to-white"></div>
-                    <!-- Mock UI -->
-                    <div class="relative z-10 w-64 bg-white rounded-2xl shadow-xl border border-slate-100 p-4">
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="font-bold text-slate-900">Your Turn</div>
-                            <div class="text-xs font-bold text-green-500 bg-green-50 px-2 py-1 rounded">Live</div>
-                        </div>
-                        <div class="text-4xl font-extrabold text-indigo-600 mb-2 text-center">A-14</div>
-                        <div class="text-xs text-center text-slate-400 mb-4">Estimated wait: 0 mins</div>
-                        <div class="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
-                            <div class="w-full h-full bg-green-500"></div>
-                        </div>
-                    </div>
-                </div>
+            <div class="relative cursor-pointer transition-transform duration-500 hover:scale-105">
+                <img src="asset/chat.png" alt="Smart Queue Management"
+                    class="rounded-3xl shadow-2xl border border-slate-200 w-full object-cover">
             </div>
         </div>
     </header>
