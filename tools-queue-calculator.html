@@ -30,30 +30,8 @@
 <body class="bg-slate-50 text-slate-900">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <a href="index.html" class="flex items-center gap-2 group">
-                    <img src="asset/QTick-Logo.png" alt="QTick Logo"
-                        class="w-10 h-10 rounded-xl shadow-lg shadow-indigo-500/20">
-                    <span class="text-xl font-bold tracking-tight text-slate-900">QTick</span>
-                </a>
-            </div>
-            <div class="hidden md:flex items-center gap-8 text-sm font-bold text-slate-600">
-                <a href="index.html" class="hover:text-indigo-600 transition-colors">Home</a>
-                <a href="features.html" class="hover:text-indigo-600 transition-colors">Features</a>
-                <a href="industries.html" class="hover:text-indigo-600 transition-colors">Industries</a>
-                <a href="pricing.html" class="hover:text-indigo-600 transition-colors">Pricing</a>
-                <a href="blog.html" class="hover:text-indigo-600 transition-colors">Blog</a>
-            </div>
-            <div class="flex items-center gap-4">
-                <a href="contact.html"
-                    class="px-5 py-2.5 text-sm font-bold text-white bg-slate-900 rounded-lg hover:bg-indigo-600 transition-all">
-                    Get Started Free
-                </a>
-            </div>
-        </div>
-    </nav>
+    <div id="global-header"></div>
+    <script src="header.js"></script>
 
     <!-- Hero -->
     <header class="pt-32 pb-20 text-center px-6 bg-white border-b border-slate-100">
@@ -164,11 +142,8 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-white pt-16 pb-8 border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-6 text-center text-slate-400 text-sm">
-            &copy; 2025 QTick Inc. All rights reserved.
-        </div>
-    </footer>
+    <div id='global-footer'></div>
+<script src='footer.js'></script>
 
     <script>
         lucide.createIcons();

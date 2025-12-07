@@ -62,6 +62,18 @@
                 transform: translateY(0px);
             }
         }
+
+        /* Scroll Reveal Animation */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 
     <!-- Schema Markup (fixed JSON-LD) -->
@@ -99,434 +111,195 @@
 </head>
 
 <body class="bg-slate-50 text-slate-900">
-    <header class="bg-white border-b border-slate-200">
-        <!-- Top Nav -->
-        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-2">
-                <img src="asset/QTick-Logo.png" alt="QTick Logo"
-                    class="w-8 h-8 rounded-lg shadow-lg shadow-indigo-500/20">
-                <span class="text-xl font-bold text-slate-900">QTick</span>
-            </a>
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-                <div class="relative group h-full flex items-center">
-                    <a href="features.html" class="flex items-center gap-1 hover:text-indigo-600 py-4 cursor-pointer">
-                        Platform
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
-                    </a>
+    <div id="global-header"></div>
+    <script src="header.js"></script>
 
-                    <div
-                        class="absolute top-full -left-10 w-[900px] bg-white rounded-2xl shadow-xl border border-slate-100 p-6 invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 z-50">
-                        <div class="grid grid-cols-3 gap-4">
-                            <!-- Queue Management -->
-                            <a href="feature-queue-management.html"
-                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item">
-                                <div
-                                    class="p-3 bg-indigo-50 text-indigo-600 rounded-lg group-hover/item:scale-110 transition-transform">
-                                    <i data-lucide="users" class="w-5 h-5"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-900 mb-1">Queue Management</h4>
-                                    <p class="text-xs text-slate-500 leading-snug">Smart token system & tracking</p>
-                                </div>
-                            </a>
-
-                            <!-- Appointment Booking -->
-                            <a href="feature-appointment-booking.html"
-                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item">
-                                <div
-                                    class="p-3 bg-indigo-50 text-indigo-600 rounded-lg group-hover/item:scale-110 transition-transform">
-                                    <i data-lucide="calendar-check" class="w-5 h-5"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-900 mb-1">Appointments</h4>
-                                    <p class="text-xs text-slate-500 leading-snug">Online booking & scheduling</p>
-                                </div>
-                            </a>
-
-                            <!-- Billing -->
-                            <a href="feature-billing-inventory.html"
-                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item">
-                                <div
-                                    class="p-3 bg-blue-50 text-blue-600 rounded-lg group-hover/item:scale-110 transition-transform">
-                                    <i data-lucide="receipt" class="w-5 h-5"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-900 mb-1">Billing & Inventory</h4>
-                                    <p class="text-xs text-slate-500 leading-snug">Invoices, payments & stock</p>
-                                </div>
-                            </a>
-
-                            <!-- WhatsApp Marketing -->
-                            <a href="feature-whatsapp-marketing.html"
-                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item">
-                                <div
-                                    class="p-3 bg-green-50 text-green-600 rounded-lg group-hover/item:scale-110 transition-transform">
-                                    <i data-lucide="message-circle" class="w-5 h-5"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-900 mb-1">WhatsApp Marketing</h4>
-                                    <p class="text-xs text-slate-500 leading-snug">Campaigns & automation</p>
-                                </div>
-                            </a>
-
-                            <!-- Website Builder -->
-                            <a href="feature-website-builder.html"
-                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item">
-                                <div
-                                    class="p-3 bg-sky-50 text-sky-600 rounded-lg group-hover/item:scale-110 transition-transform">
-                                    <i data-lucide="globe" class="w-5 h-5"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-900 mb-1">Website Builder</h4>
-                                    <p class="text-xs text-slate-500 leading-snug">SEO-ready business profile</p>
-                                </div>
-                            </a>
-
-                            <!-- Reviews -->
-                            <a href="feature-review-system.html"
-                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item">
-                                <div
-                                    class="p-3 bg-yellow-50 text-yellow-600 rounded-lg group-hover/item:scale-110 transition-transform">
-                                    <i data-lucide="star" class="w-5 h-5"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-900 mb-1">Review System</h4>
-                                    <p class="text-xs text-slate-500 leading-snug">Automated feedback collection</p>
-                                </div>
-                            </a>
-
-                            <!-- Loyalty -->
-                            <a href="feature-loyalty-program.html"
-                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item">
-                                <div
-                                    class="p-3 bg-pink-50 text-pink-600 rounded-lg group-hover/item:scale-110 transition-transform">
-                                    <i data-lucide="heart" class="w-5 h-5"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-900 mb-1">Loyalty Program</h4>
-                                    <p class="text-xs text-slate-500 leading-snug">Rewards & retention</p>
-                                </div>
-                            </a>
-
-                            <!-- Analytics -->
-                            <a href="feature-analytics.html"
-                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item">
-                                <div
-                                    class="p-3 bg-purple-50 text-purple-600 rounded-lg group-hover/item:scale-110 transition-transform">
-                                    <i data-lucide="bar-chart-2" class="w-5 h-5"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-900 mb-1">Analytics</h4>
-                                    <p class="text-xs text-slate-500 leading-snug">Business insights & data</p>
-                                </div>
-                            </a>
-
-                            <!-- Leads -->
-                            <a href="feature-lead-management.html"
-                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item">
-                                <div
-                                    class="p-3 bg-orange-50 text-orange-600 rounded-lg group-hover/item:scale-110 transition-transform">
-                                    <i data-lucide="zap" class="w-5 h-5"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-900 mb-1">Lead Management</h4>
-                                    <p class="text-xs text-slate-500 leading-snug">Capture & convert leads</p>
-                                </div>
-                            </a>
-
-                            <!-- View All Link -->
-                            <a href="features.html"
-                                class="col-span-3 mt-2 pt-4 border-t border-slate-100 flex items-center justify-center text-sm font-bold text-indigo-600 hover:text-indigo-700">
-                                View All Features <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
-                            </a>
-                        </div>
-                    </div>
+    <!-- Hero -->
+    <div class="max-w-7xl mx-auto px-6 py-12 lg:py-20">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Hero Left -->
+            <div class="space-y-6">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold">
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                    360° service business execution
                 </div>
-                <div class="relative group h-full flex items-center">
-                    <a href="industries.html" class="flex items-center gap-1 hover:text-indigo-600 py-4 cursor-pointer">
-                        Industries
-                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
+
+                <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+                    QTick - All-in-One Business Management Software
+
+                </h1>
+
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-600 leading-tight mt-2">
+                    Salons, Spas, Gaming, Turf, Fitness & Clinics
+                    <span class="text-indigo-600 block md:inline">one smart system.</span>
+                </h2>
+
+                <p class="text-slate-500 text-base md:text-lg">
+                    QTick replaces manual registers, scattered apps and guesswork. Manage appointments, walk-ins,
+                    staff, billing, inventory, and WhatsApp marketing from a single dashboard.
+                </p>
+
+                <ul class="space-y-2 text-sm md:text-base text-slate-700">
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>
+                        Reduce no-shows with smart appointment booking
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>
+                        Faster billing & inventory tracking
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>
+                        Higher repeat visits with loyalty and campaigns
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>
+                        Real-time queue and walk-in management
+                    </li>
+                </ul>
+
+                <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                    <a href="contact.html"
+                        class="px-8 py-4 bg-indigo-600 text-white rounded-xl font-bold text-lg hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-500/30 flex items-center justify-center gap-2">
+                        Book a Free Demo
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
                     </a>
-
-                    <!-- Mega Menu Dropdown -->
-                    <div
-                        class="absolute top-full left-0 md:-left-20 w-[600px] bg-white rounded-2xl shadow-xl border border-slate-100 p-6 invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 z-50">
-                        <div class="grid grid-cols-2 gap-4">
-                            <!-- Salon Item -->
-                            <a href="industry-salon.html"
-                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item">
-                                <div
-                                    class="p-3 bg-pink-50 text-pink-600 rounded-lg group-hover/item:scale-110 transition-transform">
-                                    <i data-lucide="scissors" class="w-5 h-5"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-900 mb-1 text-sm">Salons & Barbers</h4>
-                                    <p class="text-xs text-slate-500 leading-snug">Stylist scheduling & appointments</p>
-                                </div>
-                            </a>
-
-                            <!-- Spa Item -->
-                            <a href="industry-spa-software.html"
-                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item">
-                                <div
-                                    class="p-3 bg-violet-50 text-violet-600 rounded-lg group-hover/item:scale-110 transition-transform">
-                                    <i data-lucide="flower" class="w-5 h-5"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-900 mb-1 text-sm">Spas & Wellness</h4>
-                                    <p class="text-xs text-slate-500 leading-snug">Room allocation & therapy management
-                                    </p>
-                                </div>
-                            </a>
-
-                            <!-- Clinic Item -->
-                            <a href="industry-clinic-management.html"
-                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item">
-                                <div
-                                    class="p-3 bg-cyan-50 text-cyan-600 rounded-lg group-hover/item:scale-110 transition-transform">
-                                    <i data-lucide="stethoscope" class="w-5 h-5"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-900 mb-1 text-sm">Clinics & Doctors</h4>
-                                    <p class="text-xs text-slate-500 leading-snug">Patient queue & prescriptions</p>
-                                </div>
-                            </a>
-
-                            <!-- Gym Item -->
-                            <a href="industry-fitness-gym-software.html"
-                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item">
-                                <div
-                                    class="p-3 bg-amber-50 text-amber-600 rounded-lg group-hover/item:scale-110 transition-transform">
-                                    <i data-lucide="dumbbell" class="w-5 h-5"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-900 mb-1 text-sm">Gyms & Fitness</h4>
-                                    <p class="text-xs text-slate-500 leading-snug">Class booking & memberships</p>
-                                </div>
-                            </a>
-
-                            <!-- Gaming Item -->
-                            <a href="industry-gaming.html"
-                                class="flex items-start gap-4 p-3 rounded-xl hover:bg-slate-50 transition-colors group/item">
-                                <div
-                                    class="p-3 bg-violet-50 text-violet-600 rounded-lg group-hover/item:scale-110 transition-transform">
-                                    <i data-lucide="gamepad-2" class="w-5 h-5"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-900 mb-1 text-sm">Gaming Zones</h4>
-                                    <p class="text-xs text-slate-500 leading-snug">Console time-tracking & billing</p>
-                                </div>
-                            </a>
-
-                            <!-- View All Link -->
-                            <a href="industries.html"
-                                class="col-span-2 mt-2 pt-4 border-t border-slate-100 flex items-center justify-center text-sm font-bold text-indigo-600 hover:text-indigo-700">
-                                View All Industries <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
-                            </a>
-                        </div>
-                    </div>
+                    <a href="contact.html"
+                        class="px-8 py-4 bg-white text-slate-900 border border-slate-300 rounded-xl font-bold text-lg hover:bg-slate-100 transition-all flex items-center justify-center gap-2">
+                        <i data-lucide="zap" class="w-5 h-5"></i>
+                        Start 14-Day Free Trial
+                    </a>
                 </div>
-                <a href="blog.html" class="hover:text-indigo-600">Blog</a>
-                <a href="about.html" class="hover:text-indigo-600">About Us</a>
-                <a href="pricing.html" class="hover:text-indigo-600">Pricing</a>
-                <a href="contact.html" class="hover:text-indigo-600">Contact</a>
-            </nav>
-            <div class="hidden md:flex items-center gap-4">
-                <a href="download.html" class="text-sm font-semibold text-slate-700 hover:text-indigo-600">
-                    Download App
-                </a>
-                <a href="contact.html"
-                    class="px-4 py-2 rounded-xl bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-700 shadow-sm shadow-indigo-500/30">
-                    Get Started
-                </a>
+
+
+                <p class="text-xs text-slate-400">
+                    No credit card required • Quick setup • Designed for service execution business
+                </p>
             </div>
-        </div>
 
-        <!-- Hero -->
-        <div class="max-w-7xl mx-auto px-6 py-12 lg:py-20">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Hero Left -->
-                <div class="space-y-6">
-                    <div
-                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold">
-                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                        360° service business execution
-                    </div>
-
-                    <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight">
-                        QTick - All-in-One Business Management Software for Salons, Spas,Gaming, Turf, Fitness &amp;
-                        Clinics
-                        <span class="text-indigo-600">one smart system.</span>
-                    </h1>
-
-                    <p class="text-slate-500 text-base md:text-lg">
-                        QTick replaces manual registers, scattered apps and guesswork. Manage appointments, walk-ins,
-                        staff, billing, inventory, and WhatsApp marketing from a single dashboard.
-                    </p>
-
-                    <ul class="space-y-2 text-sm md:text-base text-slate-700">
-                        <li class="flex items-center gap-2">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>
-                            Reduce no-shows with smart appointment booking
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>
-                            Faster billing & inventory tracking
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>
-                            Higher repeat visits with loyalty and campaigns
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>
-                            Real-time queue and walk-in management
-                        </li>
-                    </ul>
-
-                    <div class="flex flex-col sm:flex-row gap-4 pt-2">
-                        <a href="contact.html"
-                            class="px-8 py-4 bg-indigo-600 text-white rounded-xl font-bold text-lg hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-500/30 flex items-center justify-center gap-2">
-                            Book a Free Demo
-                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                        </a>
-                        <a href="contact.html"
-                            class="px-8 py-4 bg-white text-slate-900 border border-slate-300 rounded-xl font-bold text-lg hover:bg-slate-100 transition-all flex items-center justify-center gap-2">
-                            <i data-lucide="zap" class="w-5 h-5"></i>
-                            Start 14-Day Free Trial
-                        </a>
-                    </div>
-
-
-                    <p class="text-xs text-slate-400">
-                        No credit card required • Quick setup • Designed for service execution business
-                    </p>
+            <!-- Hero Right Visual -->
+            <div class="hero-visual hidden lg:block relative h-[600px] w-full">
+                <!-- Abstract Background Blob -->
+                <div
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-100/50 rounded-full blur-3xl -z-10">
                 </div>
 
-                <!-- Hero Right Visual -->
-                <div class="hero-visual hidden lg:block relative h-[600px] w-full">
-                    <!-- Abstract Background Blob -->
-                    <div
-                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-100/50 rounded-full blur-3xl -z-10">
-                    </div>
-
-                    <!-- Card 1: Queue Management -->
-                    <div
-                        class="absolute top-10 left-10 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 w-48 animate-float-slow z-20">
-                        <div class="flex items-center gap-3 mb-3">
-                            <div
-                                class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600">
-                                <i data-lucide="users" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-slate-500 font-bold">Queue</div>
-                                <div class="text-sm font-bold text-slate-900">Ticket #A4</div>
-                            </div>
+                <!-- Card 1: Queue Management -->
+                <div
+                    class="absolute top-10 left-10 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 w-48 animate-float-slow z-20">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div
+                            class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600">
+                            <i data-lucide="users" class="w-5 h-5"></i>
                         </div>
-                        <div class="w-full bg-slate-100 rounded-full h-1.5 mb-1">
-                            <div class="bg-indigo-500 w-3/4 h-1.5 rounded-full"></div>
-                        </div>
-                        <div class="text-[10px] text-slate-400 text-right">Serving Now</div>
-                    </div>
-
-                    <!-- Card 2: Analytics -->
-                    <div
-                        class="absolute top-20 right-0 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 w-52 animate-float-medium z-10">
-                        <div class="flex justify-between items-center mb-2">
-                            <div class="text-xs font-bold text-slate-500">Revenue</div>
-                            <div class="text-xs font-bold text-green-500">+12%</div>
-                        </div>
-                        <div class="text-2xl font-bold text-slate-900 mb-2">$4,250</div>
-                        <div class="flex items-end gap-1 h-8">
-                            <div class="w-1/5 bg-indigo-100 h-4 rounded-t"></div>
-                            <div class="w-1/5 bg-indigo-200 h-6 rounded-t"></div>
-                            <div class="w-1/5 bg-indigo-300 h-3 rounded-t"></div>
-                            <div class="w-1/5 bg-indigo-400 h-7 rounded-t"></div>
-                            <div class="w-1/5 bg-indigo-600 h-full rounded-t"></div>
+                        <div>
+                            <div class="text-xs text-slate-500 font-bold">Queue</div>
+                            <div class="text-sm font-bold text-slate-900">Ticket #A4</div>
                         </div>
                     </div>
+                    <div class="w-full bg-slate-100 rounded-full h-1.5 mb-1">
+                        <div class="bg-indigo-500 w-3/4 h-1.5 rounded-full"></div>
+                    </div>
+                    <div class="text-[10px] text-slate-400 text-right">Serving Now</div>
+                </div>
 
-                    <!-- Card 3: Booking / Calendar -->
-                    <div
-                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-5 rounded-2xl shadow-2xl border border-indigo-100 w-64 z-30 transform hover:scale-105 transition-transform duration-300">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div
-                                class="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center text-violet-600">
-                                <i data-lucide="calendar" class="w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <div class="text-sm font-bold text-slate-900">New Booking</div>
-                                <div class="text-xs text-slate-500">Just now</div>
-                            </div>
+                <!-- Card 2: Analytics -->
+                <div
+                    class="absolute top-20 right-0 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 w-52 animate-float-medium z-10">
+                    <div class="flex justify-between items-center mb-2">
+                        <div class="text-xs font-bold text-slate-500">Revenue</div>
+                        <div class="text-xs font-bold text-green-500">+12%</div>
+                    </div>
+                    <div class="text-2xl font-bold text-slate-900 mb-2">$4,250</div>
+                    <div class="flex items-end gap-1 h-8">
+                        <div class="w-1/5 bg-indigo-100 h-4 rounded-t"></div>
+                        <div class="w-1/5 bg-indigo-200 h-6 rounded-t"></div>
+                        <div class="w-1/5 bg-indigo-300 h-3 rounded-t"></div>
+                        <div class="w-1/5 bg-indigo-400 h-7 rounded-t"></div>
+                        <div class="w-1/5 bg-indigo-600 h-full rounded-t"></div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Booking / Calendar -->
+                <div
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-5 rounded-2xl shadow-2xl border border-indigo-100 w-64 z-30 transform hover:scale-105 transition-transform duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div
+                            class="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center text-violet-600">
+                            <i data-lucide="calendar" class="w-6 h-6"></i>
                         </div>
-                        <div class="flex items-center gap-3 bg-slate-50 p-3 rounded-xl border border-slate-100">
-                            <img src="https://ui-avatars.com/api/?name=Sarah+J&background=random"
-                                class="w-8 h-8 rounded-full" alt="Client">
-                            <div>
-                                <div class="text-xs font-bold text-slate-900">Sarah Jenkins</div>
-                                <div class="text-[10px] text-slate-500">Haircut &amp; Spa • 2:00 PM</div>
-                            </div>
-                        </div>
-                        <div class="mt-3 flex gap-2">
-                            <button class="flex-1 py-1.5 bg-slate-900 text-white text-xs font-bold rounded-lg">
-                                Accept
-                            </button>
-                            <button
-                                class="flex-1 py-1.5 bg-white border border-slate-200 text-slate-600 text-xs font-bold rounded-lg">
-                                Decline
-                            </button>
+                        <div>
+                            <div class="text-sm font-bold text-slate-900">New Booking</div>
+                            <div class="text-xs text-slate-500">Just now</div>
                         </div>
                     </div>
-
-                    <!-- Card 4: Marketing -->
-                    <div
-                        class="absolute bottom-20 left-0 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 w-56 animate-float-slow z-20">
-                        <div class="flex items-center gap-3 mb-2">
-                            <div
-                                class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center text-green-600">
-                                <i data-lucide="message-circle" class="w-4 h-4"></i>
-                            </div>
-                            <div class="text-xs font-bold text-slate-900">WhatsApp Campaign</div>
-                        </div>
-                        <div class="bg-green-50 p-2 rounded-lg rounded-tl-none text-[10px] text-green-800 mb-2">
-                            🎉 20% off for loyal customers this weekend!
-                        </div>
-                        <div class="flex items-center gap-2 text-[10px] text-slate-400">
-                            <i data-lucide="check-check" class="w-3 h-3 text-blue-500"></i>
-                            Sent to 150 clients
+                    <div class="flex items-center gap-3 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                        <img src="https://ui-avatars.com/api/?name=Sarah+J&background=random"
+                            class="w-8 h-8 rounded-full" alt="Client">
+                        <div>
+                            <div class="text-xs font-bold text-slate-900">Sarah Jenkins</div>
+                            <div class="text-[10px] text-slate-500">Haircut &amp; Spa • 2:00 PM</div>
                         </div>
                     </div>
+                    <div class="mt-3 flex gap-2">
+                        <button class="flex-1 py-1.5 bg-slate-900 text-white text-xs font-bold rounded-lg">
+                            Accept
+                        </button>
+                        <button
+                            class="flex-1 py-1.5 bg-white border border-slate-200 text-slate-600 text-xs font-bold rounded-lg">
+                            Decline
+                        </button>
+                    </div>
+                </div>
 
-                    <!-- Card 5: Reviews -->
-                    <div
-                        class="absolute bottom-10 right-10 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 w-48 animate-float-medium z-10">
-                        <div class="flex justify-center -space-x-2 mb-3">
-                            <img src="https://ui-avatars.com/api/?name=A&background=random"
-                                class="w-8 h-8 rounded-full border-2 border-white" alt="Avatar A">
-                            <img src="https://ui-avatars.com/api/?name=B&background=random"
-                                class="w-8 h-8 rounded-full border-2 border-white" alt="Avatar B">
-                            <img src="https://ui-avatars.com/api/?name=C&background=random"
-                                class="w-8 h-8 rounded-full border-2 border-white" alt="Avatar C">
-                            <div
-                                class="w-8 h-8 rounded-full border-2 border-white bg-slate-100 flex items-center justify-center text-[10px] font-bold text-slate-500">
-                                +12
-                            </div>
+                <!-- Card 4: Marketing -->
+                <div
+                    class="absolute bottom-20 left-0 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 w-56 animate-float-slow z-20">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
                         </div>
-                        <div class="text-center">
-                            <div class="flex justify-center text-yellow-400 gap-0.5 mb-1">
-                                <i data-lucide="star" class="w-3 h-3 fill-current"></i>
-                                <i data-lucide="star" class="w-3 h-3 fill-current"></i>
-                                <i data-lucide="star" class="w-3 h-3 fill-current"></i>
-                                <i data-lucide="star" class="w-3 h-3 fill-current"></i>
-                                <i data-lucide="star" class="w-3 h-3 fill-current"></i>
-                            </div>
-                            <div class="text-xs font-bold text-slate-900">4.9/5 Rating</div>
+                        <div class="text-xs font-bold text-slate-900">WhatsApp Campaign</div>
+                    </div>
+                    <div class="bg-green-50 p-2 rounded-lg rounded-tl-none text-[10px] text-green-800 mb-2">
+                        🎉 20% off for loyal customers this weekend!
+                    </div>
+                    <div class="flex items-center gap-2 text-[10px] text-slate-400">
+                        <i data-lucide="check-check" class="w-3 h-3 text-blue-500"></i>
+                        Sent to 150 clients
+                    </div>
+                </div>
+
+                <!-- Card 5: Reviews -->
+                <div
+                    class="absolute bottom-10 right-10 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 w-48 animate-float-medium z-10">
+                    <div class="flex justify-center -space-x-2 mb-3">
+                        <img src="https://ui-avatars.com/api/?name=A&background=random"
+                            class="w-8 h-8 rounded-full border-2 border-white" alt="Avatar A">
+                        <img src="https://ui-avatars.com/api/?name=B&background=random"
+                            class="w-8 h-8 rounded-full border-2 border-white" alt="Avatar B">
+                        <img src="https://ui-avatars.com/api/?name=C&background=random"
+                            class="w-8 h-8 rounded-full border-2 border-white" alt="Avatar C">
+                        <div
+                            class="w-8 h-8 rounded-full border-2 border-white bg-slate-100 flex items-center justify-center text-[10px] font-bold text-slate-500">
+                            +12
                         </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="flex justify-center text-yellow-400 gap-0.5 mb-1">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                        </div>
+                        <div class="text-xs font-bold text-slate-900">4.9/5 Rating</div>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
-
+    </div>
     <!-- Context Sprawl vs QTick Section -->
     <section class="py-24 bg-slate-50 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 relative z-10">
@@ -546,7 +319,7 @@
                     <div class="relative grid grid-cols-2 lg:grid-cols-3 gap-4">
                         <!-- Chaos Item 1 -->
                         <div
-                            class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 opacity-70 transform rotate-2 animate-float-slow">
+                            class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 opacity-70 transform rotate-2 animate-float-slow reveal-on-scroll">
                             <div class="flex items-center gap-3 mb-2">
                                 <div
                                     class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center text-red-500">
@@ -558,7 +331,7 @@
                         </div>
                         <!-- Chaos Item 2 -->
                         <div
-                            class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 opacity-70 transform -rotate-3 translate-y-4 animate-float-medium">
+                            class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 opacity-70 transform -rotate-3 translate-y-4 animate-float-medium reveal-on-scroll">
                             <div class="flex items-center gap-3 mb-2">
                                 <div
                                     class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center text-green-600">
@@ -570,7 +343,7 @@
                         </div>
                         <!-- Chaos Item 3 -->
                         <div
-                            class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 opacity-60 transform rotate-1 animate-float-slow animation-delay-500">
+                            class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 opacity-60 transform rotate-1 animate-float-slow animation-delay-500 reveal-on-scroll">
                             <div class="flex items-center gap-3 mb-2">
                                 <div
                                     class="w-8 h-8 bg-pink-100 rounded-lg flex items-center justify-center text-pink-500">
@@ -582,7 +355,7 @@
                         </div>
                         <!-- Chaos Item 4 -->
                         <div
-                            class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 opacity-60 transform -rotate-2 translate-y-2 animate-float-medium animation-delay-1000">
+                            class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 opacity-60 transform -rotate-2 translate-y-2 animate-float-medium animation-delay-1000 reveal-on-scroll">
                             <div class="flex items-center gap-3 mb-2">
                                 <div
                                     class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-blue-500">
@@ -594,7 +367,7 @@
                         </div>
                         <!-- Chaos Item 5 -->
                         <div
-                            class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 opacity-50 transform rotate-3 translate-x-4 animate-float-slow animation-delay-200">
+                            class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 opacity-50 transform rotate-3 translate-x-4 animate-float-slow animation-delay-200 reveal-on-scroll">
                             <div class="flex items-center gap-3 mb-2">
                                 <div
                                     class="w-8 h-8 bg-yellow-100 rounded-lg flex items-center justify-center text-yellow-600">
@@ -606,7 +379,7 @@
                         </div>
                         <!-- Chaos Item 6 -->
                         <div
-                            class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 opacity-50 transform -rotate-1 -translate-x-2 animate-float-medium animation-delay-700">
+                            class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 opacity-50 transform -rotate-1 -translate-x-2 animate-float-medium animation-delay-700 reveal-on-scroll">
                             <div class="flex items-center gap-3 mb-2">
                                 <div
                                     class="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center text-orange-600">
@@ -618,7 +391,7 @@
                         </div>
                         <!-- Chaos Item 7: WhatsApp -->
                         <div
-                            class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 opacity-60 transform rotate-2 translate-y-3 animate-float-slow animation-delay-300">
+                            class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 opacity-60 transform rotate-2 translate-y-3 animate-float-slow animation-delay-300 reveal-on-scroll">
                             <div class="flex items-center gap-3 mb-2">
                                 <div
                                     class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center text-green-600">
@@ -630,7 +403,7 @@
                         </div>
                         <!-- Chaos Item 8: Word of Mouth -->
                         <div
-                            class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 opacity-50 transform -rotate-3 translate-x-2 animate-float-medium animation-delay-1500">
+                            class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 opacity-50 transform -rotate-3 translate-x-2 animate-float-medium animation-delay-1500 reveal-on-scroll">
                             <div class="flex items-center gap-3 mb-2">
                                 <div
                                     class="w-8 h-8 bg-violet-100 rounded-lg flex items-center justify-center text-violet-500">
@@ -642,7 +415,7 @@
                         </div>
                         <!-- Chaos Item 12: No Customer Engagement -->
                         <div
-                            class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 opacity-60 transform rotate-2 translate-y-4 animate-float-slow animation-delay-600">
+                            class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 opacity-60 transform rotate-2 translate-y-4 animate-float-slow animation-delay-600 reveal-on-scroll">
                             <div class="flex items-center gap-3 mb-2">
                                 <div
                                     class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center text-red-500">
@@ -653,7 +426,8 @@
                             <div class="h-1 bg-slate-100 rounded w-full"></div>
                         </div>
                     </div>
-                    <p class="text-center text-sm font-bold text-slate-400 mt-8 uppercase tracking-widest">Multiple Apps
+                    <p class="text-center text-sm font-bold text-slate-400 mt-8 uppercase tracking-widest">Multiple
+                        Apps
                         or Manual Work</p>
                 </div>
 
@@ -815,7 +589,8 @@
                             <i data-lucide="external-link" class="w-4 h-4 text-indigo-400"></i>
                         </div>
                     </div>
-                    <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-indigo-600/40 rounded-full blur-3xl"></div>
+                    <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-indigo-600/40 rounded-full blur-3xl">
+                    </div>
                 </a>
 
                 <!-- 4. AI Voice Command -->
@@ -830,7 +605,8 @@
                             </div>
                             <h3 class="text-2xl font-bold mb-2">"Talk to your Business"</h3>
                             <p class="text-indigo-100 text-sm">
-                                Don't click menus. Just tell QTick to block a slot, add a walk-in or check today's
+                                Don't click menus. Just tell QTick to block a slot, add a walk-in or check
+                                today's
                                 revenue.
                             </p>
                         </div>
@@ -974,7 +750,7 @@
         </div>
     </section>
 
-    <!-- Value Prop Bar -->
+    <!--Value Prop Bar-- >
     <section class="bg-indigo-900 py-10">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <h3 class="text-white text-xl md:text-2xl font-bold mb-4">
@@ -987,7 +763,7 @@
         </div>
     </section>
 
-    <!-- Industries -->
+    <!--Industries -->
     <section id="industries" class="py-24 bg-slate-50 relative overflow-hidden border-y border-slate-200">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
@@ -1117,77 +893,9 @@
         </div>
     </section>
 
-    <!-- Client Stories -->
-    <section id="stories" class="py-24 bg-slate-900 text-white border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-                <div>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Real Stories, Real Growth</h2>
-                    <p class="text-slate-400">See how businesses are scaling with QTick.</p>
-                </div>
-                <a href="case-studies.html"
-                    class="text-sm font-bold text-indigo-400 flex items-center gap-2 hover:text-white transition-colors">
-                    View All Stories
-                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                </a>
-            </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Video 1 -->
-                <div
-                    class="group relative aspect-video bg-slate-800 rounded-2xl overflow-hidden cursor-pointer border border-slate-700 hover:border-indigo-500 transition-all">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-80">
-                    </div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div
-                            class="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                            <i data-lucide="play" class="w-6 h-6 text-white fill-current ml-1"></i>
-                        </div>
-                    </div>
-                    <div class="absolute bottom-4 left-4">
-                        <h4 class="font-bold text-white">The Urban Spa</h4>
-                        <p class="text-xs text-slate-300">Increased bookings by 40%</p>
-                    </div>
-                </div>
 
-                <!-- Video 2 -->
-                <div
-                    class="group relative aspect-video bg-slate-800 rounded-2xl overflow-hidden cursor-pointer border border-slate-700 hover:border-indigo-500 transition-all">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-80">
-                    </div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div
-                            class="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                            <i data-lucide="play" class="w-6 h-6 text-white fill-current ml-1"></i>
-                        </div>
-                    </div>
-                    <div class="absolute bottom-4 left-4">
-                        <h4 class="font-bold text-white">Dr. Smith's Clinic</h4>
-                        <p class="text-xs text-slate-300">Zero waiting room chaos</p>
-                    </div>
-                </div>
-
-                <!-- Video 3 -->
-                <div
-                    class="group relative aspect-video bg-slate-800 rounded-2xl overflow-hidden cursor-pointer border border-slate-700 hover:border-indigo-500 transition-all">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-80">
-                    </div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div
-                            class="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                            <i data-lucide="play" class="w-6 h-6 text-white fill-current ml-1"></i>
-                        </div>
-                    </div>
-                    <div class="absolute bottom-4 left-4">
-                        <h4 class="font-bold text-white">GovHub Service Center</h4>
-                        <p class="text-xs text-slate-300">1,000+ Daily Visitors</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reviews -->
+    <!--Reviews -->
     <section id="reviews" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
@@ -1276,7 +984,7 @@
 
 
 
-    <!-- Case Study Banner -->
+    <!--Case Study Banner-- >
     <section class="bg-white pb-10">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <a href="case-studies.html"
@@ -1292,7 +1000,7 @@
         </div>
     </section>
 
-    <!-- CTA -->
+    <!--CTA -->
     <section class="py-20 bg-slate-900 text-white relative overflow-hidden border-t border-slate-800">
         <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
             <div class="w-96 h-96 bg-indigo-600 rounded-full blur-[100px] opacity-20 absolute -top-20 -left-20">
@@ -1308,7 +1016,8 @@
                         See QTick in Action
                     </h2>
                     <p class="text-slate-400 text-lg mb-8 leading-relaxed">
-                        Ready to transform your business? Join the platform that handles queues, payments, AI marketing,
+                        Ready to transform your business? Join the platform that handles queues, payments, AI
+                        marketing,
                         and more — all in one place.
                     </p>
                     <ul class="space-y-4 text-slate-300 mb-8">
@@ -1340,11 +1049,13 @@
                 <div class="bg-white rounded-2xl p-6 md:p-8 shadow-2xl shadow-indigo-500/10">
                     <form id="lead-gen-form" class="space-y-4">
                         <h3 class="text-xl font-bold text-slate-900 mb-2">Schedule Your Personal Demo</h3>
-                        <p class="text-slate-500 text-sm mb-6">Fill out the form below and we'll be in touch shortly.
+                        <p class="text-slate-500 text-sm mb-6">Fill out the form below and we'll be in touch
+                            shortly.
                         </p>
 
                         <div>
-                            <label for="name" class="block text-sm font-semibold text-slate-700 mb-1">Full Name</label>
+                            <label for="name" class="block text-sm font-semibold text-slate-700 mb-1">Full
+                                Name</label>
                             <input type="text" id="name" name="name" placeholder="John Doe"
                                 class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none transition-all text-slate-900 placeholder:text-slate-400">
                         </div>
@@ -1426,61 +1137,8 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-white pt-16 pb-8 border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-12">
-                <div class="col-span-1 lg:col-span-2">
-                    <div class="flex items-center gap-2 mb-4">
-                        <img src="asset/QTick-Logo.png" alt="QTick Logo"
-                            class="w-8 h-8 rounded-lg shadow-lg shadow-indigo-500/20">
-                        <span class="text-xl font-bold text-slate-900">QTick</span>
-                    </div>
-                    <p class="text-slate-500 mb-6 max-w-sm text-sm leading-relaxed">
-                        The all-in-one operating system for modern businesses — from salons and spas
-                        to clinics and gyms.
-                    </p>
-                    <ul class="space-y-2 text-sm text-slate-500">
-                        <li><a href="faq.html" class="hover:text-indigo-600">FAQ</a></li>
-                        <li><a href="contact.html" class="hover:text-indigo-600">Contact Us</a></li>
-                        <li><a href="blog.html" class="hover:text-indigo-600">Blog</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-bold text-slate-900 mb-4">Product</h4>
-                    <ul class="space-y-2 text-sm text-slate-500">
-                        <li><a href="features.html" class="hover:text-indigo-600">Features</a></li>
-                        <li><a href="industries.html" class="hover:text-indigo-600">Industries</a></li>
-                        <li><a href="pricing.html" class="hover:text-indigo-600">Pricing</a></li>
-                        <li><a href="download.html" class="hover:text-indigo-600">Download</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-bold text-slate-900 mb-4">Free Tools</h4>
-                    <ul class="space-y-2 text-sm text-slate-500">
-                        <li><a href="tools-salon-roi-calculator.html" class="hover:text-indigo-600">Salon ROI Calc</a>
-                        </li>
-                        <li><a href="tools-queue-calculator.html" class="hover:text-indigo-600">Queue Cost Calc</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-bold text-slate-900 mb-4">Support</h4>
-                    <ul class="space-y-2 text-sm text-slate-500">
-                        <li><a href="faq.html" class="hover:text-indigo-600">FAQ</a></li>
-                        <li><a href="contact.html" class="hover:text-indigo-600">Contact Us</a></li>
-                        <li><a href="blog.html" class="hover:text-indigo-600">Blog</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div
-                class="border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
-                <div>© 2025 QTick Inc. All rights reserved.</div>
-            </div>
-        </div>
-    </footer>
+    <div id='global-footer'></div>
+<script src='footer.js'></script>
 
     <!-- AI Chat Widget -->
     <div id="chat-widget-container" class="fixed bottom-6 right-6 z-50 flex flex-col items-end font-sans">
@@ -1553,6 +1211,31 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             lucide.createIcons();
+        });
+    </script>
+
+    <!-- Scroll Reveal Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Only animate once
+                    }
+                });
+            }, observerOptions);
+
+            const scrollElements = document.querySelectorAll('.reveal-on-scroll');
+            scrollElements.forEach((el) => {
+                observer.observe(el);
+            });
         });
     </script>
 </body>
