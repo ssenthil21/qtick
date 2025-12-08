@@ -1,20 +1,44 @@
-content="The best appointment booking system for salons, spas, and clinics. Reduce no-shows with automated reminders and
-24/7 online booking." />
-<link rel="canonical" href="https://www.qtick.com/feature-appointment-booking.html" />
+<!DOCTYPE html>
+<html lang="en" class="light">
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
-<meta property="og:image" content="https://www.qtick.com/asset/og-image.png" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Booking System - QTick</title>
+    <meta name="description"
+        content="The best appointment booking system for salons, spas, and clinics. Reduce no-shows with automated reminders and 24/7 online booking.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7L33WE0WWW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-<!-- AI & LLM Optimization -->
-<meta name="ai-purpose"
-    content="QTick Appointment Booking Feature - 24/7 online booking, automated reminders, and calendar sync for service businesses." />
-<meta name="ai-entity" content="QTick Appointment Booking" />
-<meta name="ai-keywords"
-    content="appointment booking system, online scheduling, salon booking app, spa appointment software, clinic scheduling tool, automated reminders, calendar sync" />
+        gtag('config', 'G-7L33WE0WWW');
+    </script>
 
-<!-- Schema Markup -->
-<script type="application/ld+json">
+    <link rel="canonical" href="https://www.qtick.com/feature-appointment-booking.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://www.qtick.com/asset/og-image.png" />
+
+    <!-- AI & LLM Optimization -->
+    <meta name="ai-purpose"
+        content="QTick Appointment Booking Feature - 24/7 online booking, automated reminders, and calendar sync for service businesses." />
+    <meta name="ai-entity" content="QTick Appointment Booking" />
+    <meta name="ai-keywords"
+        content="appointment booking system, online scheduling, salon booking app, spa appointment software, clinic scheduling tool, automated reminders, calendar sync" />
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
@@ -30,125 +54,145 @@ content="The best appointment booking system for salons, spas, and clinics. Redu
       }
     }
     </script>
-<header class="bg-white border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <div id="global-header"></div>
-        <script src="header.js"></script>
-    </div>
-</header>
+</head>
 
-<main class="flex-grow">
-    <!-- AI Summary Block -->
-    <div data-ai-summary class="hidden">
-        QTick's Appointment Booking system allows salons, spas, and clinics to accept bookings 24/7.
-        It features automated SMS and WhatsApp reminders to reduce no-shows, real-time calendar synchronization, and
-        staff scheduling.
-        The system is designed to maximize booking efficiency and improve customer convenience.
-        effortlessly.
-        </p>
-        <div class="flex gap-4">
-            <a href="contact.html"
-                class="px-8 py-4 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-500/30">
-                Start Booking Now
-            </a>
-        </div>
-    </div>
-    <div class="relative">
-        <div
-            class="absolute inset-0 bg-gradient-to-tr from-indigo-100 to-purple-100 rounded-3xl transform rotate-3 scale-105 -z-10">
-        </div>
-        <div class="bg-white p-6 rounded-2xl shadow-xl border border-slate-100">
-            <!-- Mock Calendar UI -->
-            <div class="space-y-4">
-                <div class="flex justify-between items-center border-b border-slate-100 pb-4">
-                    <h3 class="font-bold text-slate-900">Today's Schedule</h3>
-                    <span class="text-xs text-slate-500">Oct 24, 2025</span>
+<body class="bg-slate-50 text-slate-900">
+    <!-- Navigation -->
+    <div id="global-header"></div>
+    <script src="header.js"></script>
+
+    <main class="flex-grow">
+        <!-- Hero -->
+        <header class="pt-32 pb-20 bg-white relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+                <div>
+                    <nav class="flex items-center gap-2 text-sm text-slate-500 mb-6" aria-label="Breadcrumb">
+                        <a href="index.html" class="hover:text-indigo-600 transition-colors">Home</a>
+                        <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+                        <a href="features.html" class="hover:text-indigo-600 transition-colors">Features</a>
+                        <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+                        <span class="text-slate-900 font-medium">Booking</span>
+                    </nav>
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-50 text-indigo-600 text-xs font-bold uppercase tracking-wider mb-6">
+                        <i data-lucide="calendar" class="w-4 h-4"></i> Smart Scheduling
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight">
+                        Bookings on <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Autopilot.</span>
+                    </h1>
+                    <p class="text-xl text-slate-500 mb-8 leading-relaxed">
+                        QTick's Appointment Booking system allows salons, spas, and clinics to accept bookings 24/7.
+                        Reduce
+                        no-shows with automated reminders and manage staff schedules effortlessly.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="contact.html"
+                            class="px-8 py-4 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-500/30 text-center">
+                            Start Booking Now
+                        </a>
+                    </div>
                 </div>
-                <div class="space-y-3">
-                    <div class="flex gap-4 p-3 bg-indigo-50 rounded-xl border border-indigo-100">
-                        <div class="text-xs font-bold text-indigo-600 w-12 pt-1">09:00</div>
-                        <div>
-                            <div class="font-bold text-slate-900 text-sm">Haircut & Style</div>
-                            <div class="text-xs text-slate-500">Sarah J. • Confirmed</div>
+
+                <div class="relative">
+                    <div class="relative transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-tr from-indigo-100 to-purple-100 rounded-3xl transform scale-105 -z-10">
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-xl border border-slate-100">
+                            <!-- Mock Calendar UI -->
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center border-b border-slate-100 pb-4">
+                                    <h3 class="font-bold text-slate-900">Today's Schedule</h3>
+                                    <span class="text-xs text-slate-500">Oct 24, 2025</span>
+                                </div>
+                                <div class="space-y-3">
+                                    <div class="flex gap-4 p-3 bg-indigo-50 rounded-xl border border-indigo-100">
+                                        <div class="text-xs font-bold text-indigo-600 w-12 pt-1">09:00</div>
+                                        <div>
+                                            <div class="font-bold text-slate-900 text-sm">Haircut & Style</div>
+                                            <div class="text-xs text-slate-500">Sarah J. • Confirmed</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-4 p-3 bg-green-50 rounded-xl border border-green-100">
+                                        <div class="text-xs font-bold text-green-600 w-12 pt-1">10:30</div>
+                                        <div>
+                                            <div class="font-bold text-slate-900 text-sm">Facial Treatment</div>
+                                            <div class="text-xs text-slate-500">Mike R. • Checked In</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-4 p-3 bg-white rounded-xl border border-slate-100 opacity-50">
+                                        <div class="text-xs font-bold text-slate-400 w-12 pt-1">12:00</div>
+                                        <div class="text-xs text-slate-400 italic">Available Slot</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="flex gap-4 p-3 bg-green-50 rounded-xl border border-green-100">
-                        <div class="text-xs font-bold text-green-600 w-12 pt-1">10:30</div>
-                        <div>
-                            <div class="font-bold text-slate-900 text-sm">Facial Treatment</div>
-                            <div class="text-xs text-slate-500">Mike R. • Checked In</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Features Grid -->
+        <section class="py-20 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-4">Why Choose QTick Booking?</h2>
+                    <p class="text-slate-500 text-lg">Everything you need to manage appointments like a pro.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                        <div
+                            class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-600 mb-6">
+                            <i data-lucide="clock" class="w-6 h-6"></i>
                         </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">24/7 Online Booking</h3>
+                        <p class="text-slate-600 text-sm">Let clients book appointments anytime, anywhere, even when
+                            you're sleeping.</p>
                     </div>
-                    <div class="flex gap-4 p-3 bg-white rounded-xl border border-slate-100 opacity-50">
-                        <div class="text-xs font-bold text-slate-400 w-12 pt-1">12:00</div>
-                        <div class="text-xs text-slate-400 italic">Available Slot</div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                        <div
+                            class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-green-600 mb-6">
+                            <i data-lucide="bell" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Automated Reminders</h3>
+                        <p class="text-slate-600 text-sm">Reduce no-shows by up to 80% with automated SMS and WhatsApp
+                            reminders.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                        <div
+                            class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 mb-6">
+                            <i data-lucide="users" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Staff Management</h3>
+                        <p class="text-slate-600 text-sm">Assign services to specific staff members and manage their
+                            availability easily.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    </div>
-    </section>
+        </section>
 
-    <!-- Features Grid -->
-    <section class="py-20 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-slate-900 mb-4">Why Choose QTick Booking?</h2>
-                <p class="text-slate-500 text-lg">Everything you need to manage appointments like a pro.</p>
+        <!-- CTA -->
+        <section class="py-20 bg-white border-t border-slate-100">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-slate-900 mb-6">Ready to Streamline Your Schedule?</h2>
+                <p class="text-slate-500 text-lg mb-8">Join thousands of businesses using QTick to manage their
+                    appointments.</p>
+                <a href="contact.html"
+                    class="px-8 py-4 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition-all">
+                    Get Started for Free
+                </a>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
-                    <div
-                        class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-600 mb-6">
-                        <i data-lucide="clock" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">24/7 Online Booking</h3>
-                    <p class="text-slate-600 text-sm">Let clients book appointments anytime, anywhere, even when
-                        you're sleeping.</p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
-                    <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-green-600 mb-6">
-                        <i data-lucide="bell" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Automated Reminders</h3>
-                    <p class="text-slate-600 text-sm">Reduce no-shows by up to 80% with automated SMS and WhatsApp
-                        reminders.</p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
-                    <div
-                        class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 mb-6">
-                        <i data-lucide="users" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Staff Management</h3>
-                    <p class="text-slate-600 text-sm">Assign services to specific staff members and manage their
-                        availability easily.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- CTA -->
-    <section class="py-20 bg-white border-t border-slate-100">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold text-slate-900 mb-6">Ready to Streamline Your Schedule?</h2>
-            <p class="text-slate-500 text-lg mb-8">Join thousands of businesses using QTick to manage their
-                appointments.</p>
-            <a href="contact.html"
-                class="px-8 py-4 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition-all">
-                Get Started for Free
-            </a>
-        </div>
-    </section>
-</main>
+    <!-- Footer -->
+    <div id='global-footer'></div>
+    <script src='footer.js'></script>
 
-<!-- Footer -->
-<div id='global-footer'></div>
-<script src='footer.js'></script>
-
-<script>
-    lucide.createIcons();
-</script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 
 </html>

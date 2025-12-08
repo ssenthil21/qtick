@@ -6741,21 +6741,101 @@ All colors MUST be HSL.
         <div class="absolute top-10 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
         <div class="absolute bottom-10 left-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-3xl mx-auto">
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">Ready to Make Your
-                    Salon <span class="bg-gradient-hero bg-clip-text text-transparent">Run on Auto-Pilot?</span>
-                </h2>
-                <p class="text-lg text-muted-foreground mb-10">Join 200+ salon owners who've transformed their
-                    business with
-                    QTick. Start your free trial today – no credit card required.</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center"><a href="#cta"
-                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-hero text-white shadow-glow hover:shadow-lg hover:scale-105 transition-all duration-300 h-11 rounded-md px-8 text-base">Start
-                        14-Day Free Trial</a><a href="#cta"
-                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 rounded-md px-8 text-base">Book
-                        a Free Demo</a></div>
-                <p class="text-sm text-muted-foreground mt-6">No tech skills needed · We'll help you set it up ·
-                    Cancel
-                    anytime</p>
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Column: Copy -->
+                <div class="text-left">
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">Ready to Make Your
+                        Salon <span class="bg-gradient-hero bg-clip-text text-transparent">Run on Auto-Pilot?</span>
+                    </h2>
+                    <p class="text-lg text-muted-foreground mb-8">Join 200+ salon owners who've transformed their
+                        business with QTick. Get a personalized demo and start your journey today.</p>
+
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3">
+                            <div class="bg-green-100 rounded-full p-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                    stroke-linejoin="round" class="text-green-600">
+                                    <path d="M20 6 9 17l-5-5" />
+                                </svg>
+                            </div>
+                            <span class="text-muted-foreground font-medium">No tech skills needed</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="bg-green-100 rounded-full p-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                    stroke-linejoin="round" class="text-green-600">
+                                    <path d="M20 6 9 17l-5-5" />
+                                </svg>
+                            </div>
+                            <span class="text-muted-foreground font-medium">We'll help you set it up</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="bg-green-100 rounded-full p-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                    stroke-linejoin="round" class="text-green-600">
+                                    <path d="M20 6 9 17l-5-5" />
+                                </svg>
+                            </div>
+                            <span class="text-muted-foreground font-medium">Cancel anytime</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Form -->
+                <div class="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-8">
+                    <form id="lead-capture-form" class="space-y-4">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="space-y-2">
+                                <label for="name"
+                                    class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Name</label>
+                                <input id="name" name="name"
+                                    class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                    placeholder="John Doe" required>
+                            </div>
+                            <div class="space-y-2">
+                                <label for="phone"
+                                    class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Phone</label>
+                                <input id="phone" name="phone" type="tel"
+                                    class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                    placeholder="+91 98765 43210" required>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label for="email"
+                                class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Email
+                                <span class="text-muted-foreground font-normal">(Optional)</span></label>
+                            <input id="email" name="email" type="email"
+                                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                placeholder="john@example.com">
+                        </div>
+
+                        <div class="space-y-2">
+                            <label for="salon-name"
+                                class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Salon
+                                Name</label>
+                            <input id="salon-name" name="salon-name"
+                                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                placeholder="Luxe Salon" required>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label for="message"
+                                class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Message</label>
+                            <textarea id="message" name="message"
+                                class="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                placeholder="Tell us about your requirements..." required></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-gradient-hero text-white hover:opacity-90 h-11 px-4 py-2 w-full shadow-lg shadow-primary/20">
+                            Get Free Consultation
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -6824,6 +6904,68 @@ All colors MUST be HSL.
                     });
                 });
             });
+        });
+    </script>
+    <script>
+        // Lead Capture Form Script
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('lead-capture-form');
+            if (form) {
+                form.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+
+                    const submitBtn = form.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.innerText;
+                    submitBtn.innerText = 'Sending...';
+                    submitBtn.disabled = true;
+
+                    const formData = new FormData(form);
+                    const name = formData.get('name');
+                    const phone = formData.get('phone');
+                    const email = formData.get('email');
+                    const salonName = formData.get('salon-name');
+                    const message = formData.get('message');
+
+                    // Concatenate phone and salon name into message
+                    const concatenatedMessage = `Phone: ${phone}, Salon: ${salonName}, Message: ${message}`;
+
+                    try {
+                        const baseUrl = 'https://api.qa.qtick.co/web/v2/add-biz';
+                        const url = new URL(baseUrl);
+                        url.searchParams.append('name', name);
+                        url.searchParams.append('email', email);
+                        url.searchParams.append('message', concatenatedMessage);
+
+                        const response = await fetch(url.toString(), {
+                            method: 'POST',
+                            headers: {
+                                'Authorization': 'bizprofile-web:D9yGl4wpT1'
+                            }
+                        });
+
+                        if (response.ok) {
+                            if (window.toast) {
+                                window.toast.success('Thank you! We will contact you shortly.');
+                            } else {
+                                alert('Thank you! We will contact you shortly.');
+                            }
+                            form.reset();
+                        } else {
+                            throw new Error('Network response was not ok');
+                        }
+                    } catch (error) {
+                        console.error('Error:', error);
+                        if (window.toast) {
+                            window.toast.error('Something went wrong. Please try again.');
+                        } else {
+                            alert('Something went wrong. Please try again.');
+                        }
+                    } finally {
+                        submitBtn.innerText = originalText;
+                        submitBtn.disabled = false;
+                    }
+                });
+            }
         });
     </script>
 </body>
