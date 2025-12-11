@@ -74,6 +74,28 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Custom Attention Animation for Video Button */
+        @keyframes attention-pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4);
+            }
+
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(99, 102, 241, 0);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
+            }
+        }
+
+        .animate-attention {
+            animation: attention-pulse 2s infinite;
+        }
     </style>
 
     <!-- Schema Markup (fixed JSON-LD) -->
@@ -165,11 +187,11 @@
                         Book a Free Demo
                         <i data-lucide="arrow-right" class="w-5 h-5"></i>
                     </a>
-                    <a href="contact.html"
-                        class="px-8 py-4 bg-white text-slate-900 border border-slate-300 rounded-xl font-bold text-lg hover:bg-slate-100 transition-all flex items-center justify-center gap-2">
-                        <i data-lucide="zap" class="w-5 h-5"></i>
-                        Start 14-Day Free Trial
-                    </a>
+                    <button onclick="openVideoModal()"
+                        class="px-8 py-4 bg-white text-slate-900 border border-slate-300 rounded-xl font-bold text-lg hover:bg-slate-50 hover:border-indigo-300 hover:text-indigo-600 transition-all flex items-center justify-center gap-2 group animate-attention">
+                        <i data-lucide="play-circle" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
+                        Watch Video
+                    </button>
                 </div>
 
 
@@ -1140,7 +1162,110 @@
     <div id='global-footer'></div>
     <script src='footer.js'></script>
 
+    <!-- Sticky Social Sidebar -->
+    <div
+        class="fixed left-0 top-1/2 -translate-y-1/2 z-40 bg-white shadow-lg rounded-r-xl border border-l-0 border-slate-200 p-2 flex flex-col gap-4 hidden md:flex transition-transform duration-300 hover:translate-x-1">
+        <a href="#" class="text-slate-400 hover:text-indigo-600 hover:scale-110 transition-all p-1" title="LinkedIn">
+            <i data-lucide="linkedin" class="w-5 h-5"></i>
+        </a>
+        <a href="#" class="text-slate-400 hover:text-pink-600 hover:scale-110 transition-all p-1" title="Instagram">
+            <i data-lucide="instagram" class="w-5 h-5"></i>
+        </a>
+        <a href="#" class="text-slate-400 hover:text-blue-600 hover:scale-110 transition-all p-1" title="Facebook">
+            <i data-lucide="facebook" class="w-5 h-5"></i>
+        </a>
+        <a href="#" class="text-slate-400 hover:text-red-600 hover:scale-110 transition-all p-1" title="YouTube">
+            <i data-lucide="youtube" class="w-5 h-5"></i>
+        </a>
+    </div>
+
     <script src="js/chat-module.js"></script>
+
+    <!-- Video Modal -->
+    <div id="video-modal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog"
+        aria-modal="true">
+        <!-- Backdrop -->
+        <div class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm transition-opacity opacity-0" id="modal-backdrop">
+        </div>
+
+        <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+            <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+                <!-- Modal Panel -->
+                <div class="relative transform overflow-hidden rounded-2xl bg-black text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-4xl scale-95 opacity-0"
+                    id="modal-panel">
+
+                    <!-- Close Button -->
+                    <div class="absolute right-0 top-0 hidden pr-4 pt-4 sm:block z-10">
+                        <button type="button" onclick="closeVideoModal()"
+                            class="rounded-md bg-black/50 text-gray-400 hover:text-white focus:outline-none transition-colors">
+                            <span class="sr-only">Close</span>
+                            <i data-lucide="x" class="w-6 h-6"></i>
+                        </button>
+                    </div>
+
+                    <!-- Video Aspect Ratio Container -->
+                    <div class="relative w-full aspect-video bg-black">
+                        <iframe id="video-frame" class="absolute top-0 left-0 w-full h-full" src=""
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const videoModal = document.getElementById('video-modal');
+        const modalBackdrop = document.getElementById('modal-backdrop');
+        const modalPanel = document.getElementById('modal-panel');
+        const videoFrame = document.getElementById('video-frame');
+        const VIDEO_ID = '9FdnJ0d6G4k'; // Provided by user
+
+        function openVideoModal() {
+            // Show modal
+            videoModal.classList.remove('hidden');
+
+            // Animate in
+            requestAnimationFrame(() => {
+                modalBackdrop.classList.remove('opacity-0');
+                modalPanel.classList.remove('scale-95', 'opacity-0');
+                modalPanel.classList.add('scale-100', 'opacity-100');
+            });
+
+            // Add origin parameter to attempt to satisfy strict origin checks
+            videoFrame.src = `https://www.youtube.com/embed/${VIDEO_ID}?origin=https://www.youtube.com&rel=0`;
+
+            // Re-init icons for the close button
+            lucide.createIcons();
+        }
+
+        function closeVideoModal() {
+            // Animate out
+            modalBackdrop.classList.add('opacity-0');
+            modalPanel.classList.remove('scale-100', 'opacity-100');
+            modalPanel.classList.add('scale-95', 'opacity-0');
+
+            // Hide after animation and stop video
+            setTimeout(() => {
+                videoModal.classList.add('hidden');
+                videoFrame.src = ''; // Stop video playback
+            }, 300);
+        }
+
+        // Close on backdrop click
+        videoModal.addEventListener('click', (e) => {
+            if (e.target.closest('#modal-panel')) return;
+            closeVideoModal();
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !videoModal.classList.contains('hidden')) {
+                closeVideoModal();
+            }
+        });
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             lucide.createIcons();

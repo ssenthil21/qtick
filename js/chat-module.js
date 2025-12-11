@@ -45,6 +45,19 @@
                         grow your business!
                     </div>
                 </div>
+
+                <!-- Quick Actions -->
+                <div class="flex flex-wrap gap-2 pl-11" id="quick-actions">
+                    <button class="quick-action-btn px-3 py-1.5 bg-white border border-indigo-100 text-indigo-600 rounded-full text-xs font-medium hover:bg-indigo-50 hover:border-indigo-200 transition-colors shadow-sm">
+                        Tell about QTick features
+                    </button>
+                    <button class="quick-action-btn px-3 py-1.5 bg-white border border-indigo-100 text-indigo-600 rounded-full text-xs font-medium hover:bg-indigo-50 hover:border-indigo-200 transition-colors shadow-sm">
+                        Setup QTick demo
+                    </button>
+                    <button class="quick-action-btn px-3 py-1.5 bg-white border border-indigo-100 text-indigo-600 rounded-full text-xs font-medium hover:bg-indigo-50 hover:border-indigo-200 transition-colors shadow-sm">
+                        Connect with sales team
+                    </button>
+                </div>
             </div>
 
             <!-- Input Area -->
@@ -67,11 +80,25 @@
 
         <!-- Toggle Button -->
         <button id="chat-toggle-btn"
-            class="w-14 h-14 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full shadow-lg shadow-indigo-500/30 flex items-center justify-center transition-all duration-300 hover:scale-110 group">
+            class="w-14 h-14 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full shadow-lg shadow-indigo-500/30 flex items-center justify-center transition-all duration-300 hover:scale-110 group animate-glow-pulse">
             <i data-lucide="message-square" class="w-7 h-7 group-hover:scale-110 transition-transform"></i>
         </button>
     </div>
     `;
+
+    // 1.5 Inject Styles
+    const style = document.createElement('style');
+    style.innerHTML = `
+        @keyframes glow-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(79, 70, 229, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(79, 70, 229, 0); }
+        }
+        .animate-glow-pulse {
+            animation: glow-pulse 2s infinite;
+        }
+    `;
+    document.head.appendChild(style);
 
     // 2. Inject UI
     document.body.insertAdjacentHTML('beforeend', chatWidgetHTML);
@@ -92,11 +119,19 @@
     const chatMessages = document.getElementById('chat-messages');
     const chatInput = document.getElementById('chat-input');
     const chatForm = document.getElementById('chat-form');
+    const quickActionBtns = document.querySelectorAll('.quick-action-btn');
 
     // Event Listeners
     chatToggleBtn.addEventListener('click', toggleChat);
     closeChatBtn.addEventListener('click', toggleChat);
-    chatForm.addEventListener('submit', sendMessage);
+    chatForm.addEventListener('submit', (e) => sendMessage(e));
+
+    // Quick Action Listeners
+    quickActionBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            sendMessage(null, btn.textContent.trim());
+        });
+    });
 
     // Functions
     function toggleChat() {
@@ -126,15 +161,19 @@
         }
     }
 
-    async function sendMessage(event) {
-        event.preventDefault();
+    async function sendMessage(event, customMessage = null) {
+        if (event) event.preventDefault();
 
-        const message = chatInput.value.trim();
+        const message = customMessage || chatInput.value.trim();
         if (!message) return;
 
         appendMessage('user', message);
         chatInput.value = '';
         scrollToBottom();
+
+        // Remove quick actions after first message to keep things clean (optional, keeping for now)
+        const quickActions = document.getElementById('quick-actions');
+        if (quickActions) quickActions.remove();
 
         if (!isLeadCaptured && messageCount >= LEAD_CAPTURE_THRESHOLD) {
             showLeadForm();
