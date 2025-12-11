@@ -96,6 +96,25 @@
         .animate-attention {
             animation: attention-pulse 2s infinite;
         }
+
+        /* Hero Entrance Animation */
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            opacity: 0;
+            /* Hidden initially */
+            animation: fade-in-up 0.8s ease-out forwards;
+        }
     </style>
 
     <!-- Schema Markup (fixed JSON-LD) -->
@@ -141,28 +160,31 @@
         <div class="grid lg:grid-cols-2 gap-12 items-center">
             <!-- Hero Left -->
             <div class="space-y-6">
-                <div
-                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold animate-fade-in-up"
+                    style="animation-delay: 100ms">
                     <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
                     360° service business execution
                 </div>
 
-                <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+                <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight animate-fade-in-up"
+                    style="animation-delay: 200ms">
                     QTick - All-in-One Business Management Software
 
                 </h1>
 
-                <h2 class="text-2xl md:text-3xl font-bold text-slate-600 leading-tight mt-2">
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-600 leading-tight mt-2 animate-fade-in-up"
+                    style="animation-delay: 300ms">
                     Salons, Spas, Gaming, Turf, Fitness & Clinics
                     <span class="text-indigo-600 block md:inline">one smart system.</span>
                 </h2>
 
-                <p class="text-slate-500 text-base md:text-lg">
+                <p class="text-slate-500 text-base md:text-lg animate-fade-in-up" style="animation-delay: 400ms">
                     QTick replaces manual registers, scattered apps and guesswork. Manage appointments, walk-ins,
                     staff, billing, inventory, and WhatsApp marketing from a single dashboard.
                 </p>
 
-                <ul class="space-y-2 text-sm md:text-base text-slate-700">
+                <ul class="space-y-2 text-sm md:text-base text-slate-700 animate-fade-in-up"
+                    style="animation-delay: 500ms">
                     <li class="flex items-center gap-2">
                         <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>
                         Reduce no-shows with smart appointment booking
@@ -181,7 +203,7 @@
                     </li>
                 </ul>
 
-                <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                <div class="flex flex-col sm:flex-row gap-4 pt-2 animate-fade-in-up" style="animation-delay: 600ms">
                     <a href="contact.html"
                         class="px-8 py-4 bg-indigo-600 text-white rounded-xl font-bold text-lg hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-500/30 flex items-center justify-center gap-2">
                         Book a Free Demo
@@ -195,7 +217,7 @@
                 </div>
 
 
-                <p class="text-xs text-slate-400">
+                <p class="text-xs text-slate-400 animate-fade-in-up" style="animation-delay: 700ms">
                     No credit card required • Quick setup • Designed for service execution business
                 </p>
             </div>
@@ -1165,16 +1187,20 @@
     <!-- Sticky Social Sidebar -->
     <div
         class="fixed left-0 top-1/2 -translate-y-1/2 z-40 bg-white shadow-lg rounded-r-xl border border-l-0 border-slate-200 p-2 flex flex-col gap-4 hidden md:flex transition-transform duration-300 hover:translate-x-1">
-        <a href="#" class="text-slate-400 hover:text-indigo-600 hover:scale-110 transition-all p-1" title="LinkedIn">
+        <a href="https://in.linkedin.com/company/qtickbiz" target="_blank"
+            class="text-slate-400 hover:text-indigo-600 hover:scale-110 transition-all p-1" title="LinkedIn">
             <i data-lucide="linkedin" class="w-5 h-5"></i>
         </a>
-        <a href="#" class="text-slate-400 hover:text-pink-600 hover:scale-110 transition-all p-1" title="Instagram">
+        <a href="https://www.instagram.com/qtickbiz/" target="_blank"
+            class="text-slate-400 hover:text-pink-600 hover:scale-110 transition-all p-1" title="Instagram">
             <i data-lucide="instagram" class="w-5 h-5"></i>
         </a>
-        <a href="#" class="text-slate-400 hover:text-blue-600 hover:scale-110 transition-all p-1" title="Facebook">
+        <a href="https://www.facebook.com/qtickbiz" target="_blank"
+            class="text-slate-400 hover:text-blue-600 hover:scale-110 transition-all p-1" title="Facebook">
             <i data-lucide="facebook" class="w-5 h-5"></i>
         </a>
-        <a href="#" class="text-slate-400 hover:text-red-600 hover:scale-110 transition-all p-1" title="YouTube">
+        <a href="https://www.youtube.com/@qtickbiz" target="_blank"
+            class="text-slate-400 hover:text-red-600 hover:scale-110 transition-all p-1" title="YouTube">
             <i data-lucide="youtube" class="w-5 h-5"></i>
         </a>
     </div>
