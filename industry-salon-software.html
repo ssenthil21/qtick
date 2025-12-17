@@ -5322,11 +5322,14 @@ All colors MUST be HSL.
                         clinic software for bookings, billing, and WhatsApp automation. Built for Indian
                         businesses that want to
                         grow.</p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"><a href="#cta"
-                            class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-hero text-white shadow-glow hover:shadow-lg hover:scale-105 transition-all duration-300 h-11 rounded-md px-8 text-base">Start
-                            14-Day Free Trial</a><a href="#cta"
-                            class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 rounded-md px-8 text-base">Book
-                            a Free Demo Call</a></div>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+                        <a href="javascript:void(0)" onclick="openLeadPopup()"
+                            class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-gradient-hero text-white shadow-glow hover:shadow-lg hover:scale-105 transition-all duration-300 h-11 rounded-md px-8 text-base">Start
+                            14-Day Free Trial</a>
+                        <a href="javascript:void(0)" onclick="openLeadPopup()"
+                            class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 rounded-md px-8 text-base">Book
+                            a Free Demo Call</a>
+                    </div>
                     <div class="flex flex-wrap gap-6 justify-center lg:justify-start text-sm text-muted-foreground">
                         <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24"
                                 height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -5478,7 +5481,7 @@ All colors MUST be HSL.
                             </svg></div>
                     </div>
                     <div class="text-3xl md:text-4xl font-bold text-foreground mb-1">200+</div>
-                    <div class="text-sm text-muted-foreground">Salons &amp; Clinics Managed</div>
+                    <div class="text-sm text-muted-foreground">Salons Managed</div>
                 </div>
                 <div class="text-center">
                     <div class="flex justify-center mb-3">
@@ -6533,6 +6536,71 @@ All colors MUST be HSL.
             </div>
         </div>
     </section>
+
+    <!-- Client Video Testimonial Section -->
+    <section class="py-24 bg-white relative overflow-hidden">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">Watch <span
+                    class="bg-gradient-hero bg-clip-text text-transparent">Real Success Stories</span></h2>
+            <p class="text-lg text-muted-foreground max-w-2xl mx-auto mb-12">See how salon owners are transforming their
+                business with QTick</p>
+
+            <div class="flex flex-col md:flex-row justify-center gap-8 items-center">
+                <!-- Video 1 Container -->
+                <div class="relative w-full max-w-[340px] rounded-[2rem] overflow-hidden shadow-2xl border-8 border-slate-900 aspect-[9/16] cursor-pointer group"
+                    onclick="this.innerHTML='<iframe class=\'absolute top-0 left-0 w-full h-full\' src=\'https://www.youtube.com/embed/7HsAzaZSFLU?autoplay=1\' title=\'QTick Client Testimonial 1\' frameborder=\'0\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen></iframe>'">
+
+                    <!-- Thumbnail Image -->
+                    <img src="https://img.youtube.com/vi/7HsAzaZSFLU/maxresdefault.jpg" alt="Video Thumbnail"
+                        class="w-full h-full object-cover">
+
+                    <!-- Play Button Overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                        <div
+                            class="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center pl-1 shadow-lg group-hover:scale-110 transition-transform duration-300 backdrop-blur-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="currentColor" class="text-slate-900 w-10 h-10">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 2 Container -->
+                <div class="relative w-full max-w-[340px] rounded-[2rem] overflow-hidden shadow-2xl border-8 border-slate-900 aspect-[9/16] cursor-pointer group"
+                    onclick="this.innerHTML='<iframe class=\'absolute top-0 left-0 w-full h-full\' src=\'https://www.youtube.com/embed/qbjSMxlNI2Y?autoplay=1\' title=\'QTick Client Testimonial 2\' frameborder=\'0\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen></iframe>'">
+
+                    <!-- Thumbnail Image -->
+                    <img src="https://img.youtube.com/vi/qbjSMxlNI2Y/maxresdefault.jpg" alt="Video Thumbnail"
+                        class="w-full h-full object-cover">
+
+                    <!-- Play Button Overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                        <div
+                            class="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center pl-1 shadow-lg group-hover:scale-110 transition-transform duration-300 backdrop-blur-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="currentColor" class="text-slate-900 w-10 h-10">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 flex items-center justify-center gap-2 text-sm font-medium text-muted-foreground">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-play-circle text-primary">
+                    <circle cx="12" cy="12" r="10" />
+                    <polygon points="10 8 16 12 10 16" />
+                </svg>
+                <span>Hear from our happy customers</span>
+            </div>
+        </div>
+    </section>
+
     <section id="faq" class="py-20 bg-muted/30">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -6786,54 +6854,72 @@ All colors MUST be HSL.
 
                 <!-- Right Column: Form -->
                 <div class="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-8">
-                    <form id="lead-capture-form" class="space-y-4">
+                    <form id="bottom-lead-form" class="space-y-4" onsubmit="handleBottomFormSubmit(event)">
                         <div class="grid grid-cols-2 gap-4">
                             <div class="space-y-2">
-                                <label for="name"
-                                    class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Name</label>
-                                <input id="name" name="name"
-                                    class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                                    placeholder="John Doe" required>
+                                <label for="bottom-name" class="text-sm font-medium text-slate-700">Name</label>
+                                <input type="text" id="bottom-name" required
+                                    class="flex h-11 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                    placeholder="John Doe">
                             </div>
                             <div class="space-y-2">
-                                <label for="phone"
-                                    class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Phone</label>
-                                <input id="phone" name="phone" type="tel"
-                                    class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                                    placeholder="+91 98765 43210" required>
+                                <label for="bottom-phone" class="text-sm font-medium text-slate-700">Phone</label>
+                                <input type="tel" id="bottom-phone" required
+                                    class="flex h-11 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                    placeholder="+91 98765 43210">
                             </div>
                         </div>
 
                         <div class="space-y-2">
-                            <label for="email"
-                                class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Email
-                                <span class="text-muted-foreground font-normal">(Optional)</span></label>
-                            <input id="email" name="email" type="email"
-                                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                            <label for="bottom-email" class="text-sm font-medium text-slate-700">Email <span
+                                    class="text-slate-400 font-normal">(Optional)</span></label>
+                            <input type="email" id="bottom-email"
+                                class="flex h-11 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                                 placeholder="john@example.com">
                         </div>
 
                         <div class="space-y-2">
-                            <label for="salon-name"
-                                class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Salon
-                                Name</label>
-                            <input id="salon-name" name="salon-name"
-                                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                                placeholder="Luxe Salon" required>
+                            <label for="bottom-salon" class="text-sm font-medium text-slate-700">Salon Name</label>
+                            <input type="text" id="bottom-salon" required
+                                class="flex h-11 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                placeholder="Luxe Salon">
                         </div>
 
                         <div class="space-y-2">
-                            <label for="message"
-                                class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Message</label>
-                            <textarea id="message" name="message"
-                                class="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                                placeholder="Tell us about your requirements..." required></textarea>
+                            <label for="bottom-message" class="text-sm font-medium text-slate-700">Message</label>
+                            <textarea id="bottom-message" rows="3"
+                                class="flex min-h-[80px] w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                placeholder="Tell us about your requirements..."></textarea>
                         </div>
 
-                        <button type="submit"
-                            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-gradient-hero text-white hover:opacity-90 h-11 px-4 py-2 w-full shadow-lg shadow-primary/20">
-                            Get Free Consultation
-                        </button>
+                        <div class="pt-2 space-y-3">
+                            <button type="submit"
+                                class="w-full inline-flex justify-center items-center rounded-xl bg-yellow-400 px-3 py-3 text-base font-bold text-slate-900 shadow-sm hover:bg-yellow-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500 focus-visible:ring-offset-2 transition-all">
+                                Get Free Consultation
+                            </button>
+
+                            <div class="relative">
+                                <div class="absolute inset-0 flex items-center">
+                                    <div class="w-full border-t border-slate-200"></div>
+                                </div>
+                                <div class="relative flex justify-center text-xs uppercase">
+                                    <span class="bg-white px-2 text-slate-400 font-medium">Or</span>
+                                </div>
+                            </div>
+
+                            <button type="button" onclick="sendToWhatsApp('bottom')"
+                                class="w-full inline-flex justify-center items-center rounded-xl bg-[#25D366] px-3 py-3 text-base font-bold text-white shadow-sm hover:bg-[#128C7E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 transition-all gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="white" stroke="currentColor" stroke-width="0" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-message-circle">
+                                    <path
+                                        d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.273-.101-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.136-.135.303-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.172-.005-.372-.005-.572-.005-.2 0-.523.074-.797.372-.27.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.194 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.196-.57-.346z" />
+                                    <path
+                                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                                </svg>
+                                Chat on WhatsApp
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -6967,6 +7053,208 @@ All colors MUST be HSL.
                 });
             }
         });
+    </script>
+    <!-- Lead Generation Popup -->
+    <div id="lead-popup" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog"
+        aria-modal="true">
+        <!-- Backdrop -->
+        <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity opacity-0"
+            id="lead-popup-backdrop"></div>
+
+        <div class="fixed inset-0 z-10 overflow-y-auto">
+            <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+                <!-- Modal Panel -->
+                <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-lg opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                    id="lead-popup-panel">
+
+                    <!-- Close Button -->
+                    <div class="absolute top-4 right-4 z-10">
+                        <button type="button" onclick="closeLeadPopup()"
+                            class="rounded-full p-2 bg-slate-100 text-slate-400 hover:text-slate-500 hover:bg-slate-200 focus:outline-none transition-colors">
+                            <span class="sr-only">Close</span>
+                            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="p-6 sm:p-8">
+                        <div class="text-center sm:text-left mb-6">
+                            <h3 class="text-2xl font-bold leading-6 text-slate-900" id="modal-title">Get Started with
+                                QTick</h3>
+                            <div class="mt-2">
+                                <p class="text-sm text-slate-500">Fill in your details to get a free consultation or
+                                    chat with us instantly.</p>
+                            </div>
+                        </div>
+
+                        <form id="popup-lead-form" class="space-y-4" onsubmit="handlePopupSubmit(event)">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="space-y-2">
+                                    <label for="popup-name" class="text-sm font-medium text-slate-700">Name</label>
+                                    <input type="text" id="popup-name" required
+                                        class="flex h-11 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                        placeholder="John Doe">
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="popup-phone" class="text-sm font-medium text-slate-700">Phone</label>
+                                    <input type="tel" id="popup-phone" required
+                                        class="flex h-11 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                        placeholder="+91 98765 43210">
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <label for="popup-email" class="text-sm font-medium text-slate-700">Email <span
+                                        class="text-slate-400 font-normal">(Optional)</span></label>
+                                <input type="email" id="popup-email"
+                                    class="flex h-11 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                    placeholder="john@example.com">
+                            </div>
+
+                            <div class="space-y-2">
+                                <label for="popup-salon" class="text-sm font-medium text-slate-700">Salon Name</label>
+                                <input type="text" id="popup-salon" required
+                                    class="flex h-11 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                    placeholder="Luxe Salon">
+                            </div>
+
+                            <div class="space-y-2">
+                                <label for="popup-message" class="text-sm font-medium text-slate-700">Message</label>
+                                <textarea id="popup-message" rows="3"
+                                    class="flex min-h-[80px] w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                    placeholder="Tell us about your requirements..."></textarea>
+                            </div>
+
+                            <div class="pt-2 space-y-3">
+                                <button type="submit"
+                                    class="w-full inline-flex justify-center items-center rounded-xl bg-yellow-400 px-3 py-3 text-base font-bold text-slate-900 shadow-sm hover:bg-yellow-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500 focus-visible:ring-offset-2 transition-all">
+                                    Send Message
+                                </button>
+
+                                <div class="relative">
+                                    <div class="absolute inset-0 flex items-center">
+                                        <div class="w-full border-t border-slate-200"></div>
+                                    </div>
+                                    <div class="relative flex justify-center text-xs uppercase">
+                                        <span class="bg-white px-2 text-slate-400 font-medium">Or</span>
+                                    </div>
+                                </div>
+
+                                <button type="button" onclick="sendToWhatsApp()"
+                                    class="w-full inline-flex justify-center items-center rounded-xl bg-[#25D366] px-3 py-3 text-base font-bold text-white shadow-sm hover:bg-[#128C7E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 transition-all gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="white" stroke="currentColor" stroke-width="0" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-message-circle">
+                                        <path
+                                            d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.273-.101-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.136-.135.303-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.172-.005-.372-.005-.572-.005-.2 0-.523.074-.797.372-.27.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.194 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.196-.57-.346z" />
+                                        <path
+                                            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                                    </svg>
+                                    Chat on WhatsApp
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openLeadPopup() {
+            const modal = document.getElementById('lead-popup');
+            const backdrop = document.getElementById('lead-popup-backdrop');
+            const panel = document.getElementById('lead-popup-panel');
+
+            modal.classList.remove('hidden');
+
+            // Animation frame for transition
+            requestAnimationFrame(() => {
+                backdrop.classList.remove('opacity-0');
+                panel.classList.remove('opacity-0', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95');
+                panel.classList.add('opacity-100', 'translate-y-0', 'sm:scale-100');
+            });
+        }
+
+        function closeLeadPopup() {
+            const modal = document.getElementById('lead-popup');
+            const backdrop = document.getElementById('lead-popup-backdrop');
+            const panel = document.getElementById('lead-popup-panel');
+
+            backdrop.classList.add('opacity-0');
+            panel.classList.remove('opacity-100', 'translate-y-0', 'sm:scale-100');
+            panel.classList.add('opacity-0', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95');
+
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        function sendToWhatsApp(source) {
+            let name, salon;
+
+            if (source === 'bottom') {
+                name = document.getElementById('bottom-name').value;
+                salon = document.getElementById('bottom-salon').value;
+            } else {
+                name = document.getElementById('popup-name').value;
+                salon = document.getElementById('popup-salon').value;
+            }
+
+            let message = "Hi QTick, I'm interested in your salon software.";
+            if (name) message += ` My name is ${name}.`;
+            if (salon) message += ` I run ${salon}.`;
+
+            const url = `https://wa.me/6583324428?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+
+        function handleBottomFormSubmit(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalText = btn.innerText;
+
+            btn.innerText = 'Sending...';
+            btn.disabled = true;
+
+            // Simulate network request
+            setTimeout(() => {
+                btn.innerText = 'Message Sent!';
+                if (window.toast) window.toast.success('Message sent successfully!');
+                else alert('Message sent successfully!');
+
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                    e.target.reset();
+                }, 2000);
+            }, 1000);
+        }
+
+        function handlePopupSubmit(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalText = btn.innerText;
+
+            btn.innerText = 'Sending...';
+            btn.disabled = true;
+
+            // Simulate network request
+            setTimeout(() => {
+                btn.innerText = 'Sent!';
+                if (window.toast) window.toast.success('Message sent successfully!');
+                else alert('Message sent successfully!');
+
+                setTimeout(() => {
+                    closeLeadPopup();
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                    e.target.reset();
+                }, 1500);
+            }, 1000);
+        }
     </script>
 </body>
 
