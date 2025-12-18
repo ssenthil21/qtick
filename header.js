@@ -1,12 +1,14 @@
 const headerContent = `
-<header class="bg-white border-b border-slate-200">
+<header class="bg-white border-b border-slate-200 sticky top-0 z-[100]">
     <!-- Top Nav -->
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="index.html" class="flex items-center gap-2">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2 relative z-[110]">
             <img src="asset/QTick-Logo.png" alt="QTick Logo"
                 class="w-8 h-8 rounded-lg shadow-lg shadow-indigo-500/20">
             <span class="text-xl font-bold text-slate-900">QTick</span>
         </a>
+
+        <!-- Desktop Nav -->
         <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
             <div class="relative group h-full flex items-center">
                 <a href="features.html" class="flex items-center gap-1 hover:text-indigo-600 py-4 cursor-pointer">
@@ -15,7 +17,7 @@ const headerContent = `
                 </a>
 
                 <div
-                    class="absolute top-full -left-10 w-[900px] bg-white rounded-2xl shadow-xl border border-slate-100 p-6 invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 z-50">
+                    class="absolute top-full -left-10 w-[900px] bg-white rounded-2xl shadow-xl border border-slate-100 p-6 invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 z-[100]">
                     <div class="grid grid-cols-3 gap-4 mb-4">
                         <!-- Queue Management -->
                         <a href="feature-queue-management.html"
@@ -152,7 +154,7 @@ const headerContent = `
                 </a>
 
                 <div
-                    class="absolute top-full -left-10 w-[600px] bg-white rounded-2xl shadow-xl border border-slate-100 p-6 invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 z-50">
+                    class="absolute top-full -left-10 w-[600px] bg-white rounded-2xl shadow-xl border border-slate-100 p-6 invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 z-[100]">
                     <div class="grid grid-cols-2 gap-4">
                         <!-- Salon Item -->
                         <a href="industry-salon-software.html"
@@ -232,6 +234,7 @@ const headerContent = `
             <a href="pricing.html" class="hover:text-indigo-600">Pricing</a>
             <a href="contact.html" class="hover:text-indigo-600">Contact</a>
         </nav>
+
         <div class="hidden md:flex items-center gap-4">
             <a href="download.html" class="text-sm font-semibold text-slate-700 hover:text-indigo-600">
                 Download App
@@ -240,6 +243,42 @@ const headerContent = `
                 class="px-4 py-2 rounded-xl bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-700 shadow-sm shadow-indigo-500/30">
                 Get Started
             </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-button" class="md:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-lg relative z-[110]" aria-label="Toggle Menu">
+            <i data-lucide="menu" id="hamburger-icon" class="w-6 h-6"></i>
+            <i data-lucide="x" id="close-icon" class="w-6 h-6 hidden"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-[100] hidden opacity-0 transition-opacity duration-300 md:hidden"></div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu-drawer" class="fixed inset-y-0 right-0 w-[300px] bg-white z-[105] hidden translate-x-full transition-transform duration-300 md:hidden overflow-y-auto">
+        <div class="flex flex-col h-full p-6 pt-24">
+            <nav class="flex flex-col gap-6 text-lg font-bold text-slate-900">
+                <a href="features.html" class="flex items-center justify-between hover:text-indigo-600">
+                    Platform <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                </a>
+                <a href="industries.html" class="flex items-center justify-between hover:text-indigo-600">
+                    Industries <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                </a>
+                <a href="blog.html" class="hover:text-indigo-600">Blog</a>
+                <a href="about.html" class="hover:text-indigo-600">About Us</a>
+                <a href="pricing.html" class="hover:text-indigo-600">Pricing</a>
+                <a href="contact.html" class="hover:text-indigo-600">Contact</a>
+            </nav>
+
+            <div class="mt-auto pt-12 flex flex-col gap-4">
+                <a href="download.html" class="flex items-center justify-center py-4 rounded-xl border border-slate-200 font-bold text-slate-700 hover:bg-slate-50">
+                    Download App
+                </a>
+                <a href="contact.html" class="flex items-center justify-center py-4 rounded-xl bg-indigo-600 text-white font-bold hover:bg-indigo-700 shadow-lg shadow-indigo-500/30">
+                    Get Started
+                </a>
+            </div>
         </div>
     </div>
 </header>
@@ -250,3 +289,51 @@ document.getElementById('global-header').innerHTML = headerContent;
 
 // Re-initialize Icons
 lucide.createIcons();
+
+// Mobile Menu Logic
+const mobileButton = document.getElementById('mobile-menu-button');
+const menuOverlay = document.getElementById('mobile-menu-overlay');
+const menuDrawer = document.getElementById('mobile-menu-drawer');
+const hamburgerIcon = document.getElementById('hamburger-icon');
+const closeIcon = document.getElementById('close-icon');
+
+function toggleMobileMenu() {
+    const isOpen = !menuDrawer.classList.contains('hidden');
+
+    if (!isOpen) {
+        // Open
+        menuOverlay.classList.remove('hidden');
+        menuDrawer.classList.remove('hidden');
+        setTimeout(() => {
+            menuOverlay.classList.add('opacity-100');
+            menuDrawer.classList.remove('translate-x-full');
+        }, 10);
+        hamburgerIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    } else {
+        // Close
+        menuOverlay.classList.remove('opacity-100');
+        menuDrawer.classList.add('translate-x-full');
+        setTimeout(() => {
+            menuOverlay.classList.add('hidden');
+            menuDrawer.classList.add('hidden');
+        }, 300);
+        hamburgerIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+}
+
+mobileButton.addEventListener('click', toggleMobileMenu);
+menuOverlay.addEventListener('click', toggleMobileMenu);
+
+// Close menu on link click
+const mobileLinks = menuDrawer.querySelectorAll('a');
+mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if (!menuDrawer.classList.contains('hidden')) {
+            toggleMobileMenu();
+        }
+    });
+});
