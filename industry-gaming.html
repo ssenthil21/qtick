@@ -15,6 +15,10 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <title>QTick - Gaming Zone & Cafe Management Software | Level Up Your Business</title>
   <meta name="description"
     content="All-in-one gaming zone & e-sports center software. PC/Console bookings, cafe billing, membership tracking, and analytics. Start your 14-day free trial today.">
@@ -108,16 +112,16 @@
     }
 
     .text-gradient {
-      display: inline-block;
-      background: var(--gradient-hero);
+      background-image: var(--gradient-hero);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
       color: transparent;
+      display: inline-block;
     }
 
     .bg-gradient-hero {
-      background: var(--gradient-hero) !important;
+      background-image: var(--gradient-hero) !important;
     }
 
     .glow-violet {
@@ -175,11 +179,16 @@
             &amp;
             e-sports center software for PC/Console bookings, cafe billing, and membership management. Built for
             businesses that want to dominate.</p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"><button
-              class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-hero text-white shadow-glow hover:shadow-lg hover:scale-105 transition-all duration-300 h-11 rounded-md px-8 text-base">Start
-              14-Day Free Trial</button><button
-              class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 rounded-md px-8 text-base">Book
-              a Free Demo Call</button></div>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+            <button onclick="openLeadPopup()"
+              class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-gradient-hero text-white shadow-glow hover:shadow-lg hover:scale-105 transition-all duration-300 h-11 rounded-md px-8 text-base">
+              Start 14-Day Free Trial
+            </button>
+            <button onclick="openLeadPopup()"
+              class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 rounded-md px-8 text-base">
+              Book a Free Demo Call
+            </button>
+          </div>
           <div class="flex flex-wrap gap-6 justify-center lg:justify-start text-sm text-muted-foreground">
             <div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -346,53 +355,61 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
         <!-- Stat Card 1 -->
         <div
-          class="bg-white rounded-2xl p-6 shadow-xl border border-white/20 flex items-center gap-5 hover:scale-105 transition-all duration-300">
-          <div
-            class="w-14 h-14 rounded-full bg-primary/15 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-            <i data-lucide="users" class="w-7 h-7"></i>
+          class="bg-white p-4 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.2)] transition-all duration-300 transform hover:-translate-y-1 flex items-center">
+          <div class="w-1/3 flex justify-center items-center">
+            <div class="w-14 h-14 rounded-full bg-violet-100 flex items-center justify-center">
+              <i data-lucide="users" class="w-7 h-7 text-violet-600"></i>
+            </div>
           </div>
-          <div class="flex flex-col">
-            <span class="text-3xl font-extrabold text-slate-900 tracking-tight">200+</span>
-            <span class="text-sm font-medium text-slate-500">Centers Managed</span>
+          <div class="w-px h-12 bg-gray-200 mx-2"></div>
+          <div class="w-2/3 pl-2">
+            <div class="text-3xl font-extrabold text-slate-900 tracking-tight">200+</div>
+            <div class="text-sm font-medium text-slate-500">Centers Managed</div>
           </div>
         </div>
 
         <!-- Stat Card 2 -->
         <div
-          class="bg-white rounded-2xl p-6 shadow-xl border border-white/20 flex items-center gap-5 hover:scale-105 transition-all duration-300">
-          <div
-            class="w-14 h-14 rounded-full bg-secondary/15 flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
-            <i data-lucide="trending-up" class="w-7 h-7"></i>
+          class="bg-white p-4 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.2)] transition-all duration-300 transform hover:-translate-y-1 flex items-center">
+          <div class="w-1/3 flex justify-center items-center">
+            <div class="w-14 h-14 rounded-full bg-cyan-100 flex items-center justify-center">
+              <i data-lucide="trending-up" class="w-7 h-7 text-cyan-600"></i>
+            </div>
           </div>
-          <div class="flex flex-col">
-            <span class="text-3xl font-extrabold text-slate-900 tracking-tight">35%</span>
-            <span class="text-sm font-medium text-slate-500">Revenue Growth</span>
+          <div class="w-px h-12 bg-gray-200 mx-2"></div>
+          <div class="w-2/3 pl-2">
+            <div class="text-3xl font-extrabold text-slate-900 tracking-tight">35%</div>
+            <div class="text-sm font-medium text-slate-500">Revenue Growth</div>
           </div>
         </div>
 
         <!-- Stat Card 3 -->
         <div
-          class="bg-white rounded-2xl p-6 shadow-xl border border-white/20 flex items-center gap-5 hover:scale-105 transition-all duration-300">
-          <div
-            class="w-14 h-14 rounded-full bg-primary/15 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-            <i data-lucide="zap" class="w-7 h-7"></i>
+          class="bg-white p-4 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.2)] transition-all duration-300 transform hover:-translate-y-1 flex items-center">
+          <div class="w-1/3 flex justify-center items-center">
+            <div class="w-14 h-14 rounded-full bg-indigo-100 flex items-center justify-center">
+              <i data-lucide="zap" class="w-7 h-7 text-indigo-600"></i>
+            </div>
           </div>
-          <div class="flex flex-col">
-            <span class="text-3xl font-extrabold text-slate-900 tracking-tight">95%</span>
-            <span class="text-sm font-medium text-slate-500">System Uptime</span>
+          <div class="w-px h-12 bg-gray-200 mx-2"></div>
+          <div class="w-2/3 pl-2">
+            <div class="text-3xl font-extrabold text-slate-900 tracking-tight">95%</div>
+            <div class="text-sm font-medium text-slate-500">System Uptime</div>
           </div>
         </div>
 
         <!-- Stat Card 4 -->
         <div
-          class="bg-white rounded-2xl p-6 shadow-xl border border-white/20 flex items-center gap-5 hover:scale-105 transition-all duration-300">
-          <div
-            class="w-14 h-14 rounded-full bg-secondary/15 flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
-            <i data-lucide="star" class="w-7 h-7"></i>
+          class="bg-white p-4 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.2)] transition-all duration-300 transform hover:-translate-y-1 flex items-center">
+          <div class="w-1/3 flex justify-center items-center">
+            <div class="w-14 h-14 rounded-full bg-fuchsia-100 flex items-center justify-center">
+              <i data-lucide="star" class="w-7 h-7 text-fuchsia-600"></i>
+            </div>
           </div>
-          <div class="flex flex-col">
-            <span class="text-3xl font-extrabold text-slate-900 tracking-tight">4.9★</span>
-            <span class="text-sm font-medium text-slate-500">Average Rating</span>
+          <div class="w-px h-12 bg-gray-200 mx-2"></div>
+          <div class="w-2/3 pl-2">
+            <div class="text-3xl font-extrabold text-slate-900 tracking-tight">4.9★</div>
+            <div class="text-sm font-medium text-slate-500">Average Rating</div>
           </div>
         </div>
       </div>
@@ -413,7 +430,7 @@
           <div
             class="flex-1 p-6 md:p-8 border-b md:border-b-0 md:border-r border-border/60 bg-gradient-to-b from-white via-white to-primary/5">
             <div class="text-center md:text-right mb-8 pb-6 border-b border-border/60">
-              <h3 class="text-2xl font-bold text-muted-foreground uppercase tracking-[0.2em]">Without QTick</h3>
+              <h3 class="text-2xl font-bold text-muted-foreground tracking-[0.2em]">WITHOUT QTick</h3>
               <p class="text-xs text-muted-foreground">The old way</p>
             </div>
             <div class="space-y-4">
@@ -655,7 +672,7 @@
             VS</div>
           <div class="flex-1 p-6 md:p-8 bg-gradient-to-b from-secondary/5 via-white to-white">
             <div class="text-center md:left mb-8 pb-6 border-b border-border/60">
-              <h3 class="text-2xl font-bold text-primary uppercase tracking-[0.2em]">With QTick</h3>
+              <h3 class="text-2xl font-bold text-primary tracking-[0.2em]">WITH QTick</h3>
               <p class="text-xs text-primary">The smart way</p>
             </div>
             <div class="space-y-4">
@@ -1077,67 +1094,46 @@
   <section class="py-20 bg-background">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-16 text-foreground">The <span
-          class="text-primary">QTick AI</span> Engine</h2>
+          class="text-gradient">QTick AI</span> Engine</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
         <div
-          class="p-8 rounded-2xl bg-gradient-card border border-border/50 hover:border-primary/50 hover:shadow-lg transition-all duration-300">
-          <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6"><svg
-              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-trending-down w-8 h-8 text-primary">
-              <polyline points="22 17 13.5 8.5 8.5 13.5 2 7"></polyline>
-              <polyline points="16 17 22 17 22 11"></polyline>
-            </svg></div>
-          <h3 class="text-xl font-bold text-foreground mb-3">AI Analytics &amp; Insights</h3>
+          class="p-8 rounded-2xl bg-gradient-to-br from-violet-600/10 to-cyan-500/10 border border-violet-500/20 hover:border-violet-500/50 hover:shadow-lg transition-all duration-300 group">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-hero flex items-center justify-center mb-6 shadow-lg">
+            <i data-lucide="trending-down" class="w-8 h-8 text-white"></i>
+          </div>
+          <h3 class="text-xl font-bold text-foreground mb-3">AI Analytics & Insights</h3>
           <p class="text-muted-foreground leading-relaxed">AI helps reshape your business. Our reports analyze
             trends and provide actionable suggestions, like how to run a flash sale to fill your <span
-              class="font-semibold text-primary">off-peak hours</span>.</p>
+              class="font-semibold text-violet-600">off-peak hours</span>.</p>
         </div>
         <div
-          class="p-8 rounded-2xl bg-gradient-card border border-border/50 hover:border-primary/50 hover:shadow-lg transition-all duration-300">
-          <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6"><svg
-              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-megaphone w-8 h-8 text-primary">
-              <path d="m3 11 18-5v12L3 14v-3z"></path>
-              <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path>
-            </svg></div>
+          class="p-8 rounded-2xl bg-gradient-to-br from-cyan-600/10 to-violet-500/10 border border-cyan-500/20 hover:border-cyan-500/50 hover:shadow-lg transition-all duration-300 group">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-hero flex items-center justify-center mb-6 shadow-lg">
+            <i data-lucide="megaphone" class="w-8 h-8 text-white"></i>
+          </div>
           <h3 class="text-xl font-bold text-foreground mb-3">AI Marketing Automation</h3>
           <p class="text-muted-foreground leading-relaxed">Let AI manage your digital campaigns and re-engage
-            clients. It helps analyze customer data to <span class="font-semibold text-primary">increase
+            clients. It helps analyze customer data to <span class="font-semibold text-cyan-600">increase
               sales</span> and retention.</p>
         </div>
         <div
-          class="p-8 rounded-2xl bg-gradient-card border border-border/50 hover:border-primary/50 hover:shadow-lg transition-all duration-300">
-          <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6"><svg
-              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-headphones w-8 h-8 text-primary">
-              <path
-                d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3">
-              </path>
-            </svg></div>
+          class="p-8 rounded-2xl bg-gradient-to-br from-indigo-600/10 to-blue-500/10 border border-indigo-500/20 hover:border-indigo-500/50 hover:shadow-lg transition-all duration-300 group">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-hero flex items-center justify-center mb-6 shadow-lg">
+            <i data-lucide="headphones" class="w-8 h-8 text-white"></i>
+          </div>
           <h3 class="text-xl font-bold text-foreground mb-3">AI Enquiry Management</h3>
           <p class="text-muted-foreground leading-relaxed">Our AI automation instantly captures and qualifies
             customer enquiries 24/7, ensuring you never miss a lead and <span
-              class="font-semibold text-primary">increase booking rates</span>.</p>
+              class="font-semibold text-indigo-600">increase booking rates</span>.</p>
         </div>
         <div
-          class="p-8 rounded-2xl bg-gradient-card border border-border/50 hover:border-primary/50 hover:shadow-lg transition-all duration-300">
-          <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6"><svg
-              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-bot w-8 h-8 text-primary">
-              <path d="M12 8V4H8"></path>
-              <rect width="16" height="12" x="4" y="8" rx="2"></rect>
-              <path d="M2 14h2"></path>
-              <path d="M20 14h2"></path>
-              <path d="M15 13v2"></path>
-              <path d="M9 13v2"></path>
-            </svg></div>
+          class="p-8 rounded-2xl bg-gradient-to-br from-fuchsia-600/10 to-violet-500/10 border border-fuchsia-500/20 hover:border-fuchsia-500/50 hover:shadow-lg transition-all duration-300 group">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-hero flex items-center justify-center mb-6 shadow-lg">
+            <i data-lucide="bot" class="w-8 h-8 text-white"></i>
+          </div>
           <h3 class="text-xl font-bold text-foreground mb-3">Proactive AI Admin</h3>
           <p class="text-muted-foreground leading-relaxed">Your AI assistant <span
-              class="font-semibold text-primary">proactively manages admin work</span>, scheduling, and follow-ups,
+              class="font-semibold text-fuchsia-600">proactively manages admin work</span>, scheduling, and follow-ups,
             freeing you to focus on your clients. (Human-in-the-loop for full control).</p>
         </div>
       </div>
@@ -1519,29 +1515,244 @@
       </div>
     </div>
   </section>
-  <section class="py-24 bg-gradient-soft relative overflow-hidden">
-    <div class="absolute top-10 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-10 left-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
+  <!-- Footer -->
+  <!-- Lead Capture Form Section -->
+  <section class="py-24 bg-slate-50 relative overflow-hidden border-t border-slate-200">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="text-center max-w-3xl mx-auto">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">Ready to Make Your Gaming Zone <span
-            class="text-gradient">Run on Auto-Pilot?</span></h2>
-        <p class="text-lg text-muted-foreground mb-10">Join 200+ gaming center owners who've transformed their business
-          with
-          QTick. Start your free trial today – no credit card required.</p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center"><button
-            class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-hero text-white shadow-glow hover:shadow-lg hover:scale-105 transition-all duration-300 h-11 rounded-md px-8 text-base">Start
-            14-Day Free Trial</button><button
-            class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 rounded-md px-8 text-base">Book
-            a Free Demo</button></div>
-        <p class="text-sm text-muted-foreground mt-6">No tech skills needed · We'll help you set it up · Cancel
-          anytime</p>
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Left Column: Copy -->
+        <div class="text-left">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">Ready to Level Up Your
+            <span class="text-orange-600">Gaming Business?</span>
+          </h2>
+          <p class="text-lg text-muted-foreground mb-8">Join the elite gaming centers that have transformed their
+            operations with QTick. Get a personalized demo and start your journey today today.</p>
+
+          <div class="space-y-3">
+            <div class="flex items-center gap-3">
+              <div class="bg-green-100 rounded-full p-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                  class="text-green-600">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+              </div>
+              <span class="text-muted-foreground font-medium">No tech skills needed</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="bg-green-100 rounded-full p-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                  class="text-green-600">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+              </div>
+              <span class="text-muted-foreground font-medium">We'll help you set it up</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="bg-green-100 rounded-full p-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                  class="text-green-600">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+              </div>
+              <span class="text-muted-foreground font-medium">Cancel anytime</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Form -->
+        <div class="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-8">
+          <form id="bottom-lead-form" class="space-y-4" onsubmit="handleBottomFormSubmit(event)">
+            <div class="grid grid-cols-2 gap-4">
+              <div class="space-y-2">
+                <label for="bottom-name" class="text-sm font-medium text-slate-700">Name</label>
+                <input type="text" id="bottom-name" required
+                  class="flex h-11 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                  placeholder="John Doe">
+              </div>
+              <div class="space-y-2">
+                <label for="bottom-phone" class="text-sm font-medium text-slate-700">Phone</label>
+                <input type="tel" id="bottom-phone" required
+                  class="flex h-11 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                  placeholder="+91 98765 43210">
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <label for="bottom-email" class="text-sm font-medium text-slate-700">Email <span
+                  class="text-slate-400 font-normal">(Optional)</span></label>
+              <input type="email" id="bottom-email"
+                class="flex h-11 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                placeholder="john@example.com">
+            </div>
+
+            <div class="space-y-2">
+              <label for="bottom-business" class="text-sm font-medium text-slate-700">Gaming Center Name</label>
+              <input type="text" id="bottom-business" required
+                class="flex h-11 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                placeholder="Luxe Gaming Zone">
+            </div>
+
+            <div class="space-y-2">
+              <label for="bottom-message" class="text-sm font-medium text-slate-700">Message</label>
+              <textarea id="bottom-message" rows="3"
+                class="flex min-h-[80px] w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                placeholder="Tell us about your requirements..."></textarea>
+            </div>
+
+            <div class="pt-2 space-y-3">
+              <button type="submit"
+                class="w-full inline-flex justify-center items-center rounded-xl bg-orange-600 px-3 py-3 text-base font-bold text-white shadow-sm hover:bg-orange-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 transition-all">
+                Get Free Consultation
+              </button>
+
+              <div class="relative">
+                <div class="absolute inset-0 flex items-center">
+                  <div class="w-full border-t border-slate-200"></div>
+                </div>
+                <div class="relative flex justify-center text-xs uppercase">
+                  <span class="bg-white px-2 text-slate-400 font-medium">Or</span>
+                </div>
+              </div>
+
+              <button type="button" onclick="sendToWhatsApp('bottom')"
+                class="w-full inline-flex justify-center items-center rounded-xl bg-[#25D366] px-3 py-3 text-base font-bold text-white shadow-sm hover:bg-[#128C7E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 transition-all gap-2">
+                <i data-lucide="message-circle" class="w-5 h-5"></i>
+                Chat on WhatsApp
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </section>
-  <!-- Footer -->
+
   <div id="global-footer"></div>
   <script src="footer.js"></script>
+
+  <!-- Lead Generation Popup -->
+  <div id="lead-popup" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog"
+    aria-modal="true">
+    <!-- Backdrop -->
+    <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity opacity-0" id="lead-popup-backdrop">
+    </div>
+
+    <div class="fixed inset-0 z-10 overflow-y-auto">
+      <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+        <!-- Modal Panel -->
+        <div
+          class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-lg opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+          id="lead-popup-panel">
+
+          <!-- Close Button -->
+          <div class="absolute top-4 right-4 z-10">
+            <button type="button" onclick="closeLeadPopup()"
+              class="rounded-full p-2 bg-slate-100 text-slate-400 hover:text-slate-500 hover:bg-slate-200 focus:outline-none transition-colors">
+              <span class="sr-only">Close</span>
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="p-6 sm:p-8">
+            <div class="text-center sm:text-left mb-6">
+              <h3 class="text-2xl font-bold leading-6 text-slate-900" id="modal-title">Get Started with
+                QTick</h3>
+              <div class="mt-2">
+                <p class="text-sm text-slate-500">Fill in your details to get a free consultation or
+                  chat with us instantly.</p>
+              </div>
+            </div>
+
+            <form id="popup-lead-form" class="space-y-4" onsubmit="handlePopupSubmit(event)">
+              <div class="grid grid-cols-2 gap-4">
+                <div class="space-y-2">
+                  <label for="popup-name" class="text-sm font-medium text-slate-700">Name</label>
+                  <input type="text" id="popup-name" required
+                    class="flex h-11 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    placeholder="John Doe">
+                </div>
+                <div class="space-y-2">
+                  <label for="popup-phone" class="text-sm font-medium text-slate-700">Phone</label>
+                  <input type="tel" id="popup-phone" required
+                    class="flex h-11 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    placeholder="+91 98765 43210">
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <label for="popup-email" class="text-sm font-medium text-slate-700">Email <span
+                    class="text-slate-400 font-normal">(Optional)</span></label>
+                <input type="email" id="popup-email"
+                  class="flex h-11 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                  placeholder="john@example.com">
+              </div>
+
+              <div class="space-y-2">
+                <label for="popup-business" class="text-sm font-medium text-slate-700">Gaming Center Name</label>
+                <input type="text" id="popup-business" required
+                  class="flex h-11 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                  placeholder="Luxe Gaming Zone">
+              </div>
+
+              <div class="space-y-2">
+                <label for="popup-message" class="text-sm font-medium text-slate-700">Message</label>
+                <textarea id="popup-message" rows="3"
+                  class="flex min-h-[80px] w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                  placeholder="Tell us about your requirements..."></textarea>
+              </div>
+
+              <div class="pt-2 space-y-3">
+                <button type="submit"
+                  class="w-full inline-flex justify-center items-center rounded-xl bg-orange-600 px-3 py-3 text-base font-bold text-white shadow-sm hover:bg-orange-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 transition-all">
+                  Send Message
+                </button>
+
+                <div class="relative">
+                  <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-slate-200"></div>
+                  </div>
+                  <div class="relative flex justify-center text-xs uppercase">
+                    <span class="bg-white px-2 text-slate-400 font-medium">Or</span>
+                  </div>
+                </div>
+
+                <button type="button" onclick="sendToWhatsApp('popup')"
+                  class="w-full inline-flex justify-center items-center rounded-xl bg-[#25D366] px-3 py-3 text-base font-bold text-white shadow-sm hover:bg-[#128C7E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 transition-all gap-2">
+                  <i data-lucide="message-circle" class="w-5 h-5"></i>
+                  Chat on WhatsApp
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Bottom CTA -->
+  <div
+    class="fixed bottom-0 left-0 right-0 p-4 bg-white/90 backdrop-blur-md border-t border-border/60 z-50 flex items-center justify-between md:justify-center gap-4 shadow-[0_-4px_20px_-5px_rgba(0,0,0,0.1)] animate-in slide-in-from-bottom-full duration-500">
+    <div class="hidden md:block mr-8">
+      <p class="font-bold text-foreground">Dominate the gaming market today</p>
+    </div>
+    <div class="flex gap-3 w-full md:w-auto">
+      <button onclick="openLeadPopup()"
+        class="flex-1 md:flex-none h-11 px-6 rounded-full bg-gradient-hero text-white font-bold shadow-md hover:shadow-lg hover:scale-105 transition-all text-sm whitespace-nowrap">
+        Get Started
+      </button>
+      <a href="https://wa.me/6583324428?text=Hi%20QTick,%20I'm%20interested%20in%20scaling%20my%20gaming%20center."
+        target="_blank"
+        class="flex-1 md:flex-none h-11 px-6 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-bold hover:bg-emerald-100 transition-all flex items-center justify-center gap-2 text-sm whitespace-nowrap">
+        <i data-lucide="message-circle" class="w-4 h-4"></i>
+        WhatsApp Us
+      </a>
+    </div>
+  </div>
 
 
   <span id="PING_CONTENT_AUTOPLAY_DETECTION" style="display: none;"></span>
@@ -1603,6 +1814,106 @@
           }
         });
       });
+    });
+
+    function openLeadPopup() {
+      const modal = document.getElementById('lead-popup');
+      const backdrop = document.getElementById('lead-popup-backdrop');
+      const panel = document.getElementById('lead-popup-panel');
+
+      modal.classList.remove('hidden');
+
+      // Animation frame for transition
+      requestAnimationFrame(() => {
+        backdrop.classList.remove('opacity-0');
+        panel.classList.remove('opacity-0', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95');
+        panel.classList.add('opacity-100', 'translate-y-0', 'sm:scale-100');
+      });
+    }
+
+    function closeLeadPopup() {
+      const modal = document.getElementById('lead-popup');
+      const backdrop = document.getElementById('lead-popup-backdrop');
+      const panel = document.getElementById('lead-popup-panel');
+
+      backdrop.classList.add('opacity-0');
+      panel.classList.remove('opacity-100', 'translate-y-0', 'sm:scale-100');
+      panel.classList.add('opacity-0', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95');
+
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 300);
+    }
+
+    function sendToWhatsApp(source) {
+      let name, business;
+
+      if (source === 'bottom') {
+        name = document.getElementById('bottom-name').value;
+        business = document.getElementById('bottom-business').value;
+      } else {
+        name = document.getElementById('popup-name').value;
+        business = document.getElementById('popup-business').value;
+      }
+
+      let message = "Hi QTick, I'm interested in your gaming center software.";
+      if (name) message += ` My name is ${name}.`;
+      if (business) message += ` I run ${business}.`;
+
+      const url = `https://wa.me/6583324428?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+    }
+
+    function handleBottomFormSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      const originalText = btn.innerText;
+
+      btn.innerText = 'Sending...';
+      btn.disabled = true;
+
+      // Simulate network request
+      setTimeout(() => {
+        btn.innerText = 'Message Sent!';
+        if (window.toast) window.toast.success('Message sent successfully!');
+        else alert('Message sent successfully!');
+
+        setTimeout(() => {
+          btn.innerText = originalText;
+          btn.disabled = false;
+          e.target.reset();
+        }, 2000);
+      }, 1000);
+    }
+
+    function handlePopupSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      const originalText = btn.innerText;
+
+      btn.innerText = 'Sending...';
+      btn.disabled = true;
+
+      // Simulate network request
+      setTimeout(() => {
+        btn.innerText = 'Sent!';
+        if (window.toast) window.toast.success('Message sent successfully!');
+        else alert('Message sent successfully!');
+
+        setTimeout(() => {
+          closeLeadPopup();
+          btn.innerText = originalText;
+          btn.disabled = false;
+          e.target.reset();
+        }, 1500);
+      }, 1000);
+    }
+
+    // Initialize Lucide Icons
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
     });
   </script>
 </body>
