@@ -58,6 +58,7 @@ const footerContent = `
                     <li><a href="faq.html" class="hover:text-indigo-600">FAQ</a></li>
                     <li><a href="contact.html" class="hover:text-indigo-600">Contact Us</a></li>
                     <li><a href="blog.html" class="hover:text-indigo-600">Blog</a></li>
+                    <li><a href="policy.html" class="hover:text-indigo-600">Privacy Policy</a></li>
                 </ul>
             </div>
         </div>
