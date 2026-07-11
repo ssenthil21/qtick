@@ -217,7 +217,7 @@ const headerContent = `
                             </div>
                             <div>
                                 <h4 class="font-bold text-slate-900 mb-1 text-sm">Food &amp; Beverage</h4>
-                                <p class="text-xs text-slate-500 leading-snug">Queues, pickups &amp; loyalty</p>
+                                <p class="text-xs text-slate-500 leading-snug">QSR, KOT &amp; token flow</p>
                             </div>
                         </a>
 
